@@ -72,6 +72,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CurriculumVitae.Designer.vb">
+      <DependentUpon>CurriculumVitae.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CurriculumVitae.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConferencias.Designer.vb">
+      <DependentUpon>FrmConferencias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConferencias.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmInvestigadores.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +114,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CurriculumVitae.resx">
+      <DependentUpon>CurriculumVitae.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConferencias.resx">
+      <DependentUpon>FrmConferencias.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmInvestigadores.resx">
       <DependentUpon>FrmInvestigadores.vb</DependentUpon>
     </EmbeddedResource>
