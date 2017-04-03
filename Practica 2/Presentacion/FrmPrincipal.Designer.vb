@@ -23,6 +23,7 @@ Partial Class FrmPrincipal
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.grboxPersonas = New System.Windows.Forms.GroupBox()
+        Me.txtbxDNI = New System.Windows.Forms.MaskedTextBox()
         Me.btnLimpiarCampos = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
@@ -36,7 +37,6 @@ Partial Class FrmPrincipal
         Me.lblEstadoBD = New System.Windows.Forms.Label()
         Me.txtRuta = New System.Windows.Forms.RichTextBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.txtbxDNI = New System.Windows.Forms.MaskedTextBox()
         Me.grboxPersonas.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -58,6 +58,16 @@ Partial Class FrmPrincipal
         Me.grboxPersonas.TabIndex = 0
         Me.grboxPersonas.TabStop = False
         Me.grboxPersonas.Text = "PERSONAS"
+        '
+        'txtbxDNI
+        '
+        Me.txtbxDNI.Enabled = False
+        Me.txtbxDNI.Location = New System.Drawing.Point(484, 61)
+        Me.txtbxDNI.Mask = "00000000>L"
+        Me.txtbxDNI.Name = "txtbxDNI"
+        Me.txtbxDNI.PromptChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.txtbxDNI.Size = New System.Drawing.Size(144, 22)
+        Me.txtbxDNI.TabIndex = 10
         '
         'btnLimpiarCampos
         '
@@ -106,7 +116,7 @@ Partial Class FrmPrincipal
         'txtbxNombre
         '
         Me.txtbxNombre.Enabled = False
-        Me.txtbxNombre.Location = New System.Drawing.Point(477, 110)
+        Me.txtbxNombre.Location = New System.Drawing.Point(484, 110)
         Me.txtbxNombre.Name = "txtbxNombre"
         Me.txtbxNombre.Size = New System.Drawing.Size(144, 22)
         Me.txtbxNombre.TabIndex = 4
@@ -118,9 +128,9 @@ Partial Class FrmPrincipal
         Me.lblNombre.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblNombre.Location = New System.Drawing.Point(403, 112)
         Me.lblNombre.Name = "lblNombre"
-        Me.lblNombre.Size = New System.Drawing.Size(68, 20)
+        Me.lblNombre.Size = New System.Drawing.Size(73, 20)
         Me.lblNombre.TabIndex = 2
-        Me.lblNombre.Text = "Nombre"
+        Me.lblNombre.Text = "Nombre:"
         '
         'lblDNI
         '
@@ -129,9 +139,9 @@ Partial Class FrmPrincipal
         Me.lblDNI.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblDNI.Location = New System.Drawing.Point(403, 61)
         Me.lblDNI.Name = "lblDNI"
-        Me.lblDNI.Size = New System.Drawing.Size(38, 20)
+        Me.lblDNI.Size = New System.Drawing.Size(43, 20)
         Me.lblDNI.TabIndex = 1
-        Me.lblDNI.Text = "DNI"
+        Me.lblDNI.Text = "DNI:"
         '
         'listbxPersonas
         '
@@ -184,16 +194,6 @@ Partial Class FrmPrincipal
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.Filter = "Microsoft Access Base de datos(*.accdb)|*.accdb"
-        '
-        'txtbxDNI
-        '
-        Me.txtbxDNI.Enabled = False
-        Me.txtbxDNI.Location = New System.Drawing.Point(477, 61)
-        Me.txtbxDNI.Mask = "00000000>L"
-        Me.txtbxDNI.Name = "txtbxDNI"
-        Me.txtbxDNI.PromptChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtbxDNI.Size = New System.Drawing.Size(144, 22)
-        Me.txtbxDNI.TabIndex = 10
         '
         'FrmPrincipal
         '
