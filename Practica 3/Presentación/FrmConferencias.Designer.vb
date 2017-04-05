@@ -29,7 +29,7 @@ Partial Class FrmConferencias
         Me.txtbxFecha_fin = New System.Windows.Forms.TextBox()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.txtbxLugar = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.txtbxNombreConferencia = New System.Windows.Forms.TextBox()
         Me.txtbxSiglas = New System.Windows.Forms.TextBox()
         Me.txtbxIDConferencia = New System.Windows.Forms.TextBox()
         Me.lblLugar = New System.Windows.Forms.Label()
@@ -50,7 +50,7 @@ Partial Class FrmConferencias
         Me.GroupBox1.Controls.Add(Me.txtbxFecha_fin)
         Me.GroupBox1.Controls.Add(Me.TextBox5)
         Me.GroupBox1.Controls.Add(Me.txtbxLugar)
-        Me.GroupBox1.Controls.Add(Me.TextBox3)
+        Me.GroupBox1.Controls.Add(Me.txtbxNombreConferencia)
         Me.GroupBox1.Controls.Add(Me.txtbxSiglas)
         Me.GroupBox1.Controls.Add(Me.txtbxIDConferencia)
         Me.GroupBox1.Controls.Add(Me.lblLugar)
@@ -120,12 +120,12 @@ Partial Class FrmConferencias
         Me.txtbxLugar.Size = New System.Drawing.Size(136, 22)
         Me.txtbxLugar.TabIndex = 10
         '
-        'TextBox3
+        'txtbxNombreConferencia
         '
-        Me.TextBox3.Location = New System.Drawing.Point(441, 245)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(132, 22)
-        Me.TextBox3.TabIndex = 9
+        Me.txtbxNombreConferencia.Location = New System.Drawing.Point(441, 245)
+        Me.txtbxNombreConferencia.Name = "txtbxNombreConferencia"
+        Me.txtbxNombreConferencia.Size = New System.Drawing.Size(132, 22)
+        Me.txtbxNombreConferencia.TabIndex = 9
         '
         'txtbxSiglas
         '
@@ -232,7 +232,7 @@ Partial Class FrmConferencias
 
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents txtbxLugar As TextBox
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents txtbxNombreConferencia As TextBox
     Friend WithEvents txtbxSiglas As TextBox
     Friend WithEvents txtbxIDConferencia As TextBox
     Friend WithEvents lblLugar As Label
