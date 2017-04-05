@@ -16,10 +16,13 @@
 
     Public Sub read(ByRef art As Articulo)
         Dim leer As OleDb.OleDbDataReader
-        leer = AgenteBD.getAgente.leer("SELECT * FROM ARTICULOS WHERE idArticulo='" & art. & "';")
+        leer = AgenteBD.getAgente.leer("SELECT * FROM ARTICULOS WHERE idArticulo='" & art.IDArticulo & "';")
         While leer.Read
-            per.DNI = leer.GetValue(0).ToString
-            per.Nombre = leer.GetValue(1).ToString
+            art.IDArticulo = Convert.ToInt16(leer.GetValue(0))
+            art.Titulo = leer.GetValue(1).ToString
+            art.Conferencia.IDConferencia = Convert.ToInt16(leer.GetValue(2))
+            art.PagInicio = Convert.ToInt16(leer.GetValue(3).ToString)
+            art.PagFin = Convert.ToInt16(leer.GetValue(4).ToString)
         End While
     End Sub
 
@@ -27,20 +30,20 @@
         Dim leer As OleDb.OleDbDataReader
         leer = AgenteBD.getAgente.leer("SELECT * FROM ARTICULOS ORDER BY idArticulo;")
         While leer.Read
-            Me.ListaArticulos.Add(New Articulo(leer.GetValue(0).ToString))
+            Me.ListaArticulos.Add(New Articulo(Convert.ToInt16(leer.GetValue(0).ToString)))
         End While
     End Sub
 
-    Public Function insert(ByVal per As Articulo) As Integer
-        Return AgenteBD.getAgente().modificar("INSERT INTO ARTICULOS VALUES ('" & per.DNI & "','" & per.Nombre & "');")
+    Public Function insert(ByVal art As Articulo) As Integer
+        Return AgenteBD.getAgente().modificar("INSERT INTO ARTICULOS VALUES ('" & art.IDArticulo & "','" & art.Titulo & "','" & art.Conferencia.IDConferencia & "','" & art.PagInicio & "','" & art.PagFin & "');")
     End Function
 
-    Public Function update(ByVal per As Articulo) As Integer
-        Return AgenteBD.getAgente.modificar("UPDATE ARTICULOS SET Titulo='" & per.Nombre & "'WHERE idArticulo='" & per.DNI & "';")
+    Public Function update(ByVal art As Articulo) As Integer
+        Return AgenteBD.getAgente.modificar("UPDATE ARTICULOS SET Titulo='" & art.Titulo & "', Conferencia='" & art.Conferencia.IDConferencia & "', pag_inicio='" & art.PagInicio & "', pag_fin='" & art.PagFin & "'WHERE idArticulo='" & art.IDArticulo & "';")
     End Function
 
-    Public Function delete(ByVal per As Articulo) As Integer
-        Return AgenteBD.getAgente.modificar("DELETE FROM ARTICULOS WHERE idArticulo='" & per.DNI & "';")
+    Public Function delete(ByVal art As Articulo) As Integer
+        Return AgenteBD.getAgente.modificar("DELETE FROM ARTICULOS WHERE idArticulo='" & art.IDArticulo & "';")
     End Function
 
 End Class
