@@ -45,6 +45,7 @@ Partial Class FrmInvestigadores
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lblID = New System.Windows.Forms.Label()
         Me.lstbxInvestigadores = New System.Windows.Forms.ListBox()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.grpbxInvestigadores.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -283,6 +284,10 @@ Partial Class FrmInvestigadores
         Me.lstbxInvestigadores.Size = New System.Drawing.Size(197, 308)
         Me.lstbxInvestigadores.TabIndex = 0
         '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
         'FrmInvestigadores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -320,4 +325,5 @@ Partial Class FrmInvestigadores
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents lblID As Label
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class

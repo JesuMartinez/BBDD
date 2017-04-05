@@ -77,32 +77,32 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CurriculumVitae.Designer.vb">
+    <Compile Include="Presentación\CurriculumVitae.Designer.vb">
       <DependentUpon>CurriculumVitae.vb</DependentUpon>
     </Compile>
-    <Compile Include="CurriculumVitae.vb">
+    <Compile Include="Presentación\CurriculumVitae.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Dominio\Articulo.vb" />
     <Compile Include="Dominio\Conferencia.vb" />
     <Compile Include="Dominio\Investigador.vb" />
-    <Compile Include="FrmConferencias.Designer.vb">
+    <Compile Include="Presentación\FrmConferencias.Designer.vb">
       <DependentUpon>FrmConferencias.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmConferencias.vb">
+    <Compile Include="Presentación\FrmConferencias.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmInvestigadores.vb">
+    <Compile Include="Presentación\FrmInvestigadores.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmInvestigadores.Designer.vb">
+    <Compile Include="Presentación\FrmInvestigadores.Designer.vb">
       <DependentUpon>FrmInvestigadores.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmArticulos.Designer.vb">
+    <Compile Include="Presentación\FrmArticulos.Designer.vb">
       <DependentUpon>FrmArticulos.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmArticulos.vb">
+    <Compile Include="Presentación\FrmArticulos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -126,16 +126,16 @@
     <Compile Include="Persistencia\DAOInvestigador.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CurriculumVitae.resx">
+    <EmbeddedResource Include="Presentación\CurriculumVitae.resx">
       <DependentUpon>CurriculumVitae.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmConferencias.resx">
+    <EmbeddedResource Include="Presentación\FrmConferencias.resx">
       <DependentUpon>FrmConferencias.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmInvestigadores.resx">
+    <EmbeddedResource Include="Presentación\FrmInvestigadores.resx">
       <DependentUpon>FrmInvestigadores.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmArticulos.resx">
+    <EmbeddedResource Include="Presentación\FrmArticulos.resx">
       <DependentUpon>FrmArticulos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">

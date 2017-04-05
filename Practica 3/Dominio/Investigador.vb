@@ -28,7 +28,6 @@
         End Set
     End Property
 
-
     Public Property Articulo() As Articulo
         Get
             Return Me._articulo

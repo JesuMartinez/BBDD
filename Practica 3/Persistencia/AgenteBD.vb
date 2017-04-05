@@ -1,6 +1,6 @@
 ﻿Imports System.Data.OleDb
 Public Class AgenteBD
-    Public Shared rutaBD As String = FrmPrincipal.OpenFileDialog1.FileName
+    Public Shared rutaBD As String = FrmInvestigadores.OpenFileDialog1.FileName
     Private Shared cadConexion As String = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" & rutaBD
     Private Shared mConexion As OleDbConnection
     Private Shared mInstancia As AgenteBD
