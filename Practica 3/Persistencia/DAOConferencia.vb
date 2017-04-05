@@ -14,12 +14,17 @@
         End Set
     End Property
 
-    Public Sub read(ByRef per As Conferencia)
+    Public Sub read(ByRef con As Conferencia)
         Dim leer As OleDb.OleDbDataReader
-        leer = AgenteBD.getAgente.leer("SELECT * FROM CONFERENCIAS WHERE idConferencia='" & per.DNI & "';")
+        leer = AgenteBD.getAgente.leer("SELECT * FROM CONFERENCIAS WHERE idConferencia='" & con.IDConferencia & "';")
         While leer.Read
-            per.DNI = leer.GetValue(0).ToString
-            per.Nombre = leer.GetValue(1).ToString
+            con.IDConferencia = Convert.ToInt16(leer.GetValue(0).ToString)
+            con.Siglas = leer.GetValue(1).ToString
+            con.Nombre = leer.GetValue(2).ToString
+            con.Lugar = leer.GetValue(3).ToString
+            con.FechaInicio = leer.GetValue(4).ToString
+            con.FechaFin = leer.GetValue(5).ToString
+            con.Articulo.IDArticulo = Convert.ToInt16(leer.GetValue(6).ToString)
         End While
     End Sub
 
@@ -27,20 +32,20 @@
         Dim leer As OleDb.OleDbDataReader
         leer = AgenteBD.getAgente.leer("SELECT * FROM CONFERENCIAS ORDER BY idConferencia;")
         While leer.Read
-            Me.ListaConferencias.Add(New Conferencia(leer.GetValue(0).ToString))
+            Me.ListaConferencias.Add(New Conferencia(Convert.ToInt16(leer.GetValue(0).ToString)))
         End While
     End Sub
 
-    Public Function insert(ByVal per As Conferencia) As Integer
-        Return AgenteBD.getAgente().modificar("INSERT INTO CONFERENCIAS VALUES ('" & per.DNI & "','" & per.Nombre & "');")
+    Public Function insert(ByVal con As Conferencia) As Integer
+        Return AgenteBD.getAgente().modificar("INSERT INTO CONFERENCIAS VALUES ('" & con.IDConferencia & "','" & con.Siglas & "','" & con.Nombre & "','" & con.Lugar & "','" & con.FechaInicio & "','" & con.FechaFin & "';")
     End Function
 
-    Public Function update(ByVal per As Conferencia) As Integer
-        Return AgenteBD.getAgente.modificar("UPDATE CONFERENCIAS SET Nombre='" & per.Nombre & "'WHERE idConferencia='" & per.DNI & "';")
+    Public Function update(ByVal con As Conferencia) As Integer
+        Return AgenteBD.getAgente.modificar("UPDATE CONFERENCIAS SET Siglas='" & con.Siglas & "', Nombre='" & con.Nombre & "', Lugar='" & con.Lugar & "', Fecha_inicio='" & con.FechaInicio & "', Fecha_fin='" & con.FechaFin & "'WHERE idConferencia='" & con.IDConferencia & "';")
     End Function
 
-    Public Function delete(ByVal per As Conferencia) As Integer
-        Return AgenteBD.getAgente.modificar("DELETE FROM CONFERENCIAS WHERE idConferencia='" & per.DNI & "';")
+    Public Function delete(ByVal con As Conferencia) As Integer
+        Return AgenteBD.getAgente.modificar("DELETE FROM CONFERENCIAS WHERE idConferencia='" & con.IDConferencia & "';")
     End Function
 
 End Class
