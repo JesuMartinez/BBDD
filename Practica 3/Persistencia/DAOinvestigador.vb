@@ -5,7 +5,7 @@
         Me._listaInvestigadores = New Collection
     End Sub
 
-    Public Property ListaPersonas As Collection
+    Public Property ListaInvestigadores As Collection
         Get
             Return Me._listaInvestigadores
         End Get
@@ -14,12 +14,18 @@
         End Set
     End Property
 
-    Public Sub read(ByRef per As Investigador)
+    Public Sub read(ByRef inv As Investigador)
         Dim leer As OleDb.OleDbDataReader
-        leer = AgenteBD.getAgente.leer("SELECT * FROM INVESTIGADORES WHERE idInvest='" & per.DNI & "';")
+        leer = AgenteBD.getAgente.leer("SELECT * FROM INVESTIGADORES WHERE idInvest='" & inv.IDInvestigador & "';")
         While leer.Read
-            per.DNI = leer.GetValue(0).ToString
-            per.Nombre = leer.GetValue(1).ToString
+            inv.IDInvestigador = Convert.ToInt16(leer.GetValue(0).ToString)
+            inv.Nombre = leer.GetValue(1).ToString
+            inv.Apellidos = leer.GetValue(2).ToString
+            inv.Despacho = leer.GetValue(3).ToString
+            inv.Edificio = leer.GetValue(4).ToString
+            inv.Departamento = leer.GetValue(5).ToString
+            inv.Telefono = Convert.ToInt16(leer.GetValue(6).ToString)
+            inv.Email = leer.GetValue(7).ToString
         End While
     End Sub
 
@@ -27,20 +33,20 @@
         Dim leer As OleDb.OleDbDataReader
         leer = AgenteBD.getAgente.leer("SELECT * FROM INVESTIGADORES ORDER BY idInvest;")
         While leer.Read
-            Me.ListaPersonas.Add(New Investigador(leer.GetValue(0).ToString))
+            Me.ListaInvestigadores.Add(New Investigador(Convert.ToInt16(leer.GetValue(0).ToString)))
         End While
     End Sub
 
-    Public Function insert(ByVal per As Investigador) As Integer
-        Return AgenteBD.getAgente().modificar("INSERT INTO INVESTIGADORES VALUES ('" & per.DNI & "','" & per.Nombre & "');")
+    Public Function insert(ByVal inv As Investigador) As Integer
+        Return AgenteBD.getAgente().modificar("INSERT INTO INVESTIGADORES VALUES ('" & inv.IDInvestigador & "','" & inv.Nombre & "','" & inv.Apellidos & "','" & inv.Despacho & "','" & inv.Edificio & "','" & inv.Departamento & "','" & inv.Telefono & "','" & inv.Email & "';")
     End Function
 
-    Public Function update(ByVal per As Investigador) As Integer
-        Return AgenteBD.getAgente.modificar("UPDATE INVESTIGADORES SET Nombre='" & per.Nombre & "'WHERE idInvest='" & per.DNI & "';")
+    Public Function update(ByVal inv As Investigador) As Integer
+        Return AgenteBD.getAgente.modificar("UPDATE INVESTIGADORES Set Nombre='" & inv.Nombre & "', Apellidos='" & inv.Apellidos & "', Despacho='" & inv.Despacho & "', Edificio='" & inv.Edificio & "', Departamento='" & inv.Departamento & "', Teléfono='" & inv.Telefono & "', Email='" & inv.Email & "' WHERE idInvest='" & inv.IDInvestigador & "';")
     End Function
 
-    Public Function delete(ByVal per As Investigador) As Integer
-        Return AgenteBD.getAgente.modificar("DELETE FROM INVESTIGADORES WHERE idInvest='" & per.DNI & "';")
+    Public Function delete(ByVal inv As Investigador) As Integer
+        Return AgenteBD.getAgente.modificar("DELETE FROM INVESTIGADORES WHERE idInvest='" & inv.IDInvestigador & "';")
     End Function
 
 End Class
