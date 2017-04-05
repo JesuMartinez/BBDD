@@ -23,41 +23,41 @@ Partial Class FrmArticulos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.lstbxConferencias = New System.Windows.Forms.ListBox()
+        Me.btnEliminarArticulo = New System.Windows.Forms.Button()
+        Me.btnModificarArticulo = New System.Windows.Forms.Button()
+        Me.btnAñadirArticulo = New System.Windows.Forms.Button()
+        Me.btnGestionarAutores = New System.Windows.Forms.Button()
+        Me.txtbxPag_fin = New System.Windows.Forms.TextBox()
+        Me.txtbxPag_inicio = New System.Windows.Forms.TextBox()
+        Me.txtbxConferencia = New System.Windows.Forms.TextBox()
+        Me.txtbxTituloArticulo = New System.Windows.Forms.TextBox()
+        Me.txtbxIDArticulo = New System.Windows.Forms.TextBox()
+        Me.lblPag_fin = New System.Windows.Forms.Label()
+        Me.lblPag_inicio = New System.Windows.Forms.Label()
+        Me.lblConferencia = New System.Windows.Forms.Label()
+        Me.lblTituloArticulo = New System.Windows.Forms.Label()
+        Me.lblIDArticulo = New System.Windows.Forms.Label()
         Me.lstbxInvestigadores = New System.Windows.Forms.ListBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.lstbxConferencias = New System.Windows.Forms.ListBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Button4)
-        Me.GroupBox1.Controls.Add(Me.Button3)
-        Me.GroupBox1.Controls.Add(Me.Button2)
-        Me.GroupBox1.Controls.Add(Me.Button1)
-        Me.GroupBox1.Controls.Add(Me.TextBox5)
-        Me.GroupBox1.Controls.Add(Me.TextBox4)
-        Me.GroupBox1.Controls.Add(Me.TextBox3)
-        Me.GroupBox1.Controls.Add(Me.TextBox2)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
-        Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.btnEliminarArticulo)
+        Me.GroupBox1.Controls.Add(Me.btnModificarArticulo)
+        Me.GroupBox1.Controls.Add(Me.btnAñadirArticulo)
+        Me.GroupBox1.Controls.Add(Me.btnGestionarAutores)
+        Me.GroupBox1.Controls.Add(Me.txtbxPag_fin)
+        Me.GroupBox1.Controls.Add(Me.txtbxPag_inicio)
+        Me.GroupBox1.Controls.Add(Me.txtbxConferencia)
+        Me.GroupBox1.Controls.Add(Me.txtbxTituloArticulo)
+        Me.GroupBox1.Controls.Add(Me.txtbxIDArticulo)
+        Me.GroupBox1.Controls.Add(Me.lblPag_fin)
+        Me.GroupBox1.Controls.Add(Me.lblPag_inicio)
+        Me.GroupBox1.Controls.Add(Me.lblConferencia)
+        Me.GroupBox1.Controls.Add(Me.lblTituloArticulo)
+        Me.GroupBox1.Controls.Add(Me.lblIDArticulo)
         Me.GroupBox1.Controls.Add(Me.lstbxInvestigadores)
         Me.GroupBox1.Controls.Add(Me.lstbxConferencias)
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.MenuHighlight
@@ -68,14 +68,135 @@ Partial Class FrmArticulos
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "ARTÍCULOS"
         '
-        'lstbxConferencias
+        'btnEliminarArticulo
         '
-        Me.lstbxConferencias.FormattingEnabled = True
-        Me.lstbxConferencias.ItemHeight = 16
-        Me.lstbxConferencias.Location = New System.Drawing.Point(48, 50)
-        Me.lstbxConferencias.Name = "lstbxConferencias"
-        Me.lstbxConferencias.Size = New System.Drawing.Size(181, 340)
-        Me.lstbxConferencias.TabIndex = 0
+        Me.btnEliminarArticulo.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnEliminarArticulo.Location = New System.Drawing.Point(676, 412)
+        Me.btnEliminarArticulo.Name = "btnEliminarArticulo"
+        Me.btnEliminarArticulo.Size = New System.Drawing.Size(150, 63)
+        Me.btnEliminarArticulo.TabIndex = 15
+        Me.btnEliminarArticulo.Text = "Eliminar"
+        Me.btnEliminarArticulo.UseVisualStyleBackColor = True
+        '
+        'btnModificarArticulo
+        '
+        Me.btnModificarArticulo.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnModificarArticulo.Location = New System.Drawing.Point(458, 412)
+        Me.btnModificarArticulo.Name = "btnModificarArticulo"
+        Me.btnModificarArticulo.Size = New System.Drawing.Size(150, 63)
+        Me.btnModificarArticulo.TabIndex = 14
+        Me.btnModificarArticulo.Text = "Modificar"
+        Me.btnModificarArticulo.UseVisualStyleBackColor = True
+        '
+        'btnAñadirArticulo
+        '
+        Me.btnAñadirArticulo.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnAñadirArticulo.Location = New System.Drawing.Point(253, 412)
+        Me.btnAñadirArticulo.Name = "btnAñadirArticulo"
+        Me.btnAñadirArticulo.Size = New System.Drawing.Size(150, 63)
+        Me.btnAñadirArticulo.TabIndex = 13
+        Me.btnAñadirArticulo.Text = "Añadir"
+        Me.btnAñadirArticulo.UseVisualStyleBackColor = True
+        '
+        'btnGestionarAutores
+        '
+        Me.btnGestionarAutores.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnGestionarAutores.Location = New System.Drawing.Point(48, 412)
+        Me.btnGestionarAutores.Name = "btnGestionarAutores"
+        Me.btnGestionarAutores.Size = New System.Drawing.Size(150, 63)
+        Me.btnGestionarAutores.TabIndex = 12
+        Me.btnGestionarAutores.Text = "Gestionar Autores"
+        Me.btnGestionarAutores.UseVisualStyleBackColor = True
+        '
+        'txtbxPag_fin
+        '
+        Me.txtbxPag_fin.Location = New System.Drawing.Point(666, 353)
+        Me.txtbxPag_fin.Name = "txtbxPag_fin"
+        Me.txtbxPag_fin.Size = New System.Drawing.Size(180, 22)
+        Me.txtbxPag_fin.TabIndex = 11
+        '
+        'txtbxPag_inicio
+        '
+        Me.txtbxPag_inicio.Location = New System.Drawing.Point(666, 286)
+        Me.txtbxPag_inicio.Name = "txtbxPag_inicio"
+        Me.txtbxPag_inicio.Size = New System.Drawing.Size(180, 22)
+        Me.txtbxPag_inicio.TabIndex = 10
+        '
+        'txtbxConferencia
+        '
+        Me.txtbxConferencia.Location = New System.Drawing.Point(666, 224)
+        Me.txtbxConferencia.Name = "txtbxConferencia"
+        Me.txtbxConferencia.Size = New System.Drawing.Size(180, 22)
+        Me.txtbxConferencia.TabIndex = 9
+        '
+        'txtbxTituloArticulo
+        '
+        Me.txtbxTituloArticulo.Location = New System.Drawing.Point(666, 168)
+        Me.txtbxTituloArticulo.Name = "txtbxTituloArticulo"
+        Me.txtbxTituloArticulo.Size = New System.Drawing.Size(180, 22)
+        Me.txtbxTituloArticulo.TabIndex = 8
+        '
+        'txtbxIDArticulo
+        '
+        Me.txtbxIDArticulo.Location = New System.Drawing.Point(666, 108)
+        Me.txtbxIDArticulo.Name = "txtbxIDArticulo"
+        Me.txtbxIDArticulo.Size = New System.Drawing.Size(180, 22)
+        Me.txtbxIDArticulo.TabIndex = 7
+        '
+        'lblPag_fin
+        '
+        Me.lblPag_fin.AutoSize = True
+        Me.lblPag_fin.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPag_fin.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lblPag_fin.Location = New System.Drawing.Point(553, 355)
+        Me.lblPag_fin.Name = "lblPag_fin"
+        Me.lblPag_fin.Size = New System.Drawing.Size(70, 20)
+        Me.lblPag_fin.TabIndex = 6
+        Me.lblPag_fin.Text = "Pag_fin:"
+        '
+        'lblPag_inicio
+        '
+        Me.lblPag_inicio.AutoSize = True
+        Me.lblPag_inicio.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPag_inicio.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lblPag_inicio.Location = New System.Drawing.Point(553, 288)
+        Me.lblPag_inicio.Name = "lblPag_inicio"
+        Me.lblPag_inicio.Size = New System.Drawing.Size(91, 20)
+        Me.lblPag_inicio.TabIndex = 5
+        Me.lblPag_inicio.Text = "Pag_inicio:"
+        '
+        'lblConferencia
+        '
+        Me.lblConferencia.AutoSize = True
+        Me.lblConferencia.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblConferencia.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lblConferencia.Location = New System.Drawing.Point(553, 226)
+        Me.lblConferencia.Name = "lblConferencia"
+        Me.lblConferencia.Size = New System.Drawing.Size(104, 20)
+        Me.lblConferencia.TabIndex = 4
+        Me.lblConferencia.Text = "Conferencia:"
+        '
+        'lblTituloArticulo
+        '
+        Me.lblTituloArticulo.AutoSize = True
+        Me.lblTituloArticulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTituloArticulo.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lblTituloArticulo.Location = New System.Drawing.Point(553, 170)
+        Me.lblTituloArticulo.Name = "lblTituloArticulo"
+        Me.lblTituloArticulo.Size = New System.Drawing.Size(55, 20)
+        Me.lblTituloArticulo.TabIndex = 3
+        Me.lblTituloArticulo.Text = "Título:"
+        '
+        'lblIDArticulo
+        '
+        Me.lblIDArticulo.AutoSize = True
+        Me.lblIDArticulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblIDArticulo.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.lblIDArticulo.Location = New System.Drawing.Point(553, 110)
+        Me.lblIDArticulo.Name = "lblIDArticulo"
+        Me.lblIDArticulo.Size = New System.Drawing.Size(88, 20)
+        Me.lblIDArticulo.TabIndex = 2
+        Me.lblIDArticulo.Text = "IDArtículo:"
         '
         'lstbxInvestigadores
         '
@@ -86,135 +207,14 @@ Partial Class FrmArticulos
         Me.lstbxInvestigadores.Size = New System.Drawing.Size(181, 340)
         Me.lstbxInvestigadores.TabIndex = 1
         '
-        'Label1
+        'lstbxConferencias
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label1.Location = New System.Drawing.Point(553, 110)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(88, 20)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "IDArtículo:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label2.Location = New System.Drawing.Point(553, 170)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(55, 20)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Título:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label3.Location = New System.Drawing.Point(553, 226)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(104, 20)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Conferencia:"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label4.Location = New System.Drawing.Point(553, 288)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(91, 20)
-        Me.Label4.TabIndex = 5
-        Me.Label4.Text = "Pag_inicio:"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label5.Location = New System.Drawing.Point(553, 355)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(70, 20)
-        Me.Label5.TabIndex = 6
-        Me.Label5.Text = "Pag_fin:"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(666, 108)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(180, 22)
-        Me.TextBox1.TabIndex = 7
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(666, 168)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(180, 22)
-        Me.TextBox2.TabIndex = 8
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(666, 224)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(180, 22)
-        Me.TextBox3.TabIndex = 9
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Location = New System.Drawing.Point(666, 286)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(180, 22)
-        Me.TextBox4.TabIndex = 10
-        '
-        'TextBox5
-        '
-        Me.TextBox5.Location = New System.Drawing.Point(666, 353)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(180, 22)
-        Me.TextBox5.TabIndex = 11
-        '
-        'Button1
-        '
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button1.Location = New System.Drawing.Point(48, 412)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(150, 63)
-        Me.Button1.TabIndex = 12
-        Me.Button1.Text = "Gestionar Autores"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button2.Location = New System.Drawing.Point(253, 412)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(150, 63)
-        Me.Button2.TabIndex = 13
-        Me.Button2.Text = "Añadir"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button3.Location = New System.Drawing.Point(458, 412)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(150, 63)
-        Me.Button3.TabIndex = 14
-        Me.Button3.Text = "Modificar"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Button4.Location = New System.Drawing.Point(676, 412)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(150, 63)
-        Me.Button4.TabIndex = 15
-        Me.Button4.Text = "Eliminar"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.lstbxConferencias.FormattingEnabled = True
+        Me.lstbxConferencias.ItemHeight = 16
+        Me.lstbxConferencias.Location = New System.Drawing.Point(48, 50)
+        Me.lstbxConferencias.Name = "lstbxConferencias"
+        Me.lstbxConferencias.Size = New System.Drawing.Size(181, 340)
+        Me.lstbxConferencias.TabIndex = 0
         '
         'FrmArticulos
         '
@@ -233,18 +233,18 @@ Partial Class FrmArticulos
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents lstbxInvestigadores As ListBox
     Friend WithEvents lstbxConferencias As ListBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents txtbxIDArticulo As TextBox
+    Friend WithEvents lblPag_fin As Label
+    Friend WithEvents lblPag_inicio As Label
+    Friend WithEvents lblConferencia As Label
+    Friend WithEvents lblTituloArticulo As Label
+    Friend WithEvents lblIDArticulo As Label
+    Friend WithEvents btnEliminarArticulo As Button
+    Friend WithEvents btnModificarArticulo As Button
+    Friend WithEvents btnAñadirArticulo As Button
+    Friend WithEvents btnGestionarAutores As Button
+    Friend WithEvents txtbxPag_fin As TextBox
+    Friend WithEvents txtbxPag_inicio As TextBox
+    Friend WithEvents txtbxConferencia As TextBox
+    Friend WithEvents txtbxTituloArticulo As TextBox
 End Class
