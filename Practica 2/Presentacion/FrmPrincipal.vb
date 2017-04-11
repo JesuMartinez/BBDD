@@ -62,7 +62,7 @@
                 per.insertPersona()
                 listbxPersonas.Items.Add(per.DNI)
             Catch ex As Exception
-                MessageBox.Show(ex.Message)
+                MessageBox.Show(ex.ToString)
                 Exit Sub
             End Try
         Else

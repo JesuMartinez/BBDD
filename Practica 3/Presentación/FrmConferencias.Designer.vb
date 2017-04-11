@@ -27,7 +27,7 @@ Partial Class FrmConferencias
         Me.btnAñadir = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.txtbxFecha_fin = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.txtbxFecha_inicio = New System.Windows.Forms.TextBox()
         Me.txtbxLugar = New System.Windows.Forms.TextBox()
         Me.txtbxNombreConferencia = New System.Windows.Forms.TextBox()
         Me.txtbxSiglas = New System.Windows.Forms.TextBox()
@@ -48,7 +48,7 @@ Partial Class FrmConferencias
         Me.GroupBox1.Controls.Add(Me.btnAñadir)
         Me.GroupBox1.Controls.Add(Me.btnEliminar)
         Me.GroupBox1.Controls.Add(Me.txtbxFecha_fin)
-        Me.GroupBox1.Controls.Add(Me.TextBox5)
+        Me.GroupBox1.Controls.Add(Me.txtbxFecha_inicio)
         Me.GroupBox1.Controls.Add(Me.txtbxLugar)
         Me.GroupBox1.Controls.Add(Me.txtbxNombreConferencia)
         Me.GroupBox1.Controls.Add(Me.txtbxSiglas)
@@ -106,12 +106,12 @@ Partial Class FrmConferencias
         Me.txtbxFecha_fin.Size = New System.Drawing.Size(136, 22)
         Me.txtbxFecha_fin.TabIndex = 12
         '
-        'TextBox5
+        'txtbxFecha_inicio
         '
-        Me.TextBox5.Location = New System.Drawing.Point(757, 175)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(135, 22)
-        Me.TextBox5.TabIndex = 11
+        Me.txtbxFecha_inicio.Location = New System.Drawing.Point(757, 175)
+        Me.txtbxFecha_inicio.Name = "txtbxFecha_inicio"
+        Me.txtbxFecha_inicio.Size = New System.Drawing.Size(135, 22)
+        Me.txtbxFecha_inicio.TabIndex = 11
         '
         'txtbxLugar
         '
@@ -243,7 +243,7 @@ Partial Class FrmConferencias
     Friend WithEvents lblIDConferencia As Label
     Friend WithEvents lstbxConferencias As ListBox
     Friend WithEvents txtbxFecha_fin As TextBox
-    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents txtbxFecha_inicio As TextBox
     Friend WithEvents btnModificar As Button
     Friend WithEvents btnAñadir As Button
     Friend WithEvents btnEliminar As Button

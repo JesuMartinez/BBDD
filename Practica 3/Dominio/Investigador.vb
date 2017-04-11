@@ -5,7 +5,7 @@
     Private _despacho As String
     Private _edificio As String
     Private _departamento As String
-    Private _telefono As Integer
+    Private _telefono As String
     Private _email As String
     Private _articulo As Articulo
     Private _daoInvestigador As DAOInvestigador
@@ -82,11 +82,11 @@
         End Set
     End Property
 
-    Public Property Telefono() As Integer
+    Public Property Telefono() As String
         Get
             Return Me._telefono
         End Get
-        Set(value As Integer)
+        Set(value As String)
             Me._telefono = value
         End Set
     End Property

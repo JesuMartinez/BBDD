@@ -46,11 +46,13 @@ Partial Class FrmInvestigadores
         Me.lblIDInvestigador = New System.Windows.Forms.Label()
         Me.lstbxInvestigadores = New System.Windows.Forms.ListBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.grpbxInvestigadores.SuspendLayout()
         Me.SuspendLayout()
         '
         'grpbxInvestigadores
         '
+        Me.grpbxInvestigadores.Controls.Add(Me.Button1)
         Me.grpbxInvestigadores.Controls.Add(Me.btnGestionarAsistencias)
         Me.grpbxInvestigadores.Controls.Add(Me.btnCrearCV)
         Me.grpbxInvestigadores.Controls.Add(Me.btnAñadir)
@@ -286,7 +288,17 @@ Partial Class FrmInvestigadores
         '
         'OpenFileDialog1
         '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        Me.OpenFileDialog1.Filter = "Microsoft Access Base de datos(*.accdb)|*.accdb"
+        '
+        'Button1
+        '
+        Me.Button1.ForeColor = System.Drawing.SystemColors.InfoText
+        Me.Button1.Location = New System.Drawing.Point(808, 398)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(119, 57)
+        Me.Button1.TabIndex = 22
+        Me.Button1.Text = "Conferencias"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'FrmInvestigadores
         '
@@ -326,4 +338,5 @@ Partial Class FrmInvestigadores
     Friend WithEvents lblNombreInvestigador As Label
     Friend WithEvents lblIDInvestigador As Label
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents Button1 As Button
 End Class
