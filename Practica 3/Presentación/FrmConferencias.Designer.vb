@@ -159,9 +159,9 @@ Partial Class FrmConferencias
         Me.lblFecha_fin.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblFecha_fin.Location = New System.Drawing.Point(643, 247)
         Me.lblFecha_fin.Name = "lblFecha_fin"
-        Me.lblFecha_fin.Size = New System.Drawing.Size(87, 20)
+        Me.lblFecha_fin.Size = New System.Drawing.Size(83, 20)
         Me.lblFecha_fin.TabIndex = 5
-        Me.lblFecha_fin.Text = "Fecha_fin:"
+        Me.lblFecha_fin.Text = "Fecha fin:"
         '
         'lblFecha_inicio
         '
@@ -170,9 +170,9 @@ Partial Class FrmConferencias
         Me.lblFecha_inicio.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblFecha_inicio.Location = New System.Drawing.Point(643, 177)
         Me.lblFecha_inicio.Name = "lblFecha_inicio"
-        Me.lblFecha_inicio.Size = New System.Drawing.Size(108, 20)
+        Me.lblFecha_inicio.Size = New System.Drawing.Size(104, 20)
         Me.lblFecha_inicio.TabIndex = 4
-        Me.lblFecha_inicio.Text = "Fecha_inicio:"
+        Me.lblFecha_inicio.Text = "Fecha inicio:"
         '
         'lblNombreConferencia
         '

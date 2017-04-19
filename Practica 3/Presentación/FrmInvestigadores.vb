@@ -103,4 +103,9 @@
         Me.Hide()
         FrmConferencias.Show()
     End Sub
+
+    Private Sub btnArticulos_Click(sender As Object, e As EventArgs) Handles btnArticulos.Click
+        Me.Hide()
+        FrmArticulos.Show()
+    End Sub
 End Class

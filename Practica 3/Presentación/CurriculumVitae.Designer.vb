@@ -84,9 +84,9 @@ Partial Class Curriculum_Vitae
         Me.lblPag.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPag.Location = New System.Drawing.Point(268, 375)
         Me.lblPag.Name = "lblPag"
-        Me.lblPag.Size = New System.Drawing.Size(153, 20)
+        Me.lblPag.Size = New System.Drawing.Size(145, 20)
         Me.lblPag.TabIndex = 4
-        Me.lblPag.Text = "Pag_inicio-Pag_fin:"
+        Me.lblPag.Text = "Pag inicio-Pag fin:"
         '
         'lblLugar
         '

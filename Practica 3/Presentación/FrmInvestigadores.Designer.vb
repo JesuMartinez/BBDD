@@ -23,6 +23,7 @@ Partial Class FrmInvestigadores
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.grpbxInvestigadores = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.btnGestionarAsistencias = New System.Windows.Forms.Button()
         Me.btnCrearCV = New System.Windows.Forms.Button()
         Me.btnAñadir = New System.Windows.Forms.Button()
@@ -46,12 +47,13 @@ Partial Class FrmInvestigadores
         Me.lblIDInvestigador = New System.Windows.Forms.Label()
         Me.lstbxInvestigadores = New System.Windows.Forms.ListBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnArticulos = New System.Windows.Forms.Button()
         Me.grpbxInvestigadores.SuspendLayout()
         Me.SuspendLayout()
         '
         'grpbxInvestigadores
         '
+        Me.grpbxInvestigadores.Controls.Add(Me.btnArticulos)
         Me.grpbxInvestigadores.Controls.Add(Me.Button1)
         Me.grpbxInvestigadores.Controls.Add(Me.btnGestionarAsistencias)
         Me.grpbxInvestigadores.Controls.Add(Me.btnCrearCV)
@@ -82,6 +84,16 @@ Partial Class FrmInvestigadores
         Me.grpbxInvestigadores.TabIndex = 0
         Me.grpbxInvestigadores.TabStop = False
         Me.grpbxInvestigadores.Text = "INVESTIGADORES"
+        '
+        'Button1
+        '
+        Me.Button1.ForeColor = System.Drawing.SystemColors.InfoText
+        Me.Button1.Location = New System.Drawing.Point(808, 398)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(119, 57)
+        Me.Button1.TabIndex = 22
+        Me.Button1.Text = "Conferencias"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'btnGestionarAsistencias
         '
@@ -290,15 +302,15 @@ Partial Class FrmInvestigadores
         '
         Me.OpenFileDialog1.Filter = "Microsoft Access Base de datos(*.accdb)|*.accdb"
         '
-        'Button1
+        'btnArticulos
         '
-        Me.Button1.ForeColor = System.Drawing.SystemColors.InfoText
-        Me.Button1.Location = New System.Drawing.Point(808, 398)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(119, 57)
-        Me.Button1.TabIndex = 22
-        Me.Button1.Text = "Conferencias"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnArticulos.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnArticulos.Location = New System.Drawing.Point(612, 398)
+        Me.btnArticulos.Name = "btnArticulos"
+        Me.btnArticulos.Size = New System.Drawing.Size(143, 57)
+        Me.btnArticulos.TabIndex = 23
+        Me.btnArticulos.Text = "Artículos"
+        Me.btnArticulos.UseVisualStyleBackColor = True
         '
         'FrmInvestigadores
         '
@@ -339,4 +351,5 @@ Partial Class FrmInvestigadores
     Friend WithEvents lblIDInvestigador As Label
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents Button1 As Button
+    Friend WithEvents btnArticulos As Button
 End Class

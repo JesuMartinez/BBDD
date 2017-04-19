@@ -71,7 +71,7 @@ Partial Class FrmArticulos
         'btnEliminarArticulo
         '
         Me.btnEliminarArticulo.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnEliminarArticulo.Location = New System.Drawing.Point(676, 412)
+        Me.btnEliminarArticulo.Location = New System.Drawing.Point(855, 412)
         Me.btnEliminarArticulo.Name = "btnEliminarArticulo"
         Me.btnEliminarArticulo.Size = New System.Drawing.Size(150, 63)
         Me.btnEliminarArticulo.TabIndex = 15
@@ -81,7 +81,7 @@ Partial Class FrmArticulos
         'btnModificarArticulo
         '
         Me.btnModificarArticulo.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnModificarArticulo.Location = New System.Drawing.Point(458, 412)
+        Me.btnModificarArticulo.Location = New System.Drawing.Point(666, 412)
         Me.btnModificarArticulo.Name = "btnModificarArticulo"
         Me.btnModificarArticulo.Size = New System.Drawing.Size(150, 63)
         Me.btnModificarArticulo.TabIndex = 14
@@ -91,7 +91,7 @@ Partial Class FrmArticulos
         'btnAñadirArticulo
         '
         Me.btnAñadirArticulo.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnAñadirArticulo.Location = New System.Drawing.Point(253, 412)
+        Me.btnAñadirArticulo.Location = New System.Drawing.Point(490, 412)
         Me.btnAñadirArticulo.Name = "btnAñadirArticulo"
         Me.btnAñadirArticulo.Size = New System.Drawing.Size(150, 63)
         Me.btnAñadirArticulo.TabIndex = 13
@@ -101,7 +101,7 @@ Partial Class FrmArticulos
         'btnGestionarAutores
         '
         Me.btnGestionarAutores.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnGestionarAutores.Location = New System.Drawing.Point(48, 412)
+        Me.btnGestionarAutores.Location = New System.Drawing.Point(190, 412)
         Me.btnGestionarAutores.Name = "btnGestionarAutores"
         Me.btnGestionarAutores.Size = New System.Drawing.Size(150, 63)
         Me.btnGestionarAutores.TabIndex = 12
@@ -150,9 +150,9 @@ Partial Class FrmArticulos
         Me.lblPag_fin.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblPag_fin.Location = New System.Drawing.Point(553, 355)
         Me.lblPag_fin.Name = "lblPag_fin"
-        Me.lblPag_fin.Size = New System.Drawing.Size(70, 20)
+        Me.lblPag_fin.Size = New System.Drawing.Size(66, 20)
         Me.lblPag_fin.TabIndex = 6
-        Me.lblPag_fin.Text = "Pag_fin:"
+        Me.lblPag_fin.Text = "Pag fin:"
         '
         'lblPag_inicio
         '
@@ -161,9 +161,9 @@ Partial Class FrmArticulos
         Me.lblPag_inicio.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblPag_inicio.Location = New System.Drawing.Point(553, 288)
         Me.lblPag_inicio.Name = "lblPag_inicio"
-        Me.lblPag_inicio.Size = New System.Drawing.Size(91, 20)
+        Me.lblPag_inicio.Size = New System.Drawing.Size(87, 20)
         Me.lblPag_inicio.TabIndex = 5
-        Me.lblPag_inicio.Text = "Pag_inicio:"
+        Me.lblPag_inicio.Text = "Pag inicio:"
         '
         'lblConferencia
         '
@@ -194,9 +194,9 @@ Partial Class FrmArticulos
         Me.lblIDArticulo.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblIDArticulo.Location = New System.Drawing.Point(553, 110)
         Me.lblIDArticulo.Name = "lblIDArticulo"
-        Me.lblIDArticulo.Size = New System.Drawing.Size(88, 20)
+        Me.lblIDArticulo.Size = New System.Drawing.Size(93, 20)
         Me.lblIDArticulo.TabIndex = 2
-        Me.lblIDArticulo.Text = "IDArtículo:"
+        Me.lblIDArticulo.Text = "ID Artículo:"
         '
         'lstbxInvestigadores
         '
@@ -204,6 +204,7 @@ Partial Class FrmArticulos
         Me.lstbxInvestigadores.ItemHeight = 16
         Me.lstbxInvestigadores.Location = New System.Drawing.Point(282, 50)
         Me.lstbxInvestigadores.Name = "lstbxInvestigadores"
+        Me.lstbxInvestigadores.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
         Me.lstbxInvestigadores.Size = New System.Drawing.Size(181, 340)
         Me.lstbxInvestigadores.TabIndex = 1
         '
