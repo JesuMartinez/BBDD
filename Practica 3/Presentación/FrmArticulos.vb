@@ -17,16 +17,16 @@
 
     Private Sub btnAñadirArticulo_Click(sender As Object, e As EventArgs) Handles btnAñadirArticulo.Click
         Dim ar As Articulo
-        If txtbxConferencia.TextLength > 0 And txtbxIDArticulo.TextLength > 0 And txtbxPag_fin.TextLength > 0 And txtbxPag_inicio.TextLength > 0 And
+        If txtbxIDArticulo.TextLength > 0 And txtbxPag_fin.TextLength > 0 And txtbxPag_inicio.TextLength > 0 And
             txtbxTituloArticulo.TextLength > 0 Then
             ar = New Articulo(Convert.ToInt32(txtbxIDArticulo.Text))
             ar.Titulo = txtbxTituloArticulo.Text
-
             ar.Conferencia.IDConferencia = Convert.ToInt32(txtbxConferencia.Text)
             ar.PagInicio = Convert.ToInt32(txtbxPag_inicio.Text)
             ar.PagFin = Convert.ToInt32(txtbxPag_fin.Text)
             Try
                 ar.insertArticulo()
+                lstbxArticulos.Items.Add(ar.IDArticulo)
             Catch ex As Exception
                 MessageBox.Show(ex.ToString)
                 Exit Sub

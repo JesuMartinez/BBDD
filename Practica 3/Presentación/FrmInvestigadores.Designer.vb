@@ -344,7 +344,7 @@ Partial Class FrmInvestigadores
         'lstbxArticulosInvestigadores
         '
         Me.lstbxArticulosInvestigadores.FormattingEnabled = True
-        Me.lstbxArticulosInvestigadores.Location = New System.Drawing.Point(215, 30)
+        Me.lstbxArticulosInvestigadores.Location = New System.Drawing.Point(283, 30)
         Me.lstbxArticulosInvestigadores.Margin = New System.Windows.Forms.Padding(2)
         Me.lstbxArticulosInvestigadores.Name = "lstbxArticulosInvestigadores"
         Me.lstbxArticulosInvestigadores.Size = New System.Drawing.Size(164, 251)
