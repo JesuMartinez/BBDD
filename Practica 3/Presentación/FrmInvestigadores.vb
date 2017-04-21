@@ -9,7 +9,7 @@
             Try
                 inv.readInvestigador()
             Catch ex As Exception
-                MessageBox.Show(ex.ToString)
+                MessageBox.Show(ex.Message)
                 Exit Sub
             End Try
             txtbxIDInvestigador.Text = inv.IDInvestigador.ToString
@@ -77,7 +77,7 @@
                     inv.updateInvestigador()
                     MessageBox.Show("El investigador ha sido modificado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Catch ex As Exception
-                    MessageBox.Show(ex.ToString)
+                    MessageBox.Show(ex.Message)
                     Exit Sub
                 End Try
             End If
@@ -107,5 +107,10 @@
     Private Sub btnArticulos_Click(sender As Object, e As EventArgs) Handles btnArticulos.Click
         Me.Hide()
         FrmArticulos.Show()
+    End Sub
+
+    Private Sub btnGestionarAsistencias_Click(sender As Object, e As EventArgs) Handles btnGestionarAsistencias.Click
+        Me.Hide()
+        FrmAsistencias.Show()
     End Sub
 End Class

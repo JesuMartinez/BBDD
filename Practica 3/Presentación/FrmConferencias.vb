@@ -9,7 +9,7 @@
             Try
                 con.readConferencia()
             Catch ex As Exception
-                MessageBox.Show(ex.ToString)
+                MessageBox.Show(ex.Message)
                 Exit Sub
             End Try
             txtbxIDConferencia.Text = con.IDConferencia.ToString
@@ -91,5 +91,15 @@
     End Sub
     Private Sub FrmConferencias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarConferencias()
+    End Sub
+
+    Private Sub btnArticulos_Click(sender As Object, e As EventArgs) Handles btnArticulos.Click
+        Me.Hide()
+        FrmArticulos.Show()
+    End Sub
+
+    Private Sub btnInvestigadores_Click(sender As Object, e As EventArgs) Handles btnInvestigadores.Click
+        Me.Hide()
+        FrmInvestigadores.Show()
     End Sub
 End Class

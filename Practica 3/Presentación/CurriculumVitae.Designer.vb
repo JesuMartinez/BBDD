@@ -42,9 +42,10 @@ Partial Class Curriculum_Vitae
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 28.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.MenuHighlight
-        Me.Label1.Location = New System.Drawing.Point(262, 82)
+        Me.Label1.Location = New System.Drawing.Point(196, 67)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(500, 55)
+        Me.Label1.Size = New System.Drawing.Size(390, 44)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "CURRICULUM VITAE"
         '
@@ -52,9 +53,10 @@ Partial Class Curriculum_Vitae
         '
         Me.lblListaAutores.AutoSize = True
         Me.lblListaAutores.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblListaAutores.Location = New System.Drawing.Point(268, 216)
+        Me.lblListaAutores.Location = New System.Drawing.Point(201, 176)
+        Me.lblListaAutores.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblListaAutores.Name = "lblListaAutores"
-        Me.lblListaAutores.Size = New System.Drawing.Size(135, 20)
+        Me.lblListaAutores.Size = New System.Drawing.Size(114, 17)
         Me.lblListaAutores.TabIndex = 1
         Me.lblListaAutores.Text = "Lista de autores:"
         '
@@ -62,9 +64,10 @@ Partial Class Curriculum_Vitae
         '
         Me.lblTituloArticulo.AutoSize = True
         Me.lblTituloArticulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTituloArticulo.Location = New System.Drawing.Point(268, 269)
+        Me.lblTituloArticulo.Location = New System.Drawing.Point(201, 219)
+        Me.lblTituloArticulo.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTituloArticulo.Name = "lblTituloArticulo"
-        Me.lblTituloArticulo.Size = New System.Drawing.Size(55, 20)
+        Me.lblTituloArticulo.Size = New System.Drawing.Size(47, 17)
         Me.lblTituloArticulo.TabIndex = 2
         Me.lblTituloArticulo.Text = "Título:"
         '
@@ -72,9 +75,10 @@ Partial Class Curriculum_Vitae
         '
         Me.lblConferencia.AutoSize = True
         Me.lblConferencia.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblConferencia.Location = New System.Drawing.Point(268, 321)
+        Me.lblConferencia.Location = New System.Drawing.Point(201, 261)
+        Me.lblConferencia.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblConferencia.Name = "lblConferencia"
-        Me.lblConferencia.Size = New System.Drawing.Size(167, 20)
+        Me.lblConferencia.Size = New System.Drawing.Size(140, 17)
         Me.lblConferencia.TabIndex = 3
         Me.lblConferencia.Text = "Conferencia (Siglas):"
         '
@@ -82,9 +86,10 @@ Partial Class Curriculum_Vitae
         '
         Me.lblPag.AutoSize = True
         Me.lblPag.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPag.Location = New System.Drawing.Point(268, 375)
+        Me.lblPag.Location = New System.Drawing.Point(201, 305)
+        Me.lblPag.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblPag.Name = "lblPag"
-        Me.lblPag.Size = New System.Drawing.Size(145, 20)
+        Me.lblPag.Size = New System.Drawing.Size(122, 17)
         Me.lblPag.TabIndex = 4
         Me.lblPag.Text = "Pag inicio-Pag fin:"
         '
@@ -92,9 +97,10 @@ Partial Class Curriculum_Vitae
         '
         Me.lblLugar.AutoSize = True
         Me.lblLugar.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLugar.Location = New System.Drawing.Point(268, 431)
+        Me.lblLugar.Location = New System.Drawing.Point(201, 350)
+        Me.lblLugar.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblLugar.Name = "lblLugar"
-        Me.lblLugar.Size = New System.Drawing.Size(171, 20)
+        Me.lblLugar.Size = New System.Drawing.Size(146, 17)
         Me.lblLugar.TabIndex = 5
         Me.lblLugar.Text = "Lugar de celebración:"
         '
@@ -102,59 +108,66 @@ Partial Class Curriculum_Vitae
         '
         Me.lblAño.AutoSize = True
         Me.lblAño.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAño.Location = New System.Drawing.Point(268, 485)
+        Me.lblAño.Location = New System.Drawing.Point(201, 394)
+        Me.lblAño.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblAño.Name = "lblAño"
-        Me.lblAño.Size = New System.Drawing.Size(157, 20)
+        Me.lblAño.Size = New System.Drawing.Size(134, 17)
         Me.lblAño.TabIndex = 6
         Me.lblAño.Text = "Año de celebración:"
         '
         'txtbxListaAutores
         '
-        Me.txtbxListaAutores.Location = New System.Drawing.Point(447, 214)
+        Me.txtbxListaAutores.Location = New System.Drawing.Point(335, 174)
+        Me.txtbxListaAutores.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtbxListaAutores.Name = "txtbxListaAutores"
-        Me.txtbxListaAutores.Size = New System.Drawing.Size(606, 22)
+        Me.txtbxListaAutores.Size = New System.Drawing.Size(456, 20)
         Me.txtbxListaAutores.TabIndex = 7
         '
         'txtbxTituloArticulo
         '
-        Me.txtbxTituloArticulo.Location = New System.Drawing.Point(447, 269)
+        Me.txtbxTituloArticulo.Location = New System.Drawing.Point(335, 219)
+        Me.txtbxTituloArticulo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtbxTituloArticulo.Name = "txtbxTituloArticulo"
-        Me.txtbxTituloArticulo.Size = New System.Drawing.Size(606, 22)
+        Me.txtbxTituloArticulo.Size = New System.Drawing.Size(456, 20)
         Me.txtbxTituloArticulo.TabIndex = 8
         '
         'txtbxConferencia
         '
-        Me.txtbxConferencia.Location = New System.Drawing.Point(447, 321)
+        Me.txtbxConferencia.Location = New System.Drawing.Point(335, 261)
+        Me.txtbxConferencia.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtbxConferencia.Name = "txtbxConferencia"
-        Me.txtbxConferencia.Size = New System.Drawing.Size(606, 22)
+        Me.txtbxConferencia.Size = New System.Drawing.Size(456, 20)
         Me.txtbxConferencia.TabIndex = 9
         '
         'txtbxPag
         '
-        Me.txtbxPag.Location = New System.Drawing.Point(447, 372)
+        Me.txtbxPag.Location = New System.Drawing.Point(335, 302)
+        Me.txtbxPag.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtbxPag.Name = "txtbxPag"
-        Me.txtbxPag.Size = New System.Drawing.Size(606, 22)
+        Me.txtbxPag.Size = New System.Drawing.Size(456, 20)
         Me.txtbxPag.TabIndex = 10
         '
         'txtbxLugar
         '
-        Me.txtbxLugar.Location = New System.Drawing.Point(447, 428)
+        Me.txtbxLugar.Location = New System.Drawing.Point(335, 348)
+        Me.txtbxLugar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtbxLugar.Name = "txtbxLugar"
-        Me.txtbxLugar.Size = New System.Drawing.Size(606, 22)
+        Me.txtbxLugar.Size = New System.Drawing.Size(456, 20)
         Me.txtbxLugar.TabIndex = 11
         '
         'txtbxAño
         '
-        Me.txtbxAño.Location = New System.Drawing.Point(447, 485)
+        Me.txtbxAño.Location = New System.Drawing.Point(335, 394)
+        Me.txtbxAño.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtbxAño.Name = "txtbxAño"
-        Me.txtbxAño.Size = New System.Drawing.Size(606, 22)
+        Me.txtbxAño.Size = New System.Drawing.Size(456, 20)
         Me.txtbxAño.TabIndex = 12
         '
         'Curriculum_Vitae
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1087, 574)
+        Me.ClientSize = New System.Drawing.Size(815, 466)
         Me.Controls.Add(Me.txtbxAño)
         Me.Controls.Add(Me.txtbxLugar)
         Me.Controls.Add(Me.txtbxPag)
@@ -168,7 +181,9 @@ Partial Class Curriculum_Vitae
         Me.Controls.Add(Me.lblTituloArticulo)
         Me.Controls.Add(Me.lblListaAutores)
         Me.Controls.Add(Me.Label1)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "Curriculum_Vitae"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Curriculum_Vitae"
         Me.ResumeLayout(False)
         Me.PerformLayout()

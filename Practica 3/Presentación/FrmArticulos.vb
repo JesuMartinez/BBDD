@@ -76,4 +76,18 @@
             End Try
         End If
     End Sub
+
+    Private Sub btnConferencias_Click(sender As Object, e As EventArgs) Handles btnConferencias.Click
+        Me.Hide()
+        FrmConferencias.Show()
+    End Sub
+
+    Private Sub btnInvestigadores_Click(sender As Object, e As EventArgs) Handles btnInvestigadores.Click
+        Me.Hide()
+        FrmInvestigadores.Show()
+    End Sub
+
+    Private Sub lstbxConferencias_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstbxConferencias.SelectedIndexChanged
+
+    End Sub
 End Class

@@ -93,7 +93,7 @@
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Dim per As Persona
-        If (txtbxDNI.Modified = False And txtbxNombre.Modified = True) Then
+        If (txtbxDNI.Modified = False) Then
             per = New Persona(txtbxDNI.Text)
             per.Nombre = txtbxNombre.Text
             If MessageBox.Show("¿Desea modificar al usuario seleccionado?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
