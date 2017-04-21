@@ -89,6 +89,7 @@
             art = New Articulo(Convert.ToInt32(lstbxArticulos.SelectedItem))
             Try
                 art.readArticulo()
+                'cargar los correspondientes investigadores que participaron en el articulo investigador'
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
                 Exit Sub
@@ -105,6 +106,10 @@
     End Sub
 
     Private Sub lstbxInvestigadores_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstbxInvestigadores.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub btnGestionarAutores_Click(sender As Object, e As EventArgs) Handles btnGestionarAutores.Click
 
     End Sub
 End Class

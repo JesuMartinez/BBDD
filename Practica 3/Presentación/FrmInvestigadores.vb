@@ -120,4 +120,8 @@
         Me.Hide()
         FrmAsistencias.Show()
     End Sub
+
+    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstbxArticulosInvestigadores.SelectedIndexChanged
+
+    End Sub
 End Class

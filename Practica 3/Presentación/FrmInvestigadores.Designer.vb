@@ -48,11 +48,13 @@ Partial Class FrmInvestigadores
         Me.lblIDInvestigador = New System.Windows.Forms.Label()
         Me.lstbxInvestigadores = New System.Windows.Forms.ListBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.lstbxArticulosInvestigadores = New System.Windows.Forms.ListBox()
         Me.grpbxInvestigadores.SuspendLayout()
         Me.SuspendLayout()
         '
         'grpbxInvestigadores
         '
+        Me.grpbxInvestigadores.Controls.Add(Me.lstbxArticulosInvestigadores)
         Me.grpbxInvestigadores.Controls.Add(Me.btnArticulos)
         Me.grpbxInvestigadores.Controls.Add(Me.Button1)
         Me.grpbxInvestigadores.Controls.Add(Me.btnGestionarAsistencias)
@@ -82,7 +84,7 @@ Partial Class FrmInvestigadores
         Me.grpbxInvestigadores.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.grpbxInvestigadores.Name = "grpbxInvestigadores"
         Me.grpbxInvestigadores.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.grpbxInvestigadores.Size = New System.Drawing.Size(766, 406)
+        Me.grpbxInvestigadores.Size = New System.Drawing.Size(1023, 406)
         Me.grpbxInvestigadores.TabIndex = 0
         Me.grpbxInvestigadores.TabStop = False
         Me.grpbxInvestigadores.Text = "INVESTIGADORES"
@@ -90,7 +92,7 @@ Partial Class FrmInvestigadores
         'btnArticulos
         '
         Me.btnArticulos.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnArticulos.Location = New System.Drawing.Point(434, 323)
+        Me.btnArticulos.Location = New System.Drawing.Point(626, 286)
         Me.btnArticulos.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnArticulos.Name = "btnArticulos"
         Me.btnArticulos.Size = New System.Drawing.Size(107, 46)
@@ -101,7 +103,7 @@ Partial Class FrmInvestigadores
         'Button1
         '
         Me.Button1.ForeColor = System.Drawing.SystemColors.InfoText
-        Me.Button1.Location = New System.Drawing.Point(570, 323)
+        Me.Button1.Location = New System.Drawing.Point(785, 286)
         Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(107, 46)
@@ -134,7 +136,7 @@ Partial Class FrmInvestigadores
         'btnAñadir
         '
         Me.btnAñadir.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnAñadir.Location = New System.Drawing.Point(242, 232)
+        Me.btnAñadir.Location = New System.Drawing.Point(552, 214)
         Me.btnAñadir.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnAñadir.Name = "btnAñadir"
         Me.btnAñadir.Size = New System.Drawing.Size(114, 49)
@@ -146,7 +148,7 @@ Partial Class FrmInvestigadores
         '
         Me.btnModificar.Enabled = False
         Me.btnModificar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnModificar.Location = New System.Drawing.Point(406, 232)
+        Me.btnModificar.Location = New System.Drawing.Point(701, 214)
         Me.btnModificar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(114, 49)
@@ -158,7 +160,7 @@ Partial Class FrmInvestigadores
         '
         Me.btnEliminar.Enabled = False
         Me.btnEliminar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnEliminar.Location = New System.Drawing.Point(581, 232)
+        Me.btnEliminar.Location = New System.Drawing.Point(862, 214)
         Me.btnEliminar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(114, 49)
@@ -171,7 +173,7 @@ Partial Class FrmInvestigadores
         Me.lblEmail.AutoSize = True
         Me.lblEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblEmail.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblEmail.Location = New System.Drawing.Point(448, 174)
+        Me.lblEmail.Location = New System.Drawing.Point(758, 159)
         Me.lblEmail.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblEmail.Name = "lblEmail"
         Me.lblEmail.Size = New System.Drawing.Size(51, 17)
@@ -180,7 +182,7 @@ Partial Class FrmInvestigadores
         '
         'txtbxEmail
         '
-        Me.txtbxEmail.Location = New System.Drawing.Point(553, 172)
+        Me.txtbxEmail.Location = New System.Drawing.Point(863, 157)
         Me.txtbxEmail.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtbxEmail.Name = "txtbxEmail"
         Me.txtbxEmail.Size = New System.Drawing.Size(113, 20)
@@ -188,7 +190,7 @@ Partial Class FrmInvestigadores
         '
         'txtbxTelefono
         '
-        Me.txtbxTelefono.Location = New System.Drawing.Point(553, 134)
+        Me.txtbxTelefono.Location = New System.Drawing.Point(863, 119)
         Me.txtbxTelefono.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtbxTelefono.Name = "txtbxTelefono"
         Me.txtbxTelefono.Size = New System.Drawing.Size(113, 20)
@@ -196,7 +198,7 @@ Partial Class FrmInvestigadores
         '
         'txtbxDepartamento
         '
-        Me.txtbxDepartamento.Location = New System.Drawing.Point(553, 93)
+        Me.txtbxDepartamento.Location = New System.Drawing.Point(863, 78)
         Me.txtbxDepartamento.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtbxDepartamento.Name = "txtbxDepartamento"
         Me.txtbxDepartamento.Size = New System.Drawing.Size(113, 20)
@@ -204,7 +206,7 @@ Partial Class FrmInvestigadores
         '
         'txtbxEdificio
         '
-        Me.txtbxEdificio.Location = New System.Drawing.Point(553, 58)
+        Me.txtbxEdificio.Location = New System.Drawing.Point(863, 43)
         Me.txtbxEdificio.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtbxEdificio.Name = "txtbxEdificio"
         Me.txtbxEdificio.Size = New System.Drawing.Size(113, 20)
@@ -212,7 +214,7 @@ Partial Class FrmInvestigadores
         '
         'txtbxDespacho
         '
-        Me.txtbxDespacho.Location = New System.Drawing.Point(311, 174)
+        Me.txtbxDespacho.Location = New System.Drawing.Point(621, 159)
         Me.txtbxDespacho.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtbxDespacho.Name = "txtbxDespacho"
         Me.txtbxDespacho.Size = New System.Drawing.Size(112, 20)
@@ -220,7 +222,7 @@ Partial Class FrmInvestigadores
         '
         'txtbxApellidosInvestigador
         '
-        Me.txtbxApellidosInvestigador.Location = New System.Drawing.Point(311, 136)
+        Me.txtbxApellidosInvestigador.Location = New System.Drawing.Point(621, 121)
         Me.txtbxApellidosInvestigador.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtbxApellidosInvestigador.Name = "txtbxApellidosInvestigador"
         Me.txtbxApellidosInvestigador.Size = New System.Drawing.Size(112, 20)
@@ -228,7 +230,7 @@ Partial Class FrmInvestigadores
         '
         'txtbxNombreInvestigador
         '
-        Me.txtbxNombreInvestigador.Location = New System.Drawing.Point(311, 94)
+        Me.txtbxNombreInvestigador.Location = New System.Drawing.Point(621, 79)
         Me.txtbxNombreInvestigador.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtbxNombreInvestigador.Name = "txtbxNombreInvestigador"
         Me.txtbxNombreInvestigador.Size = New System.Drawing.Size(112, 20)
@@ -236,7 +238,7 @@ Partial Class FrmInvestigadores
         '
         'txtbxIDInvestigador
         '
-        Me.txtbxIDInvestigador.Location = New System.Drawing.Point(311, 58)
+        Me.txtbxIDInvestigador.Location = New System.Drawing.Point(621, 43)
         Me.txtbxIDInvestigador.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtbxIDInvestigador.Name = "txtbxIDInvestigador"
         Me.txtbxIDInvestigador.Size = New System.Drawing.Size(112, 20)
@@ -247,7 +249,7 @@ Partial Class FrmInvestigadores
         Me.lblDepartamento.AutoSize = True
         Me.lblDepartamento.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDepartamento.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblDepartamento.Location = New System.Drawing.Point(448, 94)
+        Me.lblDepartamento.Location = New System.Drawing.Point(758, 79)
         Me.lblDepartamento.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblDepartamento.Name = "lblDepartamento"
         Me.lblDepartamento.Size = New System.Drawing.Size(102, 17)
@@ -259,7 +261,7 @@ Partial Class FrmInvestigadores
         Me.lblEdificio.AutoSize = True
         Me.lblEdificio.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblEdificio.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblEdificio.Location = New System.Drawing.Point(448, 59)
+        Me.lblEdificio.Location = New System.Drawing.Point(758, 44)
         Me.lblEdificio.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblEdificio.Name = "lblEdificio"
         Me.lblEdificio.Size = New System.Drawing.Size(57, 17)
@@ -271,7 +273,7 @@ Partial Class FrmInvestigadores
         Me.lblTelefono.AutoSize = True
         Me.lblTelefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTelefono.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTelefono.Location = New System.Drawing.Point(448, 136)
+        Me.lblTelefono.Location = New System.Drawing.Point(758, 121)
         Me.lblTelefono.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblTelefono.Name = "lblTelefono"
         Me.lblTelefono.Size = New System.Drawing.Size(68, 17)
@@ -283,7 +285,7 @@ Partial Class FrmInvestigadores
         Me.lblDespacho.AutoSize = True
         Me.lblDespacho.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDespacho.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblDespacho.Location = New System.Drawing.Point(239, 174)
+        Me.lblDespacho.Location = New System.Drawing.Point(549, 159)
         Me.lblDespacho.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblDespacho.Name = "lblDespacho"
         Me.lblDespacho.Size = New System.Drawing.Size(76, 17)
@@ -295,7 +297,7 @@ Partial Class FrmInvestigadores
         Me.lblApellidosInvestigador.AutoSize = True
         Me.lblApellidosInvestigador.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblApellidosInvestigador.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblApellidosInvestigador.Location = New System.Drawing.Point(240, 136)
+        Me.lblApellidosInvestigador.Location = New System.Drawing.Point(550, 121)
         Me.lblApellidosInvestigador.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblApellidosInvestigador.Name = "lblApellidosInvestigador"
         Me.lblApellidosInvestigador.Size = New System.Drawing.Size(69, 17)
@@ -307,7 +309,7 @@ Partial Class FrmInvestigadores
         Me.lblNombreInvestigador.AutoSize = True
         Me.lblNombreInvestigador.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNombreInvestigador.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblNombreInvestigador.Location = New System.Drawing.Point(239, 94)
+        Me.lblNombreInvestigador.Location = New System.Drawing.Point(549, 79)
         Me.lblNombreInvestigador.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblNombreInvestigador.Name = "lblNombreInvestigador"
         Me.lblNombreInvestigador.Size = New System.Drawing.Size(62, 17)
@@ -319,7 +321,7 @@ Partial Class FrmInvestigadores
         Me.lblIDInvestigador.AutoSize = True
         Me.lblIDInvestigador.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblIDInvestigador.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblIDInvestigador.Location = New System.Drawing.Point(240, 59)
+        Me.lblIDInvestigador.Location = New System.Drawing.Point(550, 44)
         Me.lblIDInvestigador.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblIDInvestigador.Name = "lblIDInvestigador"
         Me.lblIDInvestigador.Size = New System.Drawing.Size(25, 17)
@@ -339,11 +341,20 @@ Partial Class FrmInvestigadores
         '
         Me.OpenFileDialog1.Filter = "Microsoft Access Base de datos(*.accdb)|*.accdb"
         '
+        'lstbxArticulosInvestigadores
+        '
+        Me.lstbxArticulosInvestigadores.FormattingEnabled = True
+        Me.lstbxArticulosInvestigadores.Location = New System.Drawing.Point(215, 30)
+        Me.lstbxArticulosInvestigadores.Margin = New System.Windows.Forms.Padding(2)
+        Me.lstbxArticulosInvestigadores.Name = "lstbxArticulosInvestigadores"
+        Me.lstbxArticulosInvestigadores.Size = New System.Drawing.Size(164, 251)
+        Me.lstbxArticulosInvestigadores.TabIndex = 24
+        '
         'FrmInvestigadores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(829, 469)
+        Me.ClientSize = New System.Drawing.Size(1072, 469)
         Me.Controls.Add(Me.grpbxInvestigadores)
         Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "FrmInvestigadores"
@@ -381,4 +392,5 @@ Partial Class FrmInvestigadores
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents Button1 As Button
     Friend WithEvents btnArticulos As Button
+    Friend WithEvents lstbxArticulosInvestigadores As ListBox
 End Class
