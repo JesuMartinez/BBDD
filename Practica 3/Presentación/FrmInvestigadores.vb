@@ -44,21 +44,28 @@
     End Sub
 
     Private Sub btnAñadir_Click(sender As Object, e As EventArgs) Handles btnAñadir.Click
-        Dim inv As New Investigador(Convert.ToInt32(txtbxIDInvestigador.Text))
-        inv.Nombre = txtbxNombreInvestigador.Text
-        inv.Apellidos = txtbxApellidosInvestigador.Text
-        inv.Despacho = txtbxDespacho.Text
-        inv.Edificio = txtbxEdificio.Text
-        inv.Departamento = txtbxDepartamento.Text
-        inv.Telefono = txtbxTelefono.Text
-        inv.Email = txtbxEmail.Text
-        Try
-            inv.insertInvestigador()
-            lstbxInvestigadores.Items.Add(inv.IDInvestigador)
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString)
-            Exit Sub
-        End Try
+        Dim inv As Investigador
+        If (txtbxApellidosInvestigador.TextLength > 0 And txtbxDepartamento.TextLength > 0 And txtbxDespacho.TextLength > 0 And
+        txtbxEdificio.TextLength > 0 And txtbxEmail.TextLength > 0 And txtbxNombreInvestigador.TextLength > 0 And txtbxTelefono.TextLength > 0) And
+        txtbxIDInvestigador.TextLength > 0 Then
+            inv = New Investigador(Convert.ToInt32(txtbxIDInvestigador.Text))
+            inv.Nombre = txtbxNombreInvestigador.Text
+            inv.Apellidos = txtbxApellidosInvestigador.Text
+            inv.Despacho = txtbxDespacho.Text
+            inv.Edificio = txtbxEdificio.Text
+            inv.Departamento = txtbxDepartamento.Text
+            inv.Telefono = txtbxTelefono.Text
+            inv.Email = txtbxEmail.Text
+            Try
+                inv.insertInvestigador()
+                lstbxInvestigadores.Items.Add(inv.IDInvestigador)
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString)
+                Exit Sub
+            End Try
+        Else
+            MessageBox.Show("Por favor introduzca información en los campos vacíos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click

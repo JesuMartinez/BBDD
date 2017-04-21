@@ -1,22 +1,10 @@
 ﻿Public Class FrmArticulos
-    Public Sub cargarInvestigadores()
-        Dim inv As New Investigador
+    Public Sub cargarArticulos()
+        Dim art As New Articulo
         Try
-            inv.readAll()
-            For Each inv In inv.DAOInvestigador.ListaInvestigadores
-                lstbxInvestigadores.Items.Add(inv.IDInvestigador)
-            Next
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString)
-            Exit Sub
-        End Try
-    End Sub
-    Public Sub cargarConferencias()
-        Dim con As New Conferencia
-        Try
-            con.readAll()
-            For Each con In con.DAOConferencia.ListaConferencias
-                lstbxConferencias.Items.Add(con.IDConferencia)
+            art.readAll()
+            For Each art In art.DAOArticulo.ListaArticulos
+                lstbxArticulos.Items.Add(art.IDArticulo)
             Next
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
@@ -24,23 +12,28 @@
         End Try
     End Sub
     Private Sub FrmArticulos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cargarInvestigadores()
-        cargarConferencias()
+        cargarArticulos()
     End Sub
 
     Private Sub btnAñadirArticulo_Click(sender As Object, e As EventArgs) Handles btnAñadirArticulo.Click
         Dim ar As Articulo
-        ar = New Articulo(Convert.ToInt32(txtbxIDArticulo.Text))
-        ar.Titulo = txtbxTituloArticulo.Text
-        ar.Conferencia.IDConferencia = Convert.ToInt32(txtbxConferencia.Text)
-        ar.PagInicio = Convert.ToInt32(txtbxPag_inicio.Text)
-        ar.PagFin = Convert.ToInt32(txtbxPag_fin.Text)
-        Try
-            ar.insertArticulo()
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString)
-            Exit Sub
-        End Try
+        If txtbxConferencia.TextLength > 0 And txtbxIDArticulo.TextLength > 0 And txtbxPag_fin.TextLength > 0 And txtbxPag_inicio.TextLength > 0 And
+            txtbxTituloArticulo.TextLength > 0 Then
+            ar = New Articulo(Convert.ToInt32(txtbxIDArticulo.Text))
+            ar.Titulo = txtbxTituloArticulo.Text
+
+            ar.Conferencia.IDConferencia = Convert.ToInt32(txtbxConferencia.Text)
+            ar.PagInicio = Convert.ToInt32(txtbxPag_inicio.Text)
+            ar.PagFin = Convert.ToInt32(txtbxPag_fin.Text)
+            Try
+                ar.insertArticulo()
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString)
+                Exit Sub
+            End Try
+        Else
+            MessageBox.Show("Por favor introduzca información en los campos vacíos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
     End Sub
 
     Private Sub btnModificarArticulo_Click(sender As Object, e As EventArgs) Handles btnModificarArticulo.Click
@@ -87,7 +80,31 @@
         FrmInvestigadores.Show()
     End Sub
 
-    Private Sub lstbxConferencias_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstbxConferencias.SelectedIndexChanged
+    Private Sub lstbxConferencias_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstbxArticulos.SelectedIndexChanged
+        Dim art As Articulo
+        'De esta forma controlamos que al borrar un objeto art" no nos salte una excepción de referencia a null
+        If (lstbxArticulos.SelectedIndex > -1) Then
+            btnModificarArticulo.Enabled = True
+            btnEliminarArticulo.Enabled = True
+            art = New Articulo(Convert.ToInt32(lstbxArticulos.SelectedItem))
+            Try
+                art.readArticulo()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+                Exit Sub
+            End Try
+            txtbxIDArticulo.Text = art.IDArticulo.ToString
+            txtbxTituloArticulo.Text = art.Titulo
+            txtbxPag_inicio.Text = art.PagInicio.ToString
+            txtbxPag_fin.Text = art.PagFin.ToString
+            txtbxConferencia.Text = art.Conferencia.IDConferencia.ToString
+        Else
+            btnModificarArticulo.Enabled = False
+            btnEliminarArticulo.Enabled = False
+        End If
+    End Sub
+
+    Private Sub lstbxInvestigadores_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstbxInvestigadores.SelectedIndexChanged
 
     End Sub
 End Class

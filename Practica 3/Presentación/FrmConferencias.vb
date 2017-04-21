@@ -26,19 +26,24 @@
 
     Private Sub btnAñadir_Click(sender As Object, e As EventArgs) Handles btnAñadir.Click
         Dim con As Conferencia
-        con = New Conferencia(Convert.ToInt32(txtbxIDConferencia.Text))
-        con.Siglas = txtbxSiglas.Text
-        con.Nombre = txtbxNombreConferencia.Text
-        con.Lugar = txtbxLugar.Text
-        con.FechaInicio = txtbxFecha_inicio.Text
-        con.FechaFin = txtbxFecha_fin.Text
-        Try
-            con.insertConferencia()
-            lstbxConferencias.Items.Add(con.IDConferencia)
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString)
-            Exit Sub
-        End Try
+        If txtbxFecha_fin.TextLength > 0 And txtbxFecha_inicio.TextLength > 0 And txtbxIDConferencia.TextLength > 0 And txtbxLugar.TextLength > 0 And
+          txtbxNombreConferencia.TextLength > 0 And txtbxSiglas.TextLength > 0 Then
+            con = New Conferencia(Convert.ToInt32(txtbxIDConferencia.Text))
+            con.Siglas = txtbxSiglas.Text
+            con.Nombre = txtbxNombreConferencia.Text
+            con.Lugar = txtbxLugar.Text
+            con.FechaInicio = txtbxFecha_inicio.Text
+            con.FechaFin = txtbxFecha_fin.Text
+            Try
+                con.insertConferencia()
+                lstbxConferencias.Items.Add(con.IDConferencia)
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString)
+                Exit Sub
+            End Try
+        Else
+            MessageBox.Show("Por favor introduzca información en los campos vacíos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click

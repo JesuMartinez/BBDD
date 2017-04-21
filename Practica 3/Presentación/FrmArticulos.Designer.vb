@@ -38,7 +38,7 @@ Partial Class FrmArticulos
         Me.lblTituloArticulo = New System.Windows.Forms.Label()
         Me.lblIDArticulo = New System.Windows.Forms.Label()
         Me.lstbxInvestigadores = New System.Windows.Forms.ListBox()
-        Me.lstbxConferencias = New System.Windows.Forms.ListBox()
+        Me.lstbxArticulos = New System.Windows.Forms.ListBox()
         Me.btnConferencias = New System.Windows.Forms.Button()
         Me.btnInvestigadores = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
@@ -63,7 +63,7 @@ Partial Class FrmArticulos
         Me.GroupBox1.Controls.Add(Me.lblTituloArticulo)
         Me.GroupBox1.Controls.Add(Me.lblIDArticulo)
         Me.GroupBox1.Controls.Add(Me.lstbxInvestigadores)
-        Me.GroupBox1.Controls.Add(Me.lstbxConferencias)
+        Me.GroupBox1.Controls.Add(Me.lstbxArticulos)
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.MenuHighlight
         Me.GroupBox1.Location = New System.Drawing.Point(27, 38)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
@@ -230,14 +230,14 @@ Partial Class FrmArticulos
         Me.lstbxInvestigadores.Size = New System.Drawing.Size(137, 277)
         Me.lstbxInvestigadores.TabIndex = 1
         '
-        'lstbxConferencias
+        'lstbxArticulos
         '
-        Me.lstbxConferencias.FormattingEnabled = True
-        Me.lstbxConferencias.Location = New System.Drawing.Point(36, 41)
-        Me.lstbxConferencias.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.lstbxConferencias.Name = "lstbxConferencias"
-        Me.lstbxConferencias.Size = New System.Drawing.Size(137, 277)
-        Me.lstbxConferencias.TabIndex = 0
+        Me.lstbxArticulos.FormattingEnabled = True
+        Me.lstbxArticulos.Location = New System.Drawing.Point(36, 41)
+        Me.lstbxArticulos.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.lstbxArticulos.Name = "lstbxArticulos"
+        Me.lstbxArticulos.Size = New System.Drawing.Size(137, 277)
+        Me.lstbxArticulos.TabIndex = 0
         '
         'btnConferencias
         '
@@ -279,7 +279,7 @@ Partial Class FrmArticulos
 
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents lstbxInvestigadores As ListBox
-    Friend WithEvents lstbxConferencias As ListBox
+    Friend WithEvents lstbxArticulos As ListBox
     Friend WithEvents txtbxIDArticulo As TextBox
     Friend WithEvents lblPag_fin As Label
     Friend WithEvents lblPag_inicio As Label
