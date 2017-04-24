@@ -1,4 +1,6 @@
 ﻿Public Class FrmConferencias
+    Private errorProvider1 As Object
+
     Private Sub listbxConferencias_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstbxConferencias.SelectedIndexChanged
         Dim con As Conferencia
         'De esta forma controlamos que al borrar un objeto "con" no nos salte una excepción de referencia a null
@@ -116,5 +118,16 @@
         Else
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub txtbxFecha_inicio_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles txtbxFecha_inicio.MaskInputRejected
+
+    End Sub
+    Private Sub txtbxFecha_inicio_Validating(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles txtbxFecha_inicio.Validating, txtbxFecha_fin.Validating
+        Dim fecha As DateTime
+        If Not DateTime.TryParse(txtbxFecha_inicio.Text, fecha) And Not DateTime.TryParse(txtbxFecha_fin.Text, fecha) Then
+            MessageBox.Show("Error en el formato de la fecha, por favor introduzca un formato de fecha válido")
+        End If
+
     End Sub
 End Class
