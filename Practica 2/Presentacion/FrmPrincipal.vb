@@ -138,5 +138,9 @@
             e.Handled = True
         End If
     End Sub
+
+    Private Sub txtbxDNI_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles txtbxDNI.MaskInputRejected
+
+    End Sub
 End Class
 
