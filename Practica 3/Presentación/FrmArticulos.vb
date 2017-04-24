@@ -41,7 +41,7 @@
         If (txtbxIDArticulo.Modified = False) Then
             ar = New Articulo(Convert.ToInt32(txtbxIDArticulo.Text))
             ar.Titulo = txtbxTituloArticulo.Text
-            ar.Conferencia.IDConferencia= Convert.ToInt32(txtbxConferencia.Text)
+            ar.Conferencia.IDConferencia = Convert.ToInt32(txtbxConferencia.Text)
             ar.PagInicio = Convert.ToInt32(txtbxPag_inicio.Text)
             ar.PagFin = Convert.ToInt32(txtbxPag_fin.Text)
             If MessageBox.Show("¿Desea modificar el artículo seleccionado?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
@@ -63,6 +63,7 @@
         If MessageBox.Show("¿Desea eliminar el articulo con ID: " + ar.IDArticulo.ToString + " de la base de datos?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
             Try
                 ar.deleteArticulo()
+                lstbxArticulos.Items.Remove(lstbxArticulos.SelectedItem)
             Catch ex As Exception
                 MessageBox.Show(ex.ToString)
                 Exit Sub
@@ -80,7 +81,7 @@
         FrmInvestigadores.Show()
     End Sub
 
-    Private Sub lstbxConferencias_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstbxArticulos.SelectedIndexChanged
+    Private Sub lstbxArticulos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstbxArticulos.SelectedIndexChanged
         Dim art As Articulo
         'De esta forma controlamos que al borrar un objeto art" no nos salte una excepción de referencia a null
         If (lstbxArticulos.SelectedIndex > -1) Then
@@ -89,9 +90,8 @@
             art = New Articulo(Convert.ToInt32(lstbxArticulos.SelectedItem))
             Try
                 art.readArticulo()
-                'cargar los correspondientes investigadores que participaron en el articulo investigador'
             Catch ex As Exception
-                MessageBox.Show(ex.Message)
+                MessageBox.Show(ex.ToString)
                 Exit Sub
             End Try
             txtbxIDArticulo.Text = art.IDArticulo.ToString
@@ -99,11 +99,25 @@
             txtbxPag_inicio.Text = art.PagInicio.ToString
             txtbxPag_fin.Text = art.PagFin.ToString
             txtbxConferencia.Text = art.Conferencia.IDConferencia.ToString
+            Try
+                art.readAutores()
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString)
+                Exit Sub
+            End Try
         Else
             btnModificarArticulo.Enabled = False
             btnEliminarArticulo.Enabled = False
         End If
     End Sub
 
-
+    Private Sub txtbxConferencia_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtbxConferencia.KeyPress, txtbxPag_inicio.KeyPress, txtbxPag_fin.KeyPress, txtbxIDArticulo.KeyPress
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
 End Class

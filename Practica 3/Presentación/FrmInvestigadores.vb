@@ -125,6 +125,8 @@
 
     End Sub
 
+
+
     Private Sub txtbxIDInvestigador_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtbxIDInvestigador.KeyPress
         If Char.IsDigit(e.KeyChar) Then
             e.Handled = False

@@ -50,14 +50,14 @@
     End Function
 
     Public Function generate_cv(ByVal inv As Investigador) As Integer
-        Return AgenteBD.getAgente.modificar("SELECT i.Nombre, ar.Titulo, c.Siglas, ar.pag_inicio, ar.pag_fin, c.Lugar, c.Fecha_inicio
-                                             FROM INVESTIGADORES i 
-                                             JOIN AUTOR a
-                                             ON i.idInvest = a.Invest
-                                             JOIN ARTICULOS ar
-                                             ON a.Articulo = ar.idArticulo
-                                             JOIN CONFERENCIAS c
-                                             ON ar.Conferencia = c.idConferencia
+        Return AgenteBD.getAgente.modificar("SELECT investigadores.Nombre, articulos.Titulo, conferencias.Siglas, articulos.pag_inicio, articulos.pag_fin, conferencias.Lugar, conferencias.Fecha_inicio
+                                             FROM investigadores 
+                                             JOIN autor
+                                             ON investigadores.idInvest = autor.Invest
+                                             JOIN articulos
+                                             ON autor.Articulo = articulos.idArticulo
+                                             JOIN conferencias
+                                             ON articulos.Conferencia = conferencias.idConferencia
                                              WHERE idInvest =" & inv.IDInvestigador & ";")
     End Function
 End Class
