@@ -48,4 +48,16 @@
     Public Function delete(ByVal inv As Investigador) As Integer
         Return AgenteBD.getAgente.modificar("DELETE FROM INVESTIGADORES WHERE idInvest=" & inv.IDInvestigador & ";")
     End Function
+
+    Public Function generate_cv(ByVal inv As Investigador) As Integer
+        Return AgenteBD.getAgente.modificar("SELECT i.Nombre, ar.Titulo, c.Siglas, ar.pag_inicio, ar.pag_fin, c.Lugar, c.Fecha_inicio
+                                             FROM INVESTIGADORES i 
+                                             JOIN AUTOR a
+                                             ON i.idInvest = a.Invest
+                                             JOIN ARTICULOS ar
+                                             ON a.Articulo = ar.idArticulo
+                                             JOIN CONFERENCIAS c
+                                             ON ar.Conferencia = c.idConferencia
+                                             WHERE idInvest =" & inv.IDInvestigador & ";")
+    End Function
 End Class

@@ -77,10 +77,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmAsistencias.Designer.vb">
+    <Compile Include="Presentación\FrmAsistencias.Designer.vb">
       <DependentUpon>FrmAsistencias.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmAsistencias.vb">
+    <Compile Include="Presentación\FrmAsistencias.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentación\CurriculumVitae.Designer.vb">
@@ -132,7 +132,7 @@
     <Compile Include="Persistencia\DAOInvestigador.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FrmAsistencias.resx">
+    <EmbeddedResource Include="Presentación\FrmAsistencias.resx">
       <DependentUpon>FrmAsistencias.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentación\CurriculumVitae.resx">
