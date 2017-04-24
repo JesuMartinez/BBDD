@@ -32,7 +32,6 @@ Partial Class FrmInvestigadores
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.lblEmail = New System.Windows.Forms.Label()
         Me.txtbxEmail = New System.Windows.Forms.TextBox()
-        Me.txtbxTelefono = New System.Windows.Forms.TextBox()
         Me.txtbxDepartamento = New System.Windows.Forms.TextBox()
         Me.txtbxEdificio = New System.Windows.Forms.TextBox()
         Me.txtbxDespacho = New System.Windows.Forms.TextBox()
@@ -48,11 +47,13 @@ Partial Class FrmInvestigadores
         Me.lblIDInvestigador = New System.Windows.Forms.Label()
         Me.lstbxInvestigadores = New System.Windows.Forms.ListBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.txtbxTelefono = New System.Windows.Forms.MaskedTextBox()
         Me.grpbxInvestigadores.SuspendLayout()
         Me.SuspendLayout()
         '
         'grpbxInvestigadores
         '
+        Me.grpbxInvestigadores.Controls.Add(Me.txtbxTelefono)
         Me.grpbxInvestigadores.Controls.Add(Me.btnArticulos)
         Me.grpbxInvestigadores.Controls.Add(Me.btnConferencias)
         Me.grpbxInvestigadores.Controls.Add(Me.btnGestionarAsistencias)
@@ -62,7 +63,6 @@ Partial Class FrmInvestigadores
         Me.grpbxInvestigadores.Controls.Add(Me.btnEliminar)
         Me.grpbxInvestigadores.Controls.Add(Me.lblEmail)
         Me.grpbxInvestigadores.Controls.Add(Me.txtbxEmail)
-        Me.grpbxInvestigadores.Controls.Add(Me.txtbxTelefono)
         Me.grpbxInvestigadores.Controls.Add(Me.txtbxDepartamento)
         Me.grpbxInvestigadores.Controls.Add(Me.txtbxEdificio)
         Me.grpbxInvestigadores.Controls.Add(Me.txtbxDespacho)
@@ -184,14 +184,6 @@ Partial Class FrmInvestigadores
         Me.txtbxEmail.Name = "txtbxEmail"
         Me.txtbxEmail.Size = New System.Drawing.Size(149, 22)
         Me.txtbxEmail.TabIndex = 15
-        '
-        'txtbxTelefono
-        '
-        Me.txtbxTelefono.Location = New System.Drawing.Point(804, 130)
-        Me.txtbxTelefono.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtbxTelefono.Name = "txtbxTelefono"
-        Me.txtbxTelefono.Size = New System.Drawing.Size(149, 22)
-        Me.txtbxTelefono.TabIndex = 14
         '
         'txtbxDepartamento
         '
@@ -332,6 +324,14 @@ Partial Class FrmInvestigadores
         '
         Me.OpenFileDialog1.Filter = "Microsoft Access Base de datos(*.accdb)|*.accdb"
         '
+        'txtbxTelefono
+        '
+        Me.txtbxTelefono.Location = New System.Drawing.Point(804, 132)
+        Me.txtbxTelefono.Mask = "000-000-000"
+        Me.txtbxTelefono.Name = "txtbxTelefono"
+        Me.txtbxTelefono.Size = New System.Drawing.Size(150, 22)
+        Me.txtbxTelefono.TabIndex = 25
+        '
         'FrmInvestigadores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -357,7 +357,6 @@ Partial Class FrmInvestigadores
     Friend WithEvents btnEliminar As Button
     Friend WithEvents lblEmail As Label
     Friend WithEvents txtbxEmail As TextBox
-    Friend WithEvents txtbxTelefono As TextBox
     Friend WithEvents txtbxDepartamento As TextBox
     Friend WithEvents txtbxEdificio As TextBox
     Friend WithEvents txtbxDespacho As TextBox
@@ -374,4 +373,5 @@ Partial Class FrmInvestigadores
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents btnConferencias As Button
     Friend WithEvents btnArticulos As Button
+    Friend WithEvents txtbxTelefono As MaskedTextBox
 End Class

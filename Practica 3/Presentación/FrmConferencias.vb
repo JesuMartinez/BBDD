@@ -120,9 +120,13 @@
         End If
     End Sub
 
-    Private Sub txtbxFecha_inicio_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles txtbxFecha_inicio.MaskInputRejected
+    ' Public Shared Sub Compare(date_inicio As Date, date_fin As Date)
+    'Dim result As Integer = DateTime.Compare(date_inicio, date_fin)
+    'If (result > 0) Then
+    '       MessageBox.Show("Por favor introduzca el intervalo de fechas correcto")
+    'End If
+    'End Sub
 
-    End Sub
     Private Sub txtbxFecha_inicio_Validating(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles txtbxFecha_inicio.Validating, txtbxFecha_fin.Validating
         Dim fecha As DateTime
         If Not DateTime.TryParse(txtbxFecha_inicio.Text, fecha) And Not DateTime.TryParse(txtbxFecha_fin.Text, fecha) Then
@@ -130,4 +134,5 @@
         End If
 
     End Sub
+
 End Class

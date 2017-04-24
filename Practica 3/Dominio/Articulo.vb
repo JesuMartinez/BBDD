@@ -91,7 +91,4 @@
         Me._daoArticulo.delete(Me)
     End Sub
 
-    Public Sub readAutores()
-        Me._daoArticulo.autores(Me)
-    End Sub
 End Class
