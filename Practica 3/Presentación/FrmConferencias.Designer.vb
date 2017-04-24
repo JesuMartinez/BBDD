@@ -23,6 +23,8 @@ Partial Class FrmConferencias
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtbxFecha_fin = New System.Windows.Forms.MaskedTextBox()
+        Me.txtbxFecha_inicio = New System.Windows.Forms.MaskedTextBox()
         Me.btnInvestigadores = New System.Windows.Forms.Button()
         Me.btnArticulos = New System.Windows.Forms.Button()
         Me.btnModificar = New System.Windows.Forms.Button()
@@ -39,8 +41,6 @@ Partial Class FrmConferencias
         Me.lblSiglas = New System.Windows.Forms.Label()
         Me.lblIDConferencia = New System.Windows.Forms.Label()
         Me.lstbxConferencias = New System.Windows.Forms.ListBox()
-        Me.txtbxFecha_inicio = New System.Windows.Forms.MaskedTextBox()
-        Me.txtbxFecha_fin = New System.Windows.Forms.MaskedTextBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -74,6 +74,24 @@ Partial Class FrmConferencias
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "CONFERENCIAS"
+        '
+        'txtbxFecha_fin
+        '
+        Me.txtbxFecha_fin.Location = New System.Drawing.Point(756, 245)
+        Me.txtbxFecha_fin.Mask = "00/00/0000"
+        Me.txtbxFecha_fin.Name = "txtbxFecha_fin"
+        Me.txtbxFecha_fin.Size = New System.Drawing.Size(136, 22)
+        Me.txtbxFecha_fin.TabIndex = 19
+        Me.txtbxFecha_fin.ValidatingType = GetType(Date)
+        '
+        'txtbxFecha_inicio
+        '
+        Me.txtbxFecha_inicio.Location = New System.Drawing.Point(756, 175)
+        Me.txtbxFecha_inicio.Mask = "00/00/0000"
+        Me.txtbxFecha_inicio.Name = "txtbxFecha_inicio"
+        Me.txtbxFecha_inicio.Size = New System.Drawing.Size(136, 22)
+        Me.txtbxFecha_inicio.TabIndex = 18
+        Me.txtbxFecha_inicio.ValidatingType = GetType(Date)
         '
         'btnInvestigadores
         '
@@ -239,24 +257,6 @@ Partial Class FrmConferencias
         Me.lstbxConferencias.Name = "lstbxConferencias"
         Me.lstbxConferencias.Size = New System.Drawing.Size(203, 420)
         Me.lstbxConferencias.TabIndex = 0
-        '
-        'txtbxFecha_inicio
-        '
-        Me.txtbxFecha_inicio.Location = New System.Drawing.Point(756, 175)
-        Me.txtbxFecha_inicio.Mask = "00/00/0000"
-        Me.txtbxFecha_inicio.Name = "txtbxFecha_inicio"
-        Me.txtbxFecha_inicio.Size = New System.Drawing.Size(136, 22)
-        Me.txtbxFecha_inicio.TabIndex = 18
-        Me.txtbxFecha_inicio.ValidatingType = GetType(Date)
-        '
-        'txtbxFecha_fin
-        '
-        Me.txtbxFecha_fin.Location = New System.Drawing.Point(756, 245)
-        Me.txtbxFecha_fin.Mask = "00/00/0000"
-        Me.txtbxFecha_fin.Name = "txtbxFecha_fin"
-        Me.txtbxFecha_fin.Size = New System.Drawing.Size(136, 22)
-        Me.txtbxFecha_fin.TabIndex = 19
-        Me.txtbxFecha_fin.ValidatingType = GetType(Date)
         '
         'FrmConferencias
         '
