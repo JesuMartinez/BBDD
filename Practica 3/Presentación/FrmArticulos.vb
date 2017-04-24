@@ -111,8 +111,12 @@
         End If
     End Sub
 
-    Private Sub txtbxConferencia_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtbxConferencia.KeyPress
-        If Not IsNumeric(e.KeyChar) And Is Then
+    Private Sub txtbxConferencia_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtbxConferencia.KeyPress, txtbxPag_inicio.KeyPress, txtbxPag_fin.KeyPress, txtbxIDArticulo.KeyPress
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
             e.Handled = True
         End If
     End Sub
