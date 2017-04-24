@@ -22,6 +22,7 @@
             ar = New Articulo(Convert.ToInt32(txtbxIDArticulo.Text))
             ar.Titulo = txtbxTituloArticulo.Text
             ar.Conferencia.IDConferencia = Convert.ToInt32(txtbxConferencia.Text)
+
             ar.PagInicio = Convert.ToInt32(txtbxPag_inicio.Text)
             ar.PagFin = Convert.ToInt32(txtbxPag_fin.Text)
             Try
@@ -105,11 +106,5 @@
         End If
     End Sub
 
-    Private Sub lstbxInvestigadores_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstbxInvestigadores.SelectedIndexChanged
 
-    End Sub
-
-    Private Sub btnGestionarAutores_Click(sender As Object, e As EventArgs) Handles btnGestionarAutores.Click
-
-    End Sub
 End Class

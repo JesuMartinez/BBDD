@@ -77,6 +77,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAutores.Designer.vb">
+      <DependentUpon>FrmAutores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAutores.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentación\FrmAsistencias.Designer.vb">
       <DependentUpon>FrmAsistencias.vb</DependentUpon>
     </Compile>
@@ -132,6 +138,9 @@
     <Compile Include="Persistencia\DAOInvestigador.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FrmAutores.resx">
+      <DependentUpon>FrmAutores.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentación\FrmAsistencias.resx">
       <DependentUpon>FrmAsistencias.vb</DependentUpon>
     </EmbeddedResource>
