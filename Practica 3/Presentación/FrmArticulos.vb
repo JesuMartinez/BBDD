@@ -41,7 +41,7 @@
         If (txtbxIDArticulo.Modified = False) Then
             ar = New Articulo(Convert.ToInt32(txtbxIDArticulo.Text))
             ar.Titulo = txtbxTituloArticulo.Text
-            ar.Conferencia.IDConferencia = Convert.ToInt32(txtbxConferencia.Text)
+            ar.Conferencia.IDConferencia= Convert.ToInt32(txtbxConferencia.Text)
             ar.PagInicio = Convert.ToInt32(txtbxPag_inicio.Text)
             ar.PagFin = Convert.ToInt32(txtbxPag_fin.Text)
             If MessageBox.Show("¿Desea modificar el artículo seleccionado?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
