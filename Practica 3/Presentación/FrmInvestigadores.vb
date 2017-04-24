@@ -106,7 +106,7 @@
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btnConferencias_Click(sender As Object, e As EventArgs) Handles btnConferencias.Click
         Me.Hide()
         FrmConferencias.Show()
     End Sub
@@ -119,10 +119,6 @@
     Private Sub btnGestionarAsistencias_Click(sender As Object, e As EventArgs) Handles btnGestionarAsistencias.Click
         Me.Hide()
         FrmAsistencias.Show()
-    End Sub
-
-    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) 
-
     End Sub
 
     Private Sub btnCrearCV_Click(sender As Object, e As EventArgs) Handles btnCrearCV.Click
