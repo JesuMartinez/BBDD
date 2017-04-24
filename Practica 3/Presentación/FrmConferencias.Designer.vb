@@ -28,8 +28,6 @@ Partial Class FrmConferencias
         Me.btnModificar = New System.Windows.Forms.Button()
         Me.btnAñadir = New System.Windows.Forms.Button()
         Me.btnEliminar = New System.Windows.Forms.Button()
-        Me.txtbxFecha_fin = New System.Windows.Forms.TextBox()
-        Me.txtbxFecha_inicio = New System.Windows.Forms.TextBox()
         Me.txtbxLugar = New System.Windows.Forms.TextBox()
         Me.txtbxNombreConferencia = New System.Windows.Forms.TextBox()
         Me.txtbxSiglas = New System.Windows.Forms.TextBox()
@@ -41,18 +39,20 @@ Partial Class FrmConferencias
         Me.lblSiglas = New System.Windows.Forms.Label()
         Me.lblIDConferencia = New System.Windows.Forms.Label()
         Me.lstbxConferencias = New System.Windows.Forms.ListBox()
+        Me.txtbxFecha_inicio = New System.Windows.Forms.MaskedTextBox()
+        Me.txtbxFecha_fin = New System.Windows.Forms.MaskedTextBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.txtbxFecha_fin)
+        Me.GroupBox1.Controls.Add(Me.txtbxFecha_inicio)
         Me.GroupBox1.Controls.Add(Me.btnInvestigadores)
         Me.GroupBox1.Controls.Add(Me.btnArticulos)
         Me.GroupBox1.Controls.Add(Me.btnModificar)
         Me.GroupBox1.Controls.Add(Me.btnAñadir)
         Me.GroupBox1.Controls.Add(Me.btnEliminar)
-        Me.GroupBox1.Controls.Add(Me.txtbxFecha_fin)
-        Me.GroupBox1.Controls.Add(Me.txtbxFecha_inicio)
         Me.GroupBox1.Controls.Add(Me.txtbxLugar)
         Me.GroupBox1.Controls.Add(Me.txtbxNombreConferencia)
         Me.GroupBox1.Controls.Add(Me.txtbxSiglas)
@@ -131,22 +131,6 @@ Partial Class FrmConferencias
         Me.btnEliminar.TabIndex = 13
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.UseVisualStyleBackColor = True
-        '
-        'txtbxFecha_fin
-        '
-        Me.txtbxFecha_fin.Location = New System.Drawing.Point(756, 244)
-        Me.txtbxFecha_fin.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtbxFecha_fin.Name = "txtbxFecha_fin"
-        Me.txtbxFecha_fin.Size = New System.Drawing.Size(136, 22)
-        Me.txtbxFecha_fin.TabIndex = 12
-        '
-        'txtbxFecha_inicio
-        '
-        Me.txtbxFecha_inicio.Location = New System.Drawing.Point(757, 175)
-        Me.txtbxFecha_inicio.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.txtbxFecha_inicio.Name = "txtbxFecha_inicio"
-        Me.txtbxFecha_inicio.Size = New System.Drawing.Size(135, 22)
-        Me.txtbxFecha_inicio.TabIndex = 11
         '
         'txtbxLugar
         '
@@ -256,6 +240,24 @@ Partial Class FrmConferencias
         Me.lstbxConferencias.Size = New System.Drawing.Size(203, 420)
         Me.lstbxConferencias.TabIndex = 0
         '
+        'txtbxFecha_inicio
+        '
+        Me.txtbxFecha_inicio.Location = New System.Drawing.Point(756, 175)
+        Me.txtbxFecha_inicio.Mask = "00/00/0000"
+        Me.txtbxFecha_inicio.Name = "txtbxFecha_inicio"
+        Me.txtbxFecha_inicio.Size = New System.Drawing.Size(136, 22)
+        Me.txtbxFecha_inicio.TabIndex = 18
+        Me.txtbxFecha_inicio.ValidatingType = GetType(Date)
+        '
+        'txtbxFecha_fin
+        '
+        Me.txtbxFecha_fin.Location = New System.Drawing.Point(756, 245)
+        Me.txtbxFecha_fin.Mask = "00/00/0000"
+        Me.txtbxFecha_fin.Name = "txtbxFecha_fin"
+        Me.txtbxFecha_fin.Size = New System.Drawing.Size(136, 22)
+        Me.txtbxFecha_fin.TabIndex = 19
+        Me.txtbxFecha_fin.ValidatingType = GetType(Date)
+        '
         'FrmConferencias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -284,11 +286,11 @@ Partial Class FrmConferencias
     Friend WithEvents lblSiglas As Label
     Friend WithEvents lblIDConferencia As Label
     Friend WithEvents lstbxConferencias As ListBox
-    Friend WithEvents txtbxFecha_fin As TextBox
-    Friend WithEvents txtbxFecha_inicio As TextBox
     Friend WithEvents btnModificar As Button
     Friend WithEvents btnAñadir As Button
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnInvestigadores As Button
     Friend WithEvents btnArticulos As Button
+    Friend WithEvents txtbxFecha_fin As MaskedTextBox
+    Friend WithEvents txtbxFecha_inicio As MaskedTextBox
 End Class
