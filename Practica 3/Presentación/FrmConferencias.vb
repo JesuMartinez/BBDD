@@ -1,5 +1,5 @@
 ﻿Public Class FrmConferencias
-    Private Sub listbxConferencias_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstbxConferencias.SelectedIndexChanged
+    Private Sub lstbxConferencias_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstbxConferencias.SelectedIndexChanged
         Dim con As Conferencia
         'De esta forma controlamos que al borrar un objeto "con" no nos salte una excepción de referencia a null
         If (lstbxConferencias.SelectedIndex > -1) Then
@@ -26,23 +26,27 @@
 
     Private Sub btnAñadir_Click(sender As Object, e As EventArgs) Handles btnAñadir.Click
         Dim con As Conferencia
-        If txtbxFecha_fin.TextLength > 0 And txtbxFecha_inicio.TextLength > 0 And txtbxIDConferencia.TextLength > 0 And txtbxLugar.TextLength > 0 And
-          txtbxNombreConferencia.TextLength > 0 And txtbxSiglas.TextLength > 0 Then
-            con = New Conferencia(Convert.ToInt32(txtbxIDConferencia.Text))
-            con.Siglas = txtbxSiglas.Text
-            con.Nombre = txtbxNombreConferencia.Text
-            con.Lugar = txtbxLugar.Text
-            con.FechaInicio = txtbxFecha_inicio.Text
-            con.FechaFin = txtbxFecha_fin.Text
-            Try
-                con.insertConferencia()
-                lstbxConferencias.Items.Add(con.IDConferencia)
-            Catch ex As Exception
-                MessageBox.Show(ex.ToString)
-                Exit Sub
-            End Try
+        If (txtbxFecha_fin.TextLength > 0 And txtbxFecha_inicio.TextLength > 0 And txtbxIDConferencia.TextLength > 0 And txtbxLugar.TextLength > 0 And
+          txtbxNombreConferencia.TextLength > 0 And txtbxSiglas.TextLength > 0) Then
+            If (txtbxFecha_inicio.Text <= txtbxFecha_fin.Text) Then
+                con = New Conferencia(Convert.ToInt32(txtbxIDConferencia.Text))
+                con.Siglas = txtbxSiglas.Text
+                con.Nombre = txtbxNombreConferencia.Text
+                con.Lugar = txtbxLugar.Text
+                con.FechaInicio = txtbxFecha_inicio.Text
+                con.FechaFin = txtbxFecha_fin.Text
+                Try
+                    con.insertConferencia()
+                    lstbxConferencias.Items.Add(con.IDConferencia)
+                Catch ex As Exception
+                    MessageBox.Show(ex.ToString)
+                    Exit Sub
+                End Try
+            Else
+                MessageBox.Show("Fechas de las conferencias inválidas. Por favor compruebe que la fecha de inicio es menor o igual que la fecha de finalización.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
         Else
-            MessageBox.Show("Por favor introduzca información en los campos vacíos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Por favor introduzca información en los campos vacíos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 
@@ -58,7 +62,6 @@
             End Try
         End If
     End Sub
-
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Dim con As Conferencia
