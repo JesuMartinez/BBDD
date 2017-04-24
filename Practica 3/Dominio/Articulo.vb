@@ -9,6 +9,7 @@
     Public Sub New(ByVal idArticulo As Integer)
         Me._idArticulo = idArticulo
         Me._daoArticulo = New DAOArticulo
+        Me._conferencia = New Conferencia
     End Sub
 
     Public Sub New()
