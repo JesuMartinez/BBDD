@@ -24,7 +24,7 @@ Partial Class FrmInvestigadores
     Private Sub InitializeComponent()
         Me.grpbxInvestigadores = New System.Windows.Forms.GroupBox()
         Me.btnArticulos = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnConferencias = New System.Windows.Forms.Button()
         Me.btnGestionarAsistencias = New System.Windows.Forms.Button()
         Me.btnCrearCV = New System.Windows.Forms.Button()
         Me.btnAñadir = New System.Windows.Forms.Button()
@@ -54,7 +54,7 @@ Partial Class FrmInvestigadores
         'grpbxInvestigadores
         '
         Me.grpbxInvestigadores.Controls.Add(Me.btnArticulos)
-        Me.grpbxInvestigadores.Controls.Add(Me.Button1)
+        Me.grpbxInvestigadores.Controls.Add(Me.btnConferencias)
         Me.grpbxInvestigadores.Controls.Add(Me.btnGestionarAsistencias)
         Me.grpbxInvestigadores.Controls.Add(Me.btnCrearCV)
         Me.grpbxInvestigadores.Controls.Add(Me.btnAñadir)
@@ -98,16 +98,16 @@ Partial Class FrmInvestigadores
         Me.btnArticulos.Text = "Artículos"
         Me.btnArticulos.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btnConferencias
         '
-        Me.Button1.ForeColor = System.Drawing.SystemColors.InfoText
-        Me.Button1.Location = New System.Drawing.Point(700, 336)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(143, 57)
-        Me.Button1.TabIndex = 22
-        Me.Button1.Text = "Conferencias"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnConferencias.ForeColor = System.Drawing.SystemColors.InfoText
+        Me.btnConferencias.Location = New System.Drawing.Point(700, 336)
+        Me.btnConferencias.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnConferencias.Name = "btnConferencias"
+        Me.btnConferencias.Size = New System.Drawing.Size(143, 57)
+        Me.btnConferencias.TabIndex = 22
+        Me.btnConferencias.Text = "Conferencias"
+        Me.btnConferencias.UseVisualStyleBackColor = True
         '
         'btnGestionarAsistencias
         '
@@ -372,6 +372,6 @@ Partial Class FrmInvestigadores
     Friend WithEvents lblNombreInvestigador As Label
     Friend WithEvents lblIDInvestigador As Label
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnConferencias As Button
     Friend WithEvents btnArticulos As Button
 End Class

@@ -106,7 +106,7 @@
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btnConferencias_Click(sender As Object, e As EventArgs) Handles btnConferencias.Click
         Me.Hide()
         FrmConferencias.Show()
     End Sub
