@@ -23,6 +23,8 @@ Partial Class FrmArticulos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnInvestigadores = New System.Windows.Forms.Button()
+        Me.btnConferencias = New System.Windows.Forms.Button()
         Me.btnEliminarArticulo = New System.Windows.Forms.Button()
         Me.btnModificarArticulo = New System.Windows.Forms.Button()
         Me.btnAñadirArticulo = New System.Windows.Forms.Button()
@@ -37,10 +39,8 @@ Partial Class FrmArticulos
         Me.lblConferencia = New System.Windows.Forms.Label()
         Me.lblTituloArticulo = New System.Windows.Forms.Label()
         Me.lblIDArticulo = New System.Windows.Forms.Label()
-        Me.lstbxInvestigadores = New System.Windows.Forms.ListBox()
+        Me.lstbxAutores = New System.Windows.Forms.ListBox()
         Me.lstbxArticulos = New System.Windows.Forms.ListBox()
-        Me.btnConferencias = New System.Windows.Forms.Button()
-        Me.btnInvestigadores = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -62,26 +62,48 @@ Partial Class FrmArticulos
         Me.GroupBox1.Controls.Add(Me.lblConferencia)
         Me.GroupBox1.Controls.Add(Me.lblTituloArticulo)
         Me.GroupBox1.Controls.Add(Me.lblIDArticulo)
-        Me.GroupBox1.Controls.Add(Me.lstbxInvestigadores)
+        Me.GroupBox1.Controls.Add(Me.lstbxAutores)
         Me.GroupBox1.Controls.Add(Me.lstbxArticulos)
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.MenuHighlight
-        Me.GroupBox1.Location = New System.Drawing.Point(27, 38)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Location = New System.Drawing.Point(36, 47)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.GroupBox1.Size = New System.Drawing.Size(774, 404)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GroupBox1.Size = New System.Drawing.Size(1032, 497)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "ARTÍCULOS"
+        '
+        'btnInvestigadores
+        '
+        Me.btnInvestigadores.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnInvestigadores.Location = New System.Drawing.Point(789, 329)
+        Me.btnInvestigadores.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnInvestigadores.Name = "btnInvestigadores"
+        Me.btnInvestigadores.Size = New System.Drawing.Size(223, 63)
+        Me.btnInvestigadores.TabIndex = 17
+        Me.btnInvestigadores.Text = "Investigadores"
+        Me.btnInvestigadores.UseVisualStyleBackColor = True
+        '
+        'btnConferencias
+        '
+        Me.btnConferencias.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnConferencias.Location = New System.Drawing.Point(553, 329)
+        Me.btnConferencias.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnConferencias.Name = "btnConferencias"
+        Me.btnConferencias.Size = New System.Drawing.Size(223, 63)
+        Me.btnConferencias.TabIndex = 16
+        Me.btnConferencias.Text = "Conferencias"
+        Me.btnConferencias.UseVisualStyleBackColor = True
         '
         'btnEliminarArticulo
         '
         Me.btnEliminarArticulo.Enabled = False
         Me.btnEliminarArticulo.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnEliminarArticulo.Location = New System.Drawing.Point(647, 197)
-        Me.btnEliminarArticulo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnEliminarArticulo.Location = New System.Drawing.Point(863, 242)
+        Me.btnEliminarArticulo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnEliminarArticulo.Name = "btnEliminarArticulo"
-        Me.btnEliminarArticulo.Size = New System.Drawing.Size(112, 51)
+        Me.btnEliminarArticulo.Size = New System.Drawing.Size(149, 63)
         Me.btnEliminarArticulo.TabIndex = 15
         Me.btnEliminarArticulo.Text = "Eliminar"
         Me.btnEliminarArticulo.UseVisualStyleBackColor = True
@@ -90,10 +112,10 @@ Partial Class FrmArticulos
         '
         Me.btnModificarArticulo.Enabled = False
         Me.btnModificarArticulo.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnModificarArticulo.Location = New System.Drawing.Point(531, 197)
-        Me.btnModificarArticulo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnModificarArticulo.Location = New System.Drawing.Point(708, 242)
+        Me.btnModificarArticulo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnModificarArticulo.Name = "btnModificarArticulo"
-        Me.btnModificarArticulo.Size = New System.Drawing.Size(112, 51)
+        Me.btnModificarArticulo.Size = New System.Drawing.Size(149, 63)
         Me.btnModificarArticulo.TabIndex = 14
         Me.btnModificarArticulo.Text = "Modificar"
         Me.btnModificarArticulo.UseVisualStyleBackColor = True
@@ -101,10 +123,10 @@ Partial Class FrmArticulos
         'btnAñadirArticulo
         '
         Me.btnAñadirArticulo.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnAñadirArticulo.Location = New System.Drawing.Point(415, 197)
-        Me.btnAñadirArticulo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnAñadirArticulo.Location = New System.Drawing.Point(553, 242)
+        Me.btnAñadirArticulo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnAñadirArticulo.Name = "btnAñadirArticulo"
-        Me.btnAñadirArticulo.Size = New System.Drawing.Size(112, 51)
+        Me.btnAñadirArticulo.Size = New System.Drawing.Size(149, 63)
         Me.btnAñadirArticulo.TabIndex = 13
         Me.btnAñadirArticulo.Text = "Añadir"
         Me.btnAñadirArticulo.UseVisualStyleBackColor = True
@@ -112,52 +134,52 @@ Partial Class FrmArticulos
         'btnGestionarAutores
         '
         Me.btnGestionarAutores.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnGestionarAutores.Location = New System.Drawing.Point(36, 334)
-        Me.btnGestionarAutores.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnGestionarAutores.Location = New System.Drawing.Point(48, 411)
+        Me.btnGestionarAutores.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnGestionarAutores.Name = "btnGestionarAutores"
-        Me.btnGestionarAutores.Size = New System.Drawing.Size(112, 51)
+        Me.btnGestionarAutores.Size = New System.Drawing.Size(149, 63)
         Me.btnGestionarAutores.TabIndex = 12
         Me.btnGestionarAutores.Text = "Gestionar Autores"
         Me.btnGestionarAutores.UseVisualStyleBackColor = True
         '
         'txtbxPag_fin
         '
-        Me.txtbxPag_fin.Location = New System.Drawing.Point(509, 160)
-        Me.txtbxPag_fin.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtbxPag_fin.Location = New System.Drawing.Point(679, 197)
+        Me.txtbxPag_fin.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtbxPag_fin.Name = "txtbxPag_fin"
-        Me.txtbxPag_fin.Size = New System.Drawing.Size(136, 20)
+        Me.txtbxPag_fin.Size = New System.Drawing.Size(180, 22)
         Me.txtbxPag_fin.TabIndex = 11
         '
         'txtbxPag_inicio
         '
-        Me.txtbxPag_inicio.Location = New System.Drawing.Point(509, 131)
-        Me.txtbxPag_inicio.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtbxPag_inicio.Location = New System.Drawing.Point(679, 161)
+        Me.txtbxPag_inicio.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtbxPag_inicio.Name = "txtbxPag_inicio"
-        Me.txtbxPag_inicio.Size = New System.Drawing.Size(136, 20)
+        Me.txtbxPag_inicio.Size = New System.Drawing.Size(180, 22)
         Me.txtbxPag_inicio.TabIndex = 10
         '
         'txtbxConferencia
         '
-        Me.txtbxConferencia.Location = New System.Drawing.Point(509, 102)
-        Me.txtbxConferencia.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtbxConferencia.Location = New System.Drawing.Point(679, 126)
+        Me.txtbxConferencia.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtbxConferencia.Name = "txtbxConferencia"
-        Me.txtbxConferencia.Size = New System.Drawing.Size(136, 20)
+        Me.txtbxConferencia.Size = New System.Drawing.Size(180, 22)
         Me.txtbxConferencia.TabIndex = 9
         '
         'txtbxTituloArticulo
         '
-        Me.txtbxTituloArticulo.Location = New System.Drawing.Point(509, 73)
-        Me.txtbxTituloArticulo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtbxTituloArticulo.Location = New System.Drawing.Point(679, 90)
+        Me.txtbxTituloArticulo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtbxTituloArticulo.Name = "txtbxTituloArticulo"
-        Me.txtbxTituloArticulo.Size = New System.Drawing.Size(136, 20)
+        Me.txtbxTituloArticulo.Size = New System.Drawing.Size(180, 22)
         Me.txtbxTituloArticulo.TabIndex = 8
         '
         'txtbxIDArticulo
         '
-        Me.txtbxIDArticulo.Location = New System.Drawing.Point(509, 41)
-        Me.txtbxIDArticulo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtbxIDArticulo.Location = New System.Drawing.Point(679, 50)
+        Me.txtbxIDArticulo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.txtbxIDArticulo.Name = "txtbxIDArticulo"
-        Me.txtbxIDArticulo.Size = New System.Drawing.Size(136, 20)
+        Me.txtbxIDArticulo.Size = New System.Drawing.Size(180, 22)
         Me.txtbxIDArticulo.TabIndex = 7
         '
         'lblPag_fin
@@ -165,10 +187,9 @@ Partial Class FrmArticulos
         Me.lblPag_fin.AutoSize = True
         Me.lblPag_fin.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPag_fin.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblPag_fin.Location = New System.Drawing.Point(412, 160)
-        Me.lblPag_fin.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblPag_fin.Location = New System.Drawing.Point(549, 197)
         Me.lblPag_fin.Name = "lblPag_fin"
-        Me.lblPag_fin.Size = New System.Drawing.Size(56, 17)
+        Me.lblPag_fin.Size = New System.Drawing.Size(66, 20)
         Me.lblPag_fin.TabIndex = 6
         Me.lblPag_fin.Text = "Pag fin:"
         '
@@ -177,10 +198,9 @@ Partial Class FrmArticulos
         Me.lblPag_inicio.AutoSize = True
         Me.lblPag_inicio.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPag_inicio.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblPag_inicio.Location = New System.Drawing.Point(412, 131)
-        Me.lblPag_inicio.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblPag_inicio.Location = New System.Drawing.Point(549, 161)
         Me.lblPag_inicio.Name = "lblPag_inicio"
-        Me.lblPag_inicio.Size = New System.Drawing.Size(73, 17)
+        Me.lblPag_inicio.Size = New System.Drawing.Size(87, 20)
         Me.lblPag_inicio.TabIndex = 5
         Me.lblPag_inicio.Text = "Pag inicio:"
         '
@@ -189,10 +209,9 @@ Partial Class FrmArticulos
         Me.lblConferencia.AutoSize = True
         Me.lblConferencia.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblConferencia.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblConferencia.Location = New System.Drawing.Point(412, 102)
-        Me.lblConferencia.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblConferencia.Location = New System.Drawing.Point(549, 126)
         Me.lblConferencia.Name = "lblConferencia"
-        Me.lblConferencia.Size = New System.Drawing.Size(88, 17)
+        Me.lblConferencia.Size = New System.Drawing.Size(104, 20)
         Me.lblConferencia.TabIndex = 4
         Me.lblConferencia.Text = "Conferencia:"
         '
@@ -201,10 +220,9 @@ Partial Class FrmArticulos
         Me.lblTituloArticulo.AutoSize = True
         Me.lblTituloArticulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTituloArticulo.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTituloArticulo.Location = New System.Drawing.Point(412, 73)
-        Me.lblTituloArticulo.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblTituloArticulo.Location = New System.Drawing.Point(549, 90)
         Me.lblTituloArticulo.Name = "lblTituloArticulo"
-        Me.lblTituloArticulo.Size = New System.Drawing.Size(47, 17)
+        Me.lblTituloArticulo.Size = New System.Drawing.Size(55, 20)
         Me.lblTituloArticulo.TabIndex = 3
         Me.lblTituloArticulo.Text = "Título:"
         '
@@ -213,61 +231,40 @@ Partial Class FrmArticulos
         Me.lblIDArticulo.AutoSize = True
         Me.lblIDArticulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblIDArticulo.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblIDArticulo.Location = New System.Drawing.Point(412, 41)
-        Me.lblIDArticulo.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblIDArticulo.Location = New System.Drawing.Point(549, 50)
         Me.lblIDArticulo.Name = "lblIDArticulo"
-        Me.lblIDArticulo.Size = New System.Drawing.Size(76, 17)
+        Me.lblIDArticulo.Size = New System.Drawing.Size(93, 20)
         Me.lblIDArticulo.TabIndex = 2
         Me.lblIDArticulo.Text = "ID Artículo:"
         '
-        'lstbxInvestigadores
+        'lstbxAutores
         '
-        Me.lstbxInvestigadores.FormattingEnabled = True
-        Me.lstbxInvestigadores.Location = New System.Drawing.Point(212, 41)
-        Me.lstbxInvestigadores.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.lstbxInvestigadores.Name = "lstbxInvestigadores"
-        Me.lstbxInvestigadores.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
-        Me.lstbxInvestigadores.Size = New System.Drawing.Size(137, 277)
-        Me.lstbxInvestigadores.TabIndex = 1
+        Me.lstbxAutores.FormattingEnabled = True
+        Me.lstbxAutores.ItemHeight = 16
+        Me.lstbxAutores.Location = New System.Drawing.Point(283, 50)
+        Me.lstbxAutores.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.lstbxAutores.Name = "lstbxAutores"
+        Me.lstbxAutores.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
+        Me.lstbxAutores.Size = New System.Drawing.Size(181, 340)
+        Me.lstbxAutores.TabIndex = 1
         '
         'lstbxArticulos
         '
         Me.lstbxArticulos.FormattingEnabled = True
-        Me.lstbxArticulos.Location = New System.Drawing.Point(36, 41)
-        Me.lstbxArticulos.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.lstbxArticulos.ItemHeight = 16
+        Me.lstbxArticulos.Location = New System.Drawing.Point(48, 50)
+        Me.lstbxArticulos.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.lstbxArticulos.Name = "lstbxArticulos"
-        Me.lstbxArticulos.Size = New System.Drawing.Size(137, 277)
+        Me.lstbxArticulos.Size = New System.Drawing.Size(181, 340)
         Me.lstbxArticulos.TabIndex = 0
-        '
-        'btnConferencias
-        '
-        Me.btnConferencias.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnConferencias.Location = New System.Drawing.Point(415, 267)
-        Me.btnConferencias.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnConferencias.Name = "btnConferencias"
-        Me.btnConferencias.Size = New System.Drawing.Size(167, 51)
-        Me.btnConferencias.TabIndex = 16
-        Me.btnConferencias.Text = "Conferencias"
-        Me.btnConferencias.UseVisualStyleBackColor = True
-        '
-        'btnInvestigadores
-        '
-        Me.btnInvestigadores.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnInvestigadores.Location = New System.Drawing.Point(592, 267)
-        Me.btnInvestigadores.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnInvestigadores.Name = "btnInvestigadores"
-        Me.btnInvestigadores.Size = New System.Drawing.Size(167, 51)
-        Me.btnInvestigadores.TabIndex = 17
-        Me.btnInvestigadores.Text = "Investigadores"
-        Me.btnInvestigadores.UseVisualStyleBackColor = True
         '
         'FrmArticulos
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(824, 472)
+        Me.ClientSize = New System.Drawing.Size(1099, 581)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "FrmArticulos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Articulos"
@@ -278,7 +275,7 @@ Partial Class FrmArticulos
     End Sub
 
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents lstbxInvestigadores As ListBox
+    Friend WithEvents lstbxAutores As ListBox
     Friend WithEvents lstbxArticulos As ListBox
     Friend WithEvents txtbxIDArticulo As TextBox
     Friend WithEvents lblPag_fin As Label

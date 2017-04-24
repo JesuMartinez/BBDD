@@ -124,4 +124,15 @@
     Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) 
 
     End Sub
+
+    Private Sub btnCrearCV_Click(sender As Object, e As EventArgs) Handles btnCrearCV.Click
+        Dim inv As Investigador
+        inv = New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem.ToString))
+        Try
+            inv.generarCV()
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+            Exit Sub
+        End Try
+    End Sub
 End Class

@@ -129,7 +129,7 @@
         Me._daoInvestigador.delete(Me)
     End Sub
 
-    Public Sub generarCU()
+    Public Sub generarCV()
         Me._daoInvestigador.generate_cv(Me)
     End Sub
 End Class
