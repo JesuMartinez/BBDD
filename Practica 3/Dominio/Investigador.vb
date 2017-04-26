@@ -137,4 +137,8 @@
     Public Sub insertAutores()
         Me._daoInvestigador.insert_autores(Me, Me._articulo)
     End Sub
+
+    Public Sub asiste()
+        Me._daoInvestigador.asiste(Articulo.Conferencia, Me)
+    End Sub
 End Class

@@ -109,4 +109,7 @@
     Public Sub deleteConferencia()
         Me._daoConferencia.delete(Me)
     End Sub
+    'Public Sub asiste()
+    'Me._daoConferencia.asiste(Me, Articulo.)
+    'End Sub
 End Class
