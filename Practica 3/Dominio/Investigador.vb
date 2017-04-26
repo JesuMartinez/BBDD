@@ -8,6 +8,7 @@
     Private _telefono As String
     Private _email As String
     Private _articulo As Articulo
+    Private _orden As Integer
     Private _daoInvestigador As DAOInvestigador
 
     Public Sub New(ByVal idInvest As Integer)
@@ -131,5 +132,9 @@
 
     Public Sub generarCV()
         Me._daoInvestigador.generate_cv(Me)
+    End Sub
+
+    Public Sub insertAutores()
+        Me._daoInvestigador.insert_autores(Me, Me._articulo)
     End Sub
 End Class

@@ -66,7 +66,7 @@
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Dim con As Conferencia
         If (txtbxIDConferencia.Modified = False) Then
-            con = New Conferencia(Convert.ToInt32(txtbxIDConferencia.Text))
+            con = New Conferencia(Convert.ToInt32(lstbxConferencias.SelectedItem))
             con.Siglas = txtbxSiglas.Text
             con.Nombre = txtbxNombreConferencia.Text
             con.Lugar = txtbxLugar.Text

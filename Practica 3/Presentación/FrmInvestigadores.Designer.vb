@@ -23,6 +23,7 @@ Partial Class FrmInvestigadores
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.grpbxInvestigadores = New System.Windows.Forms.GroupBox()
+        Me.txtbxTelefono = New System.Windows.Forms.MaskedTextBox()
         Me.btnArticulos = New System.Windows.Forms.Button()
         Me.btnConferencias = New System.Windows.Forms.Button()
         Me.btnGestionarAsistencias = New System.Windows.Forms.Button()
@@ -47,7 +48,6 @@ Partial Class FrmInvestigadores
         Me.lblIDInvestigador = New System.Windows.Forms.Label()
         Me.lstbxInvestigadores = New System.Windows.Forms.ListBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.txtbxTelefono = New System.Windows.Forms.MaskedTextBox()
         Me.grpbxInvestigadores.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -87,6 +87,14 @@ Partial Class FrmInvestigadores
         Me.grpbxInvestigadores.TabStop = False
         Me.grpbxInvestigadores.Text = "INVESTIGADORES"
         '
+        'txtbxTelefono
+        '
+        Me.txtbxTelefono.Location = New System.Drawing.Point(804, 132)
+        Me.txtbxTelefono.Mask = "000-000-000"
+        Me.txtbxTelefono.Name = "txtbxTelefono"
+        Me.txtbxTelefono.Size = New System.Drawing.Size(150, 22)
+        Me.txtbxTelefono.TabIndex = 25
+        '
         'btnArticulos
         '
         Me.btnArticulos.ForeColor = System.Drawing.SystemColors.ControlText
@@ -112,7 +120,7 @@ Partial Class FrmInvestigadores
         'btnGestionarAsistencias
         '
         Me.btnGestionarAsistencias.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnGestionarAsistencias.Location = New System.Drawing.Point(140, 388)
+        Me.btnGestionarAsistencias.Location = New System.Drawing.Point(170, 388)
         Me.btnGestionarAsistencias.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnGestionarAsistencias.Name = "btnGestionarAsistencias"
         Me.btnGestionarAsistencias.Size = New System.Drawing.Size(107, 76)
@@ -123,7 +131,7 @@ Partial Class FrmInvestigadores
         'btnCrearCV
         '
         Me.btnCrearCV.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnCrearCV.Location = New System.Drawing.Point(28, 388)
+        Me.btnCrearCV.Location = New System.Drawing.Point(40, 388)
         Me.btnCrearCV.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnCrearCV.Name = "btnCrearCV"
         Me.btnCrearCV.Size = New System.Drawing.Size(107, 76)
@@ -323,14 +331,6 @@ Partial Class FrmInvestigadores
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.Filter = "Microsoft Access Base de datos(*.accdb)|*.accdb"
-        '
-        'txtbxTelefono
-        '
-        Me.txtbxTelefono.Location = New System.Drawing.Point(804, 132)
-        Me.txtbxTelefono.Mask = "000-000-000"
-        Me.txtbxTelefono.Name = "txtbxTelefono"
-        Me.txtbxTelefono.Size = New System.Drawing.Size(150, 22)
-        Me.txtbxTelefono.TabIndex = 25
         '
         'FrmInvestigadores
         '

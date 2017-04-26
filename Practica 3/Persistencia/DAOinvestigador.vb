@@ -60,4 +60,8 @@
                                              ON articulos.Conferencia = conferencias.idConferencia
                                              WHERE idInvest =" & inv.IDInvestigador & ";")
     End Function
+
+    Public Function insert_autores(ByVal inv As Investigador, ar As Articulo) As Integer
+        Return AgenteBD.getAgente.modificar("INSERT INTO AUTOR VALUES ('" & inv.IDInvestigador & "','" & ar.IDArticulo & "');")
+    End Function
 End Class

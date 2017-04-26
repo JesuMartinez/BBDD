@@ -134,7 +134,7 @@ Partial Class FrmArticulos
         'btnGestionarAutores
         '
         Me.btnGestionarAutores.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnGestionarAutores.Location = New System.Drawing.Point(48, 411)
+        Me.btnGestionarAutores.Location = New System.Drawing.Point(179, 409)
         Me.btnGestionarAutores.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnGestionarAutores.Name = "btnGestionarAutores"
         Me.btnGestionarAutores.Size = New System.Drawing.Size(149, 63)

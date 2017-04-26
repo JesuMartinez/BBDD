@@ -39,7 +39,7 @@
     Private Sub btnModificarArticulo_Click(sender As Object, e As EventArgs) Handles btnModificarArticulo.Click
         Dim ar As Articulo
         If (txtbxIDArticulo.Modified = False) Then
-            ar = New Articulo(Convert.ToInt32(txtbxIDArticulo.Text))
+            ar = New Articulo(Convert.ToInt32(lstbxArticulos.SelectedItem))
             ar.Titulo = txtbxTituloArticulo.Text
             ar.Conferencia.IDConferencia = Convert.ToInt32(txtbxConferencia.Text)
             ar.PagInicio = Convert.ToInt32(txtbxPag_inicio.Text)
@@ -59,7 +59,7 @@
     End Sub
 
     Private Sub btnEliminarArticulo_Click(sender As Object, e As EventArgs) Handles btnEliminarArticulo.Click
-        Dim ar As New Articulo(Convert.ToInt32(txtbxIDArticulo.Text))
+        Dim ar As New Articulo(Convert.ToInt32(lstbxArticulos.SelectedItem))
         If MessageBox.Show("¿Desea eliminar el articulo con ID: " + ar.IDArticulo.ToString + " de la base de datos?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
             Try
                 ar.deleteArticulo()
@@ -119,5 +119,10 @@
         Else
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub btnGestionarAutores_Click(sender As Object, e As EventArgs) Handles btnGestionarAutores.Click
+        Me.Hide()
+        FrmAutores.Show()
     End Sub
 End Class

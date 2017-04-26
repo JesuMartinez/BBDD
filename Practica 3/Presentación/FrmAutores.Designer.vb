@@ -25,8 +25,8 @@ Partial Class FrmAutores
         Me.btnAplicarGuardar = New System.Windows.Forms.Button()
         Me.Eliminar = New System.Windows.Forms.Button()
         Me.Añadir = New System.Windows.Forms.Button()
-        Me.ListAutores = New System.Windows.Forms.ListBox()
-        Me.ListAutoresArticulo = New System.Windows.Forms.ListBox()
+        Me.ListbxAutores = New System.Windows.Forms.ListBox()
+        Me.ListbxAutoresArticulos = New System.Windows.Forms.ListBox()
         Me.SuspendLayout()
         '
         'btnAplicarGuardar
@@ -52,7 +52,6 @@ Partial Class FrmAutores
         '
         'Añadir
         '
-        Me.Añadir.Enabled = False
         Me.Añadir.Location = New System.Drawing.Point(296, 95)
         Me.Añadir.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Añadir.Name = "Añadir"
@@ -61,25 +60,25 @@ Partial Class FrmAutores
         Me.Añadir.Text = "Añadir"
         Me.Añadir.UseVisualStyleBackColor = True
         '
-        'ListAutores
+        'ListbxAutores
         '
-        Me.ListAutores.FormattingEnabled = True
-        Me.ListAutores.ItemHeight = 16
-        Me.ListAutores.Location = New System.Drawing.Point(42, 52)
-        Me.ListAutores.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.ListAutores.Name = "ListAutores"
-        Me.ListAutores.Size = New System.Drawing.Size(212, 404)
-        Me.ListAutores.TabIndex = 6
+        Me.ListbxAutores.FormattingEnabled = True
+        Me.ListbxAutores.ItemHeight = 16
+        Me.ListbxAutores.Location = New System.Drawing.Point(42, 52)
+        Me.ListbxAutores.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ListbxAutores.Name = "ListbxAutores"
+        Me.ListbxAutores.Size = New System.Drawing.Size(212, 404)
+        Me.ListbxAutores.TabIndex = 6
         '
-        'ListAutoresArticulo
+        'ListbxAutoresArticulos
         '
-        Me.ListAutoresArticulo.FormattingEnabled = True
-        Me.ListAutoresArticulo.ItemHeight = 16
-        Me.ListAutoresArticulo.Location = New System.Drawing.Point(490, 52)
-        Me.ListAutoresArticulo.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.ListAutoresArticulo.Name = "ListAutoresArticulo"
-        Me.ListAutoresArticulo.Size = New System.Drawing.Size(212, 404)
-        Me.ListAutoresArticulo.TabIndex = 5
+        Me.ListbxAutoresArticulos.FormattingEnabled = True
+        Me.ListbxAutoresArticulos.ItemHeight = 16
+        Me.ListbxAutoresArticulos.Location = New System.Drawing.Point(490, 52)
+        Me.ListbxAutoresArticulos.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ListbxAutoresArticulos.Name = "ListbxAutoresArticulos"
+        Me.ListbxAutoresArticulos.Size = New System.Drawing.Size(212, 404)
+        Me.ListbxAutoresArticulos.TabIndex = 5
         '
         'FrmAutores
         '
@@ -89,8 +88,8 @@ Partial Class FrmAutores
         Me.Controls.Add(Me.btnAplicarGuardar)
         Me.Controls.Add(Me.Eliminar)
         Me.Controls.Add(Me.Añadir)
-        Me.Controls.Add(Me.ListAutores)
-        Me.Controls.Add(Me.ListAutoresArticulo)
+        Me.Controls.Add(Me.ListbxAutores)
+        Me.Controls.Add(Me.ListbxAutoresArticulos)
         Me.Name = "FrmAutores"
         Me.Text = "FrmAutores"
         Me.ResumeLayout(False)
@@ -100,6 +99,6 @@ Partial Class FrmAutores
     Friend WithEvents btnAplicarGuardar As Button
     Friend WithEvents Eliminar As Button
     Friend WithEvents Añadir As Button
-    Friend WithEvents ListAutores As ListBox
-    Friend WithEvents ListAutoresArticulo As ListBox
+    Friend WithEvents ListbxAutores As ListBox
+    Friend WithEvents ListbxAutoresArticulos As ListBox
 End Class
