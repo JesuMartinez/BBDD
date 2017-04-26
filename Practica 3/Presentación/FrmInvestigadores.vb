@@ -48,7 +48,7 @@
         If (txtbxApellidosInvestigador.TextLength > 0 And txtbxDepartamento.TextLength > 0 And txtbxDespacho.TextLength > 0 And
         txtbxEdificio.TextLength > 0 And txtbxEmail.TextLength > 0 And txtbxNombreInvestigador.TextLength > 0 And txtbxTelefono.TextLength > 0) And
         txtbxIDInvestigador.TextLength > 0 Then
-            inv = New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem))
+            inv = New Investigador(Convert.ToInt32(txtbxIDInvestigador.Text))
             inv.Nombre = txtbxNombreInvestigador.Text
             inv.Apellidos = txtbxApellidosInvestigador.Text
             inv.Despacho = txtbxDespacho.Text
@@ -134,6 +134,4 @@
             e.Handled = True
         End If
     End Sub
-
-
 End Class

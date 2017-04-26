@@ -25,6 +25,13 @@
     End Sub
 
     Private Sub btnAplicarGuardar_Click(sender As Object, e As EventArgs) Handles btnAplicarGuardar.Click
-        ' Dim
+        Dim inv As Investigador, ar As Articulo
+        inv = New Investigador(Convert.ToInt32(ListbxAutoresArticulos.SelectedItem))
+        ar = New Articulo
+        Try
+            inv.insertAutores()
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+        End Try
     End Sub
 End Class

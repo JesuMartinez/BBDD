@@ -61,8 +61,8 @@
                                              WHERE idInvest =" & inv.IDInvestigador & ";")
     End Function
 
-    Public Function insert_autores(ByVal inv As Investigador, ar As Articulo) As Integer
-        Return AgenteBD.getAgente.modificar("INSERT INTO AUTOR VALUES ('" & inv.IDInvestigador & "','" & ar.IDArticulo & "');")
+    Public Function insert_autores(ByVal inv As Investigador, ByVal ar As Articulo) As Integer
+        Return AgenteBD.getAgente.modificar("INSERT INTO AUTOR VALUES ('" & inv.IDInvestigador & "','" & ar.IDArticulo & "') WHERE IdInvest=" & inv.IDInvestigador & " AND idArticulo=" & ar.IDArticulo & ";")
     End Function
 
     Public Function asiste(ByVal conf As Conferencia, ByVal inv As Investigador) As Integer
