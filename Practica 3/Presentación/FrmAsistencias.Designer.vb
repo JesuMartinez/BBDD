@@ -22,82 +22,85 @@ Partial Class FrmAsistencias
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.ListConferenciasAsiste = New System.Windows.Forms.ListBox()
-        Me.ListConferencias = New System.Windows.Forms.ListBox()
-        Me.Añadir = New System.Windows.Forms.Button()
-        Me.Eliminar = New System.Windows.Forms.Button()
+        Me.lstConferenciasAsiste = New System.Windows.Forms.ListBox()
+        Me.lstConferencias = New System.Windows.Forms.ListBox()
+        Me.btnAñadir = New System.Windows.Forms.Button()
+        Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnAplicarGuardar = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'ListConferenciasAsiste
+        'lstConferenciasAsiste
         '
-        Me.ListConferenciasAsiste.FormattingEnabled = True
-        Me.ListConferenciasAsiste.Location = New System.Drawing.Point(383, 32)
-        Me.ListConferenciasAsiste.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.ListConferenciasAsiste.Name = "ListConferenciasAsiste"
-        Me.ListConferenciasAsiste.Size = New System.Drawing.Size(160, 329)
-        Me.ListConferenciasAsiste.TabIndex = 0
+        Me.lstConferenciasAsiste.FormattingEnabled = True
+        Me.lstConferenciasAsiste.ItemHeight = 16
+        Me.lstConferenciasAsiste.Location = New System.Drawing.Point(511, 39)
+        Me.lstConferenciasAsiste.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.lstConferenciasAsiste.Name = "lstConferenciasAsiste"
+        Me.lstConferenciasAsiste.Size = New System.Drawing.Size(212, 404)
+        Me.lstConferenciasAsiste.TabIndex = 0
         '
-        'ListConferencias
+        'lstConferencias
         '
-        Me.ListConferencias.FormattingEnabled = True
-        Me.ListConferencias.Location = New System.Drawing.Point(47, 32)
-        Me.ListConferencias.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.ListConferencias.Name = "ListConferencias"
-        Me.ListConferencias.Size = New System.Drawing.Size(160, 329)
-        Me.ListConferencias.TabIndex = 1
+        Me.lstConferencias.FormattingEnabled = True
+        Me.lstConferencias.ItemHeight = 16
+        Me.lstConferencias.Location = New System.Drawing.Point(63, 39)
+        Me.lstConferencias.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.lstConferencias.Name = "lstConferencias"
+        Me.lstConferencias.Size = New System.Drawing.Size(212, 404)
+        Me.lstConferencias.TabIndex = 1
         '
-        'Añadir
+        'btnAñadir
         '
-        Me.Añadir.Enabled = False
-        Me.Añadir.Location = New System.Drawing.Point(238, 67)
-        Me.Añadir.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.Añadir.Name = "Añadir"
-        Me.Añadir.Size = New System.Drawing.Size(98, 45)
-        Me.Añadir.TabIndex = 2
-        Me.Añadir.Text = "Añadir"
-        Me.Añadir.UseVisualStyleBackColor = True
+        Me.btnAñadir.Enabled = False
+        Me.btnAñadir.Location = New System.Drawing.Point(317, 82)
+        Me.btnAñadir.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAñadir.Name = "btnAñadir"
+        Me.btnAñadir.Size = New System.Drawing.Size(131, 55)
+        Me.btnAñadir.TabIndex = 2
+        Me.btnAñadir.Text = "Añadir"
+        Me.btnAñadir.UseVisualStyleBackColor = True
         '
-        'Eliminar
+        'btnEliminar
         '
-        Me.Eliminar.Enabled = False
-        Me.Eliminar.Location = New System.Drawing.Point(238, 128)
-        Me.Eliminar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.Eliminar.Name = "Eliminar"
-        Me.Eliminar.Size = New System.Drawing.Size(98, 40)
-        Me.Eliminar.TabIndex = 3
-        Me.Eliminar.Text = "Eliminar"
-        Me.Eliminar.UseVisualStyleBackColor = True
+        Me.btnEliminar.Enabled = False
+        Me.btnEliminar.Location = New System.Drawing.Point(317, 158)
+        Me.btnEliminar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(131, 49)
+        Me.btnEliminar.TabIndex = 3
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = True
         '
         'btnAplicarGuardar
         '
-        Me.btnAplicarGuardar.Location = New System.Drawing.Point(238, 266)
+        Me.btnAplicarGuardar.Location = New System.Drawing.Point(317, 327)
+        Me.btnAplicarGuardar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAplicarGuardar.Name = "btnAplicarGuardar"
-        Me.btnAplicarGuardar.Size = New System.Drawing.Size(98, 95)
+        Me.btnAplicarGuardar.Size = New System.Drawing.Size(131, 117)
         Me.btnAplicarGuardar.TabIndex = 4
         Me.btnAplicarGuardar.Text = "Aplicar y guardar"
         Me.btnAplicarGuardar.UseVisualStyleBackColor = True
         '
         'FrmAsistencias
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(572, 407)
+        Me.ClientSize = New System.Drawing.Size(763, 501)
         Me.Controls.Add(Me.btnAplicarGuardar)
-        Me.Controls.Add(Me.Eliminar)
-        Me.Controls.Add(Me.Añadir)
-        Me.Controls.Add(Me.ListConferencias)
-        Me.Controls.Add(Me.ListConferenciasAsiste)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Controls.Add(Me.btnEliminar)
+        Me.Controls.Add(Me.btnAñadir)
+        Me.Controls.Add(Me.lstConferencias)
+        Me.Controls.Add(Me.lstConferenciasAsiste)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "FrmAsistencias"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents ListConferenciasAsiste As ListBox
-    Friend WithEvents ListConferencias As ListBox
-    Friend WithEvents Añadir As Button
-    Friend WithEvents Eliminar As Button
+    Friend WithEvents lstConferenciasAsiste As ListBox
+    Friend WithEvents lstConferencias As ListBox
+    Friend WithEvents btnAñadir As Button
+    Friend WithEvents btnEliminar As Button
     Friend WithEvents btnAplicarGuardar As Button
 End Class

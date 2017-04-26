@@ -120,4 +120,8 @@
             e.Handled = True
         End If
     End Sub
+
+    Private Sub btnGestionarAutores_Click(sender As Object, e As EventArgs) Handles btnGestionarAutores.Click
+
+    End Sub
 End Class

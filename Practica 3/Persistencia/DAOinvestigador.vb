@@ -38,7 +38,7 @@
     End Sub
 
     Public Function insert(ByVal inv As Investigador) As Integer
-        Return AgenteBD.getAgente().modificar("INSERT INTO INVESTIGADORES VALUES ('" & inv.IDInvestigador & "','" & inv.Nombre & "','" & inv.Apellidos & "','" & inv.Despacho & "','" & inv.Edificio & "','" & inv.Departamento & "','" & inv.Telefono & "','" & inv.Email & "');")
+        Return AgenteBD.getAgente().modificar("INSERT INTO INVESTIGADORES VALUES (" & inv.IDInvestigador & ",'" & inv.Nombre & "','" & inv.Apellidos & "','" & inv.Despacho & "','" & inv.Edificio & "','" & inv.Departamento & "','" & inv.Telefono & "','" & inv.Email & "');")
     End Function
 
     Public Function update(ByVal inv As Investigador) As Integer
@@ -59,5 +59,9 @@
                                              JOIN conferencias
                                              ON articulos.Conferencia = conferencias.idConferencia
                                              WHERE idInvest =" & inv.IDInvestigador & ";")
+    End Function
+
+    Public Function asiste(ByVal conf As Conferencia, ByVal inv As Investigador) As Integer
+        Return AgenteBD.getAgente.modificar("INSERT INTO ASISTE VALUES ('" & conf.IDConferencia & "','" & inv.IDInvestigador & "')" & "WHERE Conferencia='" & conf.IDConferencia & "' AND Invest='" & inv.IDInvestigador & "';")
     End Function
 End Class

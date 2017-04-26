@@ -46,4 +46,9 @@
     Public Function delete(ByVal con As Conferencia) As Integer
         Return AgenteBD.getAgente.modificar("DELETE FROM CONFERENCIAS WHERE idConferencia=" & con.IDConferencia & ";")
     End Function
+
+    'Public Function asiste(ByVal conf As Conferencia, ByVal inv As Investigador) As Integer
+    'Return AgenteBD.getAgente.modificar("INSERT INTO ASISTE VALUES ('" & conf.IDConferencia & "','" & inv.IDInvestigador & "')" & "WHERE Conferencia='" & conf.IDConferencia & "' AND Invest='" & inv.IDInvestigador & "';")
+    'End Function
+
 End Class

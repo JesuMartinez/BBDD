@@ -23,6 +23,7 @@ Partial Class FrmInvestigadores
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.grpbxInvestigadores = New System.Windows.Forms.GroupBox()
+        Me.txtbxTelefono = New System.Windows.Forms.MaskedTextBox()
         Me.btnArticulos = New System.Windows.Forms.Button()
         Me.btnConferencias = New System.Windows.Forms.Button()
         Me.btnGestionarAsistencias = New System.Windows.Forms.Button()
@@ -47,7 +48,6 @@ Partial Class FrmInvestigadores
         Me.lblIDInvestigador = New System.Windows.Forms.Label()
         Me.lstbxInvestigadores = New System.Windows.Forms.ListBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.txtbxTelefono = New System.Windows.Forms.MaskedTextBox()
         Me.grpbxInvestigadores.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -86,6 +86,14 @@ Partial Class FrmInvestigadores
         Me.grpbxInvestigadores.TabIndex = 0
         Me.grpbxInvestigadores.TabStop = False
         Me.grpbxInvestigadores.Text = "INVESTIGADORES"
+        '
+        'txtbxTelefono
+        '
+        Me.txtbxTelefono.Location = New System.Drawing.Point(804, 132)
+        Me.txtbxTelefono.Mask = "000-000-000"
+        Me.txtbxTelefono.Name = "txtbxTelefono"
+        Me.txtbxTelefono.Size = New System.Drawing.Size(150, 22)
+        Me.txtbxTelefono.TabIndex = 25
         '
         'btnArticulos
         '
@@ -323,14 +331,6 @@ Partial Class FrmInvestigadores
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.Filter = "Microsoft Access Base de datos(*.accdb)|*.accdb"
-        '
-        'txtbxTelefono
-        '
-        Me.txtbxTelefono.Location = New System.Drawing.Point(804, 132)
-        Me.txtbxTelefono.Mask = "000-000-000"
-        Me.txtbxTelefono.Name = "txtbxTelefono"
-        Me.txtbxTelefono.Size = New System.Drawing.Size(150, 22)
-        Me.txtbxTelefono.TabIndex = 25
         '
         'FrmInvestigadores
         '

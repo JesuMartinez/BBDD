@@ -132,4 +132,8 @@
     Public Sub generarCV()
         Me._daoInvestigador.generate_cv(Me)
     End Sub
+
+    Public Sub asiste()
+        Me._daoInvestigador.asiste(Articulo.Conferencia, Me)
+    End Sub
 End Class
