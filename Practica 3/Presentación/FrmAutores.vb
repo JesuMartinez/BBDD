@@ -25,6 +25,6 @@
     End Sub
 
     Private Sub btnAplicarGuardar_Click(sender As Object, e As EventArgs) Handles btnAplicarGuardar.Click
-        Dim
+        ' Dim
     End Sub
 End Class

@@ -10,7 +10,7 @@
         Try
             conf.readAll()
             For Each conf In conf.DAOConferencia.ListaConferencias
-                lstConferencias.Items.Add(conf.IDConferencia)
+                ListbxConferencias.Items.Add(conf.IDConferencia)
             Next
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
@@ -22,34 +22,34 @@
         cargarAsistencias()
     End Sub
 
-    Private Sub Añadir_Click(sender As Object, e As EventArgs) Handles btnAñadir.Click
-        lstConferenciasAsiste.Items.Add(lstConferencias.SelectedItem)
-        lstConferencias.Items.Remove(lstConferencias.SelectedItem)
+    Private Sub Añadir_Click(sender As Object, e As EventArgs) Handles Añadir.Click
+        ListbxConferenciasAsiste.Items.Add(ListbxConferencias.SelectedItem)
+        ListbxConferencias.Items.Remove(ListbxConferencias.SelectedItem)
     End Sub
 
-    Private Sub lstConferencias_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstConferencias.SelectedIndexChanged
-        If (lstConferencias.SelectedIndex > -1) Then
-            lstConferenciasAsiste.SelectedIndex = -1
-            btnAñadir.Enabled = True
+    Private Sub lstConferencias_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListbxConferencias.SelectedIndexChanged
+        If (ListbxConferencias.SelectedIndex > -1) Then
+            ListbxConferenciasAsiste.SelectedIndex = -1
+            Añadir.Enabled = True
         Else
-            btnAñadir.Enabled = False
+            Añadir.Enabled = False
 
         End If
 
     End Sub
 
-    Private Sub lstConferenciasAsiste_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstConferenciasAsiste.SelectedIndexChanged
-        If (lstConferenciasAsiste.SelectedIndex > -1) Then
-            lstConferencias.SelectedIndex = -1
-            btnEliminar.Enabled = True
+    Private Sub lstConferenciasAsiste_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListbxConferenciasAsiste.SelectedIndexChanged
+        If (ListbxConferenciasAsiste.SelectedIndex > -1) Then
+            ListbxConferencias.SelectedIndex = -1
+            Eliminar.Enabled = True
         Else
-            btnEliminar.Enabled = False
+            Eliminar.Enabled = False
 
         End If
     End Sub
 
-    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        lstConferencias.Items.Add(lstConferenciasAsiste.SelectedItem)
-        lstConferenciasAsiste.Items.Remove(lstConferenciasAsiste.SelectedItem)
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles Eliminar.Click
+        ListbxConferencias.Items.Add(ListbxConferenciasAsiste.SelectedItem)
+        ListbxConferenciasAsiste.Items.Remove(ListbxConferenciasAsiste.SelectedItem)
     End Sub
 End Class
