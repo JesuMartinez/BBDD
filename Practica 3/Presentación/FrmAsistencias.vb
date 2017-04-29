@@ -11,6 +11,7 @@
             conf.readAll()
             For Each conf In conf.DAOConferencia.ListaConferencias
                 ListbxConferencias.Items.Add(conf.IDConferencia)
+
             Next
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
@@ -51,5 +52,8 @@
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles Eliminar.Click
         ListbxConferencias.Items.Add(ListbxConferenciasAsiste.SelectedItem)
         ListbxConferenciasAsiste.Items.Remove(ListbxConferenciasAsiste.SelectedItem)
+
     End Sub
+
+
 End Class
