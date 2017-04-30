@@ -8,6 +8,7 @@
     Private _telefono As String
     Private _email As String
     Private _articulo As Articulo
+    Private _listaConferencias As Microsoft.VisualBasic.Collection
     Private _orden As Integer
     Private _daoInvestigador As DAOInvestigador
     Private _conferencia As Conferencia
@@ -34,6 +35,15 @@
         End Get
         Set(value As Integer)
             Me._idInvest = value
+        End Set
+    End Property
+
+    Public Property ListaConferencias() As Microsoft.VisualBasic.Collection
+        Get
+            Return Me._listaConferencias
+        End Get
+        Set(value As Microsoft.VisualBasic.Collection)
+            Me._listaConferencias = value
         End Set
     End Property
 

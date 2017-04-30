@@ -5,6 +5,7 @@
         If (lstbxInvestigadores.SelectedIndex > -1) Then
             btnModificar.Enabled = True
             btnEliminar.Enabled = True
+            btnGestionarAsistencias.Enabled = True
             inv = New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem))
             Try
                 inv.readInvestigador()
@@ -23,6 +24,7 @@
         Else
             btnModificar.Enabled = False
             btnEliminar.Enabled = False
+            btnGestionarAsistencias.Enabled = False
         End If
     End Sub
 

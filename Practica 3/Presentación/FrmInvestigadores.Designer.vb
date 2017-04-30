@@ -119,8 +119,9 @@ Partial Class FrmInvestigadores
         '
         'btnGestionarAsistencias
         '
+        Me.btnGestionarAsistencias.Enabled = False
         Me.btnGestionarAsistencias.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnGestionarAsistencias.Location = New System.Drawing.Point(170, 388)
+        Me.btnGestionarAsistencias.Location = New System.Drawing.Point(181, 374)
         Me.btnGestionarAsistencias.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnGestionarAsistencias.Name = "btnGestionarAsistencias"
         Me.btnGestionarAsistencias.Size = New System.Drawing.Size(107, 76)
@@ -131,7 +132,7 @@ Partial Class FrmInvestigadores
         'btnCrearCV
         '
         Me.btnCrearCV.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnCrearCV.Location = New System.Drawing.Point(40, 388)
+        Me.btnCrearCV.Location = New System.Drawing.Point(28, 374)
         Me.btnCrearCV.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnCrearCV.Name = "btnCrearCV"
         Me.btnCrearCV.Size = New System.Drawing.Size(107, 76)

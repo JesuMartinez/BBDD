@@ -87,6 +87,7 @@
         If (lstbxArticulos.SelectedIndex > -1) Then
             btnModificarArticulo.Enabled = True
             btnEliminarArticulo.Enabled = True
+            btnGestionarAutores.Enabled = True
             art = New Articulo(Convert.ToInt32(lstbxArticulos.SelectedItem))
             Try
                 art.readArticulo()
@@ -102,6 +103,7 @@
         Else
             btnModificarArticulo.Enabled = False
             btnEliminarArticulo.Enabled = False
+            btnGestionarAutores.Enabled = False
         End If
     End Sub
 

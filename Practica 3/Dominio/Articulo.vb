@@ -4,6 +4,7 @@
     Private _conferencia As Conferencia
     Private _pagInicio As Integer
     Private _pagFin As Integer
+    Private _listaAutores As Microsoft.VisualBasic.Collection
     Private _daoArticulo As DAOArticulo
 
     Public Sub New(ByVal idArticulo As Integer)
@@ -22,6 +23,15 @@
         End Get
         Set(value As Integer)
             Me._idArticulo = value
+        End Set
+    End Property
+
+    Public Property ListaAutores() As Microsoft.VisualBasic.Collection
+        Get
+            Return Me._listaAutores
+        End Get
+        Set(value As Microsoft.VisualBasic.Collection)
+            Me._listaAutores = value
         End Set
     End Property
 
