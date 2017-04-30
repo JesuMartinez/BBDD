@@ -1,23 +1,32 @@
 ﻿Public Class FrmAsistencias
     Private Sub btnAplicarGuardar_Click(sender As Object, e As EventArgs) Handles btnAplicarGuardar.Click
         Dim inv As Investigador
-        inv = New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem), Convert.ToInt32(ListbxConferenciasAsiste.SelectedItem))
+        Dim conf As New Conferencia
+        inv = New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem))
         Try
-            inv.asiste()
-            ListbxConferenciasAsiste.Items.Remove(ListbxConferenciasAsiste.SelectedItem)
+
+
+            For Each conf In ListbxConferenciasAsiste.Items
+                inv.ListaConferencias.Add(conf)
+            Next
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
             Exit Sub
         End Try
     End Sub
 
-    Private Sub cargarAsistencias()
-        Dim conf As New Conferencia
+    Private Sub cargarConferencias()
+        Dim conf, item As New Conferencia
+        Dim inv As New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem))
         Try
             conf.readAll()
             For Each conf In conf.DAOConferencia.ListaConferencias
-                ListbxConferencias.Items.Add(conf.IDConferencia)
-
+                For Each item In inv.ListaConferencias
+                    If conf.IDConferencia <> item.IDConferencia Then
+                        'faltaria poder cargar solo as conferencias que no asiste el investigador seleccionado'
+                        ListbxConferencias.Items.Add(conf.IDConferencia)
+                    End If
+                Next
             Next
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
@@ -39,13 +48,13 @@
     End Sub
 
     Private Sub FrmAsistencias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cargarAsistencias()
         cargarInvestigadores()
     End Sub
 
     Private Sub Añadir_Click(sender As Object, e As EventArgs) Handles Añadir.Click
         ListbxConferenciasAsiste.Items.Add(ListbxConferencias.SelectedItem)
         ListbxConferencias.Items.Remove(ListbxConferencias.SelectedItem)
+        btnAplicarGuardar.Enabled = True
     End Sub
 
     Private Sub lstConferencias_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListbxConferencias.SelectedIndexChanged
@@ -75,5 +84,17 @@
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         Me.Hide()
         FrmInvestigadores.Show()
+    End Sub
+
+
+    Private Sub lstbxInvestigadores_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstbxInvestigadores.SelectedIndexChanged
+        ListbxConferencias.Items.Clear()
+        cargarConferencias()
+        'cargamos la coleccion de conferencias de cada investiador en Conferencias Asiste'
+        Dim conf As New Conferencia
+        Dim inv As New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem))
+        For Each conf In inv.ListaConferencias
+            ListbxConferenciasAsiste.Items.Add(conf)
+        Next
     End Sub
 End Class
