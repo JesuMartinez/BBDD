@@ -20,6 +20,8 @@
         Dim inv As New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem))
         Try
             conf.readAll()
+            item.readAll()
+
             For Each conf In conf.DAOConferencia.ListaConferencias
                 For Each item In inv.ListaConferencias
                     If conf.IDConferencia <> item.IDConferencia Then
@@ -90,8 +92,8 @@
     Private Sub lstbxInvestigadores_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstbxInvestigadores.SelectedIndexChanged
         ListbxConferencias.Items.Clear()
         cargarConferencias()
-        'cargamos la coleccion de conferencias de cada investiador en Conferencias Asiste'
         Dim conf As New Conferencia
+        'cargamos la coleccion de conferencias de cada investiador en Conferencias Asiste'
         Dim inv As New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem))
         For Each conf In inv.ListaConferencias
             ListbxConferenciasAsiste.Items.Add(conf)
