@@ -39,7 +39,7 @@
     End Sub
 
     Private Sub FrmAsistencias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'cargarAsistencias()
+        cargarAsistencias()
         cargarInvestigadores()
     End Sub
 
