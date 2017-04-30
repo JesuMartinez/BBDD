@@ -16,15 +16,15 @@
     End Sub
 
     Private Sub cargarConferencias()
-        Dim conf, item As New Conferencia
+        Dim conf As New Conferencia
+        Dim it As New Conferencia
         Dim inv As New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem))
         Try
             conf.readAll()
-            item.readAll()
-
             For Each conf In conf.DAOConferencia.ListaConferencias
-                For Each item In inv.ListaConferencias
-                    If conf.IDConferencia <> item.IDConferencia Then
+                ' da un error en la siguiente line (26)
+                For Each it In inv.ListaConferencias
+                    If conf.IDConferencia <> it.IDConferencia Then
                         'faltaria poder cargar solo as conferencias que no asiste el investigador seleccionado'
                         ListbxConferencias.Items.Add(conf.IDConferencia)
                     End If
@@ -95,6 +95,7 @@
         Dim conf As New Conferencia
         'cargamos la coleccion de conferencias de cada investiador en Conferencias Asiste'
         Dim inv As New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem))
+        'da un error en la siguiente linea(99)
         For Each conf In inv.ListaConferencias
             ListbxConferenciasAsiste.Items.Add(conf)
         Next
