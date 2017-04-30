@@ -10,10 +10,18 @@
     Private _articulo As Articulo
     Private _orden As Integer
     Private _daoInvestigador As DAOInvestigador
+    Private _conferencia As Conferencia
 
     Public Sub New(ByVal idInvest As Integer)
         Me._idInvest = idInvest
         Me._daoInvestigador = New DAOInvestigador
+    End Sub
+    'Constructor para inicializar las conferencias de un investigador con un id determinado
+    Public Sub New(ByVal idInvest As Integer, ByVal idConferencia As Integer)
+        Me._idInvest = idInvest
+        Me._daoInvestigador = New DAOInvestigador
+        Me._conferencia = New Conferencia
+        Me._conferencia.IDConferencia = idConferencia
     End Sub
 
     Public Sub New()
@@ -92,7 +100,14 @@
         End Set
     End Property
 
-
+    Public Property Conferencia As Conferencia
+        Get
+            Return Me._conferencia
+        End Get
+        Set(value As Conferencia)
+            Me._conferencia = value
+        End Set
+    End Property
     Public Property Email() As String
         Get
             Return Me._email
@@ -130,15 +145,15 @@
         Me._daoInvestigador.delete(Me)
     End Sub
 
-    Public Sub generarCV()
-        Me._daoInvestigador.generate_cv(Me)
-    End Sub
+    'Public Sub generarCV()
+    'Me._daoInvestigador.generate_cv(Me)
+    'End Sub
 
-    Public Sub insertAutores()
-        Me._daoInvestigador.insert_autores(Me, Me._articulo)
-    End Sub
+    'Public Sub insertAutores()
+    'Me._daoInvestigador.insert_autores(Me, Me._articulo)
+    'End Sub
 
     Public Sub asiste()
-        Me._daoInvestigador.asiste(Articulo.Conferencia, Me)
+        Me._daoInvestigador.asiste(Me, Me._conferencia)
     End Sub
 End Class

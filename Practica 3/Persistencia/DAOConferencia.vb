@@ -16,7 +16,7 @@
 
     Public Sub read(ByRef con As Conferencia)
         Dim leer As OleDb.OleDbDataReader
-        leer = AgenteBD.getAgente.leer("SELECT * FROM CONFERENCIAS WHERE idConferencia=" & con.IDConferencia & ";")
+        leer = AgenteBD.getAgente.leer("SELECT * FROM CONFERENCIAS WHERE idInvest=" & con.IDConferencia & ";")
         While leer.Read
             con.IDConferencia = leer.GetInt32(0)
             con.Siglas = leer.GetValue(1).ToString
@@ -46,9 +46,4 @@
     Public Function delete(ByVal con As Conferencia) As Integer
         Return AgenteBD.getAgente.modificar("DELETE FROM CONFERENCIAS WHERE idConferencia=" & con.IDConferencia & ";")
     End Function
-
-    'Public Function asiste(ByVal conf As Conferencia, ByVal inv As Investigador) As Integer
-    'Return AgenteBD.getAgente.modificar("INSERT INTO ASISTE VALUES ('" & conf.IDConferencia & "','" & inv.IDInvestigador & "')" & "WHERE Conferencia='" & conf.IDConferencia & "' AND Invest='" & inv.IDInvestigador & "';")
-    'End Function
-
 End Class

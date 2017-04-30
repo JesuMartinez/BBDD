@@ -49,23 +49,23 @@
         Return AgenteBD.getAgente.modificar("DELETE FROM INVESTIGADORES WHERE idInvest=" & inv.IDInvestigador & ";")
     End Function
 
-    Public Function generate_cv(ByVal inv As Investigador) As Integer
-        Return AgenteBD.getAgente.modificar("SELECT investigadores.Nombre, articulos.Titulo, conferencias.Siglas, articulos.pag_inicio, articulos.pag_fin, conferencias.Lugar, conferencias.Fecha_inicio
-                                             FROM investigadores 
-                                             JOIN autor
-                                             ON investigadores.idInvest = autor.Invest
-                                             JOIN articulos
-                                             ON autor.Articulo = articulos.idArticulo
-                                             JOIN conferencias
-                                             ON articulos.Conferencia = conferencias.idConferencia
-                                             WHERE idInvest =" & inv.IDInvestigador & ";")
-    End Function
+    'Public Function generate_cv(ByVal inv As Investigador) As Integer
+    'Return AgenteBD.getAgente.modificar("SELECT investigadores.Nombre, articulos.Titulo, conferencias.Siglas, articulos.pag_inicio, articulos.pag_fin, conferencias.Lugar, conferencias.Fecha_inicio
+    '                                        FROM investigadores 
+    '                                       JOIN autor
+    '                                      ON investigadores.idInvest = autor.Invest
+    '                                     JOIN articulos
+    'On autor.Articulo = articulos.idArticulo
+    '                                        JOIN conferencias
+    'On articulos.Conferencia = conferencias.idConferencia
+    '                                        WHERE idInvest =" & inv.IDInvestigador & ";")
+    'End Function
 
-    Public Function insert_autores(ByVal inv As Investigador, ByVal ar As Articulo) As Integer
-        Return AgenteBD.getAgente.modificar("INSERT INTO AUTOR VALUES ('" & inv.IDInvestigador & "','" & ar.IDArticulo & "') WHERE IdInvest=" & inv.IDInvestigador & " AND idArticulo=" & ar.IDArticulo & ";")
-    End Function
+    'Public Function insert_autores(ByVal inv As Investigador, ByVal ar As Articulo) As Integer
+    'Return AgenteBD.getAgente.modificar("INSERT INTO AUTOR VALUES ('" & inv.IDInvestigador & "','" & ar.IDArticulo & "') WHERE IdInvest=" & inv.IDInvestigador & " AND idArticulo=" & ar.IDArticulo & ";")
+    'End Function
 
-    Public Function asiste(ByVal conf As Conferencia, ByVal inv As Investigador) As Integer
-        Return AgenteBD.getAgente.modificar("INSERT INTO ASISTE VALUES ('" & conf.IDConferencia & "','" & inv.IDInvestigador & "')" & "WHERE Conferencia='" & conf.IDConferencia & "' AND Invest='" & inv.IDInvestigador & "';")
+    Public Function asiste(ByVal inv As Investigador, ByVal conf As Conferencia) As Integer
+        Return AgenteBD.getAgente.modificar("INSERT INTO ASISTE VALUES ('" & conf.IDConferencia & "','" & inv.IDInvestigador & "');")
     End Function
 End Class

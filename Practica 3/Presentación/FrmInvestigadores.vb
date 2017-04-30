@@ -40,7 +40,11 @@
     End Sub
 
     Private Sub FrmInvestigadores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        OpenFileDialog1.ShowDialog()
+        If OpenFileDialog1.ShowDialog = DialogResult.OK Then
+        Else
+            Me.Close()
+        End If
+
     End Sub
 
     Private Sub btnAñadir_Click(sender As Object, e As EventArgs) Handles btnAñadir.Click
@@ -121,10 +125,10 @@
         FrmAsistencias.Show()
     End Sub
 
-    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
+    Public Function investigadorSeleccionado() As Investigador
+        Dim inv = New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem))
+        Return inv
+    End Function
     Private Sub txtbxIDInvestigador_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtbxIDInvestigador.KeyPress
         If Char.IsDigit(e.KeyChar) Then
             e.Handled = False

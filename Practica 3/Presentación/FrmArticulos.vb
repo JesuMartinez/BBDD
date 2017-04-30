@@ -99,12 +99,6 @@
             txtbxPag_inicio.Text = art.PagInicio.ToString
             txtbxPag_fin.Text = art.PagFin.ToString
             txtbxConferencia.Text = art.Conferencia.IDConferencia.ToString
-            'Try
-            'art.readAutores()
-            'Catch ex As Exception
-            'MessageBox.Show(ex.ToString)
-            'Exit Sub
-            'End Try
         Else
             btnModificarArticulo.Enabled = False
             btnEliminarArticulo.Enabled = False

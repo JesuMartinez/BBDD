@@ -29,7 +29,7 @@
         inv = New Investigador(Convert.ToInt32(ListbxAutoresArticulos.SelectedItem))
         ar = New Articulo
         Try
-            inv.insertAutores()
+            'inv.insertAutores()
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
         End Try
