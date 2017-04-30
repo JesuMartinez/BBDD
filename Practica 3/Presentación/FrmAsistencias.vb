@@ -4,10 +4,8 @@
         Dim conf As New Conferencia
         inv = New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem))
         Try
-
-
             For Each conf In ListbxConferenciasAsiste.Items
-                inv.ListaConferencias.Add(conf)
+                inv.ListaConferencias.Add(conf) 'inv.Conferencia.DAOConferencia.ListaConferencias.Add(conf) ¿¿¿¿¿podria valer??????
             Next
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
@@ -22,8 +20,8 @@
         Try
             conf.readAll()
             For Each conf In conf.DAOConferencia.ListaConferencias
-                ' da un error en la siguiente line (26)
-                For Each it In inv.ListaConferencias
+                ' da un error en la siguiente line (24)
+                For Each it In inv.ListaConferencias 'For Each it In inv.Conferencia.DAOConferencia.ListaConferencias ¿¿¿¿¿podria valer????
                     If conf.IDConferencia <> it.IDConferencia Then
                         'faltaria poder cargar solo as conferencias que no asiste el investigador seleccionado'
                         ListbxConferencias.Items.Add(conf.IDConferencia)
@@ -95,8 +93,8 @@
         Dim conf As New Conferencia
         'cargamos la coleccion de conferencias de cada investiador en Conferencias Asiste'
         Dim inv As New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem))
-        'da un error en la siguiente linea(99)
-        For Each conf In inv.ListaConferencias
+        'da un error en la siguiente linea(97)
+        For Each conf In inv.ListaConferencias 'For Each conf In inv.Conferencia.DAOConferencia.ListaConferencias    ¿¿¿¿podria valer????
             ListbxConferenciasAsiste.Items.Add(conf)
         Next
     End Sub
