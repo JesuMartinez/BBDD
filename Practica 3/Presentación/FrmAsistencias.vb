@@ -1,14 +1,10 @@
 ﻿Public Class FrmAsistencias
     Private Sub btnAplicarGuardar_Click(sender As Object, e As EventArgs) Handles btnAplicarGuardar.Click
         Dim inv As Investigador
-        Dim conf As New Conferencia
-        inv = New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem))
+        inv = New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem), Convert.ToInt32(ListbxConferenciasAsiste.SelectedItem))
         Try
-            For Each conf In ListbxConferenciasAsiste.Items
-                inv.ListaConferencias.Add(conf) 'inv.Conferencia.DAOConferencia.ListaConferencias.Add(conf) ¿¿¿¿¿podria valer??????
-            Next
-            ListbxConferencias.Items.Clear()
-            ListbxConferenciasAsiste.Items.Clear()
+            inv.asiste()
+            ListbxConferenciasAsiste.Items.Remove(ListbxConferenciasAsiste.SelectedItem)
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
             Exit Sub
@@ -25,7 +21,6 @@
                 If inv.ListaConferencias.Count > 0 Then
                     For Each it In inv.ListaConferencias
                         If conf.IDConferencia <> it.IDConferencia Then
-                            'faltaria poder cargar solo as conferencias que no asiste el investigador seleccionado'
                             ListbxConferencias.Items.Add(conf.IDConferencia)
                         End If
                     Next
@@ -91,19 +86,19 @@
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         ListbxConferencias.Items.Clear()
         ListbxConferenciasAsiste.Items.Clear()
-        Me.Hide()
+        Me.Close()
         FrmInvestigadores.Show()
     End Sub
 
     Private Sub lstbxInvestigadores_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstbxInvestigadores.SelectedIndexChanged
-        'ListbxConferencias.Items.Clear()
+        ListbxConferencias.Items.Clear()
         cargarConferencias()
         Dim conf As New Conferencia
         'cargamos la coleccion de conferencias de cada investiador en Conferencias Asiste'
         Dim inv As New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem))
         'da un error en la siguiente linea(97)
-        For Each conf In inv.ListaConferencias 'For Each conf In inv.Conferencia.DAOConferencia.ListaConferencias    ¿¿¿¿podria valer????
-            ListbxConferenciasAsiste.Items.Add(conf)
+        For Each conf In inv.Conferencia.DAOConferencia.ListaConferencias 'For Each conf In inv.Conferencia.DAOConferencia.ListaConferencias    ¿¿¿¿podria valer????
+            ListbxConferenciasAsiste.Items.Add(conf.IDConferencia)
         Next
     End Sub
 End Class
