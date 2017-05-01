@@ -7,6 +7,8 @@
             For Each conf In ListbxConferenciasAsiste.Items
                 inv.ListaConferencias.Add(conf) 'inv.Conferencia.DAOConferencia.ListaConferencias.Add(conf) ¿¿¿¿¿podria valer??????
             Next
+            ListbxConferencias.Items.Clear()
+            ListbxConferenciasAsiste.Items.Clear()
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
             Exit Sub
@@ -85,6 +87,8 @@
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        ListbxConferencias.Items.Clear()
+        ListbxConferenciasAsiste.Items.Clear()
         Me.Hide()
         FrmInvestigadores.Show()
     End Sub
