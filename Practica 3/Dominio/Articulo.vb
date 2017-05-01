@@ -6,11 +6,19 @@
     Private _pagFin As Integer
     Private _listaAutores As Microsoft.VisualBasic.Collection
     Private _daoArticulo As DAOArticulo
+    Private _investigador As Investigador
 
     Public Sub New(ByVal idArticulo As Integer)
         Me._idArticulo = idArticulo
         Me._daoArticulo = New DAOArticulo
         Me._conferencia = New Conferencia
+    End Sub
+
+    Public Sub New(ByVal idInvest As Integer, ByVal idArticulo As Integer)
+        Me._investigador.IDInvestigador = idInvest
+        Me._daoArticulo = New DAOArticulo
+        Me._investigador = New Investigador
+        Me._idArticulo = idArticulo
     End Sub
 
     Public Sub New()

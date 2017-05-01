@@ -28,13 +28,6 @@
         Me._conferencia.IDConferencia = idConferencia
     End Sub
 
-    'Public Sub New(ByVal idInvest As Integer, ByVal idArticulo As Integer)
-    'Me._idInvest = idInvest
-    'Me._daoInvestigador = New DAOInvestigador
-    'Me._articulo = New Articulo
-    'Me._articulo.IDArticulo = idArticulo
-    'End Sub
-
     Public Sub New()
         Me._daoInvestigador = New DAOInvestigador
     End Sub
@@ -136,6 +129,16 @@
             Me._email = value
         End Set
     End Property
+
+    Public Property Orden As Integer
+        Get
+            Return Me._orden
+        End Get
+        Set(value As Integer)
+            Me._orden = value
+        End Set
+    End Property
+
     Public Property DAOInvestigador() As DAOInvestigador
         Get
             Return Me._daoInvestigador
