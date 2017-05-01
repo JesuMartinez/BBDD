@@ -20,12 +20,16 @@
         Try
             conf.readAll()
             For Each conf In conf.DAOConferencia.ListaConferencias
-                For Each it In inv.ListaConferencias 'For Each it In inv.Conferencia.DAOConferencia.ListaConferencias ¿¿¿¿¿podria valer????
-                    If conf.IDConferencia <> it.IDConferencia Then
-                        'faltaria poder cargar solo as conferencias que no asiste el investigador seleccionado'
-                        ListbxConferencias.Items.Add(conf.IDConferencia)
-                    End If
-                Next
+                If inv.ListaConferencias.Count > 0 Then
+                    For Each it In inv.ListaConferencias
+                        If conf.IDConferencia <> it.IDConferencia Then
+                            'faltaria poder cargar solo as conferencias que no asiste el investigador seleccionado'
+                            ListbxConferencias.Items.Add(conf.IDConferencia)
+                        End If
+                    Next
+                Else
+                    ListbxConferencias.Items.Add(conf.IDConferencia)
+                End If
             Next
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
