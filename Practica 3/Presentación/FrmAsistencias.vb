@@ -1,7 +1,7 @@
 ﻿Public Class FrmAsistencias
     Private Sub btnAplicarGuardar_Click(sender As Object, e As EventArgs) Handles btnAplicarGuardar.Click
         Dim inv As Investigador
-        inv = New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem), Convert.ToInt32(ListbxConferenciasAsiste.SelectedItem))
+        'inv = New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem), Convert.ToInt32(ListbxConferenciasAsiste.SelectedItem))
         Try
             inv.asiste()
             ListbxConferenciasAsiste.Items.Remove(ListbxConferenciasAsiste.SelectedItem)
@@ -13,27 +13,32 @@
 
     Private Sub cargarConferencias()
         Dim conf As New Conferencia
-        Dim it As New Conferencia
         Dim inv As New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem))
         Try
             conf.readAll()
             For Each conf In conf.DAOConferencia.ListaConferencias
-                If inv.ListaConferencias.Count > 0 Then
-                    For Each it In inv.ListaConferencias
-                        If conf.IDConferencia <> it.IDConferencia Then
-                            ListbxConferencias.Items.Add(conf.IDConferencia)
-                        End If
-                    Next
-                Else
-
-                    ListbxConferencias.Items.Add(conf.IDConferencia)
-                End If
-
+                'If inv.ListaConferencias.Count > 0 Then
+                'For Each it In inv.ListaConferencias
+                'If conf.IDConferencia <> it.IDConferencia Then
+                ListbxConferencias.Items.Add(conf.IDConferencia)
+                'End If
             Next
+            'Else
+            'ListbxConferencias.Items.Add(conf.IDConferencia)
+            'End If
+            'Next
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
             Exit Sub
         End Try
+    End Sub
+
+    Private Sub cargarAsistencias()
+        Dim inv As New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem))
+        Dim conf As New Conferencia
+        For Each conf In inv.ListaConferencias
+            ListbxConferenciasAsiste.Items.Add(inv.ListaConferencias)
+        Next
     End Sub
 
     Private Sub cargarInvestigadores()
@@ -92,13 +97,8 @@
 
     Private Sub lstbxInvestigadores_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstbxInvestigadores.SelectedIndexChanged
         ListbxConferencias.Items.Clear()
+        ListbxConferenciasAsiste.Items.Clear()
         cargarConferencias()
-        Dim conf As New Conferencia
-        'cargamos la coleccion de conferencias de cada investiador en Conferencias Asiste'
-        Dim inv As New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem))
-        'da un error en la siguiente linea(97)
-        For Each conf In inv.Conferencia.DAOConferencia.ListaConferencias 'For Each conf In inv.Conferencia.DAOConferencia.ListaConferencias    ¿¿¿¿podria valer????
-            ListbxConferenciasAsiste.Items.Add(conf.IDConferencia)
-        Next
+        cargarAsistencias()
     End Sub
 End Class
