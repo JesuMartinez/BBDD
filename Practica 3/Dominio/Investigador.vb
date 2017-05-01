@@ -16,6 +16,7 @@
     Public Sub New(ByVal idInvest As Integer)
         Me._idInvest = idInvest
         Me._daoInvestigador = New DAOInvestigador
+        Me._listaConferencias = New Microsoft.VisualBasic.Collection
     End Sub
     'Constructor para inicializar las conferencias de un investigador con un id determinado
     'Public Sub New(ByVal idInvest As Integer, ByVal idConferencia As Integer)

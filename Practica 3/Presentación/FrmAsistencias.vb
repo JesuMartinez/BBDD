@@ -20,7 +20,6 @@
         Try
             conf.readAll()
             For Each conf In conf.DAOConferencia.ListaConferencias
-                ' da un error en la siguiente line (24)
                 For Each it In inv.ListaConferencias 'For Each it In inv.Conferencia.DAOConferencia.ListaConferencias ¿¿¿¿¿podria valer????
                     If conf.IDConferencia <> it.IDConferencia Then
                         'faltaria poder cargar solo as conferencias que no asiste el investigador seleccionado'
