@@ -93,9 +93,8 @@
         FrmInvestigadores.Show()
     End Sub
 
-
     Private Sub lstbxInvestigadores_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstbxInvestigadores.SelectedIndexChanged
-        ListbxConferencias.Items.Clear()
+        'ListbxConferencias.Items.Clear()
         cargarConferencias()
         Dim conf As New Conferencia
         'cargamos la coleccion de conferencias de cada investiador en Conferencias Asiste'
