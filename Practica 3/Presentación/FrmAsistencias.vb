@@ -7,6 +7,8 @@
             For Each conf In ListbxConferenciasAsiste.Items
                 inv.ListaConferencias.Add(conf) 'inv.Conferencia.DAOConferencia.ListaConferencias.Add(conf) ¿¿¿¿¿podria valer??????
             Next
+            ListbxConferencias.Items.Clear()
+            ListbxConferenciasAsiste.Items.Clear()
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
             Exit Sub
@@ -20,12 +22,16 @@
         Try
             conf.readAll()
             For Each conf In conf.DAOConferencia.ListaConferencias
-                For Each it In inv.ListaConferencias 'For Each it In inv.Conferencia.DAOConferencia.ListaConferencias ¿¿¿¿¿podria valer????
-                    If conf.IDConferencia <> it.IDConferencia Then
-                        'faltaria poder cargar solo as conferencias que no asiste el investigador seleccionado'
-                        ListbxConferencias.Items.Add(conf.IDConferencia)
-                    End If
-                Next
+                If inv.ListaConferencias.Count > 0 Then
+                    For Each it In inv.ListaConferencias
+                        If conf.IDConferencia <> it.IDConferencia Then
+                            'faltaria poder cargar solo as conferencias que no asiste el investigador seleccionado'
+                            ListbxConferencias.Items.Add(conf.IDConferencia)
+                        End If
+                    Next
+                Else
+                    ListbxConferencias.Items.Add(conf.IDConferencia)
+                End If
             Next
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
@@ -81,6 +87,8 @@
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        ListbxConferencias.Items.Clear()
+        ListbxConferenciasAsiste.Items.Clear()
         Me.Hide()
         FrmInvestigadores.Show()
     End Sub
