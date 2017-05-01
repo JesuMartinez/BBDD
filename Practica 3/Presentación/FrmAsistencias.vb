@@ -30,8 +30,10 @@
                         End If
                     Next
                 Else
+
                     ListbxConferencias.Items.Add(conf.IDConferencia)
                 End If
+
             Next
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
