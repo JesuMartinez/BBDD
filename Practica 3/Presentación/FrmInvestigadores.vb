@@ -124,9 +124,8 @@
     End Sub
 
     Private Sub btnGestionarAsistencias_Click(sender As Object, e As EventArgs) Handles btnGestionarAsistencias.Click
-        'id_investigador = Convert.ToInt32(lstbxInvestigadores.SelectedItem) module1
         Dim frmasistencia As New FrmAsistencias
-        frmasistencia._idInvestigador = Convert.ToInt32(lstbxInvestigadores.SelectedItem)
+        frmasistencia.IDInvestigador = Convert.ToInt32(lstbxInvestigadores.SelectedItem)
         Me.Hide()
         frmasistencia.Show()
 

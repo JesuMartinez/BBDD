@@ -1,9 +1,18 @@
 ﻿Public Class FrmAsistencias
-    Public _idInvestigador As Integer
+    Private _idInvestigador As Integer
 
     Public Sub New()
         InitializeComponent()
     End Sub
+
+    Public Property IDInvestigador As Integer
+        Get
+            Return Me._idInvestigador
+        End Get
+        Set(value As Integer)
+            Me._idInvestigador = value
+        End Set
+    End Property
 
     Private Sub btnAplicarGuardar_Click(sender As Object, e As EventArgs) Handles btnAplicarGuardar.Click
         Dim invseleccionado As New FrmInvestigadores
@@ -45,7 +54,6 @@
     Private Sub Añadir_Click(sender As Object, e As EventArgs) Handles Añadir.Click
         lstbxAsistencias.Items.Add(lstbxConferencias.SelectedItem)
         lstbxConferencias.Items.Remove(lstbxConferencias.SelectedItem)
-        btnAplicarGuardar.Enabled = True
     End Sub
 
     Private Sub lstConferencias_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstbxConferencias.SelectedIndexChanged
