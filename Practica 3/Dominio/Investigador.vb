@@ -11,12 +11,14 @@
     Private _orden As Integer
     Private _daoInvestigador As DAOInvestigador
     Private _daoarticulo As DAOArticulo
+    Private _daoconferencia As DAOConferencia
     Private _conferencia As Conferencia
     'Private _listaConferenciasAsiste As Collection
 
     Public Sub New(ByVal idInvest As Integer)
         Me._idInvest = idInvest
         Me._daoInvestigador = New DAOInvestigador
+        Me._conferencia = New Conferencia
         Me._daoConferencia = New DAOConferencia
 
     End Sub

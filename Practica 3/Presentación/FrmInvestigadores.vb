@@ -1,10 +1,12 @@
 ﻿Public Class FrmInvestigadores
+
     Private Sub lstbxInvestigadores_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstbxInvestigadores.SelectedIndexChanged
         Dim inv As Investigador
         'De esta forma controlamos que al borrar un objeto "inv" no nos salte una excepción de referencia a null
         If (lstbxInvestigadores.SelectedIndex > -1) Then
             btnModificar.Enabled = True
             btnEliminar.Enabled = True
+            btnGestionarAsistencias.Enabled = True
             inv = New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem))
             Try
                 inv.readInvestigador()
@@ -23,6 +25,7 @@
         Else
             btnModificar.Enabled = False
             btnEliminar.Enabled = False
+            btnGestionarAsistencias.Enabled = False
         End If
     End Sub
 
@@ -121,14 +124,14 @@
     End Sub
 
     Private Sub btnGestionarAsistencias_Click(sender As Object, e As EventArgs) Handles btnGestionarAsistencias.Click
+        'id_investigador = Convert.ToInt32(lstbxInvestigadores.SelectedItem) module1
+        Dim frmasistencia As New FrmAsistencias
+        frmasistencia._idInvestigador = Convert.ToInt32(lstbxInvestigadores.SelectedItem)
         Me.Hide()
-        FrmAsistencias.Show()
+        frmasistencia.Show()
+
     End Sub
 
-    Public Function investigadorSeleccionado() As Investigador
-        Dim inv = New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem))
-        Return inv
-    End Function
     Private Sub txtbxIDInvestigador_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtbxIDInvestigador.KeyPress
         If Char.IsDigit(e.KeyChar) Then
             e.Handled = False

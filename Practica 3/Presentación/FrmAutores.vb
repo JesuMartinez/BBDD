@@ -44,10 +44,10 @@
 
     Private Sub btnAplicarGuardar_Click(sender As Object, e As EventArgs) Handles btnAplicarGuardar.Click
         Dim art As Articulo
-        art = New Articulo(Convert.ToInt32(lstbxArticulos.SelectedItem), Convert.ToInt32(ListbxInvestigadores.SelectedItem))
+        art = New Articulo(Convert.ToInt32(lstbxArticulos.SelectedItem), Convert.ToInt32(ListbxAutores.SelectedItem))
         Try
             art.autor()
-            ListbxAutores.Items.Remove(ListbxAutores.SelectedItems)
+            ListbxAutores.Items.Remove(ListbxAutores.SelectedItem)
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
         End Try
