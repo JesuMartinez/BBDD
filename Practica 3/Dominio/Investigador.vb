@@ -17,7 +17,7 @@
     Public Sub New(ByVal idInvest As Integer)
         Me._idInvest = idInvest
         Me._daoInvestigador = New DAOInvestigador
-        Me._daoConferencia = New DAOConferencia
+        'Me._daoConferencia = New DAOConferencia
 
     End Sub
     'Constructor para inicializar las conferencias de un investigador con un id determinado
