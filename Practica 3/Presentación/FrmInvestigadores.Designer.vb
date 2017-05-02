@@ -119,6 +119,7 @@ Partial Class FrmInvestigadores
         '
         'btnGestionarAsistencias
         '
+        Me.btnGestionarAsistencias.Enabled = False
         Me.btnGestionarAsistencias.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btnGestionarAsistencias.Location = New System.Drawing.Point(181, 377)
         Me.btnGestionarAsistencias.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)

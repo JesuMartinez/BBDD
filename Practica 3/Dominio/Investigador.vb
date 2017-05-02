@@ -11,6 +11,7 @@
     Private _orden As Integer
     Private _daoInvestigador As DAOInvestigador
     Private _daoarticulo As DAOArticulo
+    Private _daoconferencia As DAOConferencia
     Private _conferencia As Conferencia
     'Private _listaConferenciasAsiste As Collection
 
