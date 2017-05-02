@@ -39,6 +39,7 @@ Partial Class FrmAutores
         '
         'btnAplicarGuardar
         '
+        Me.btnAplicarGuardar.Enabled = False
         Me.btnAplicarGuardar.Location = New System.Drawing.Point(686, 263)
         Me.btnAplicarGuardar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAplicarGuardar.Name = "btnAplicarGuardar"
@@ -60,6 +61,7 @@ Partial Class FrmAutores
         '
         'Añadir
         '
+        Me.Añadir.Enabled = False
         Me.Añadir.Location = New System.Drawing.Point(686, 109)
         Me.Añadir.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Añadir.Name = "Añadir"

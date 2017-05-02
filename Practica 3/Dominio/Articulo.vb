@@ -4,7 +4,6 @@
     Private _conferencia As Conferencia
     Private _pagInicio As Integer
     Private _pagFin As Integer
-    Private _listaAutores As Microsoft.VisualBasic.Collection
     Private _daoArticulo As DAOArticulo
     Private _investigador As Investigador
 
@@ -14,17 +13,26 @@
         Me._conferencia = New Conferencia
     End Sub
 
-    Public Sub New(ByVal idInvest As Integer, ByVal idArticulo As Integer)
-        Me._investigador.IDInvestigador = idInvest
+    Public Sub New(ByVal idArticulo As Integer, ByVal idInvest As Integer)
+        Me._idArticulo = idArticulo
         Me._daoArticulo = New DAOArticulo
         Me._investigador = New Investigador
-        Me._idArticulo = idArticulo
+        Me._investigador.IDInvestigador = idInvest
+        Me._investigador.Orden = Convert.ToInt32(((6 * Rnd()) + 1))
     End Sub
 
     Public Sub New()
         Me._daoArticulo = New DAOArticulo
     End Sub
 
+    Public Property Investigador As Investigador
+        Get
+            Return Me._investigador
+        End Get
+        Set(value As Investigador)
+            Me._investigador = value
+        End Set
+    End Property
     Public Property IDArticulo() As Integer
         Get
             Return Me._idArticulo
@@ -33,16 +41,6 @@
             Me._idArticulo = value
         End Set
     End Property
-
-    Public Property ListaAutores() As Microsoft.VisualBasic.Collection
-        Get
-            Return Me._listaAutores
-        End Get
-        Set(value As Microsoft.VisualBasic.Collection)
-            Me._listaAutores = value
-        End Set
-    End Property
-
 
     Public Property Conferencia() As Conferencia
         Get
@@ -103,6 +101,10 @@
 
     Public Sub updateArticulo()
         Me._daoArticulo.update(Me)
+    End Sub
+
+    Public Sub autor()
+        Me._daoArticulo.autor(Me, Me._investigador)
     End Sub
 
     Public Sub deleteArticulo()
