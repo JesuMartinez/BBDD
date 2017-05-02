@@ -46,12 +46,7 @@
         Return AgenteBD.getAgente.modificar("DELETE FROM ARTICULOS WHERE idArticulo=" & art.IDArticulo & ";")
     End Function
 
-    'Public Function autores(ByVal art As Articulo) As Integer
-    'Return AgenteBD.getAgente.modificar("SELECT investigadores.Nombre
-    '                                        FROM investigadores 
-    '                                       JOIN autor
-    '                                      ON investigadores.idInvest = autor.Invest
-    '                                     WHERE (autor.articulo = articulos.idArticulo) AND WHERE (articulos.idArticulo =" & art.IDArticulo & ")
-    '                                    ORDER BY autor.Orden ;")
-    'End Function
+    Public Function autor(ByVal art As Articulo, ByVal inv As Investigador) As Integer
+        Return AgenteBD.getAgente.modificar("INSERT INTO AUTOR VALUES ('" & inv.IDInvestigador & "','" & art.IDArticulo & "','" & art.Investigador.Orden & "');")
+    End Function
 End Class
