@@ -7,6 +7,7 @@
             btnModificar.Enabled = True
             btnEliminar.Enabled = True
             btnGestionarAsistencias.Enabled = True
+            btnCrearCV.Enabled = True
             inv = New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem))
             Try
                 inv.readInvestigador()
@@ -26,6 +27,7 @@
             btnModificar.Enabled = False
             btnEliminar.Enabled = False
             btnGestionarAsistencias.Enabled = False
+            btnCrearCV.Enabled = False
         End If
     End Sub
 
@@ -139,5 +141,12 @@
         Else
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub btnCrearCV_Click(sender As Object, e As EventArgs) Handles btnCrearCV.Click
+        Dim frmcv As New Curriculum_Vitae
+        frmcv.IDInvestigador = Convert.ToInt32(lstbxInvestigadores.SelectedItem)
+        Me.Hide()
+        frmcv.Show()
     End Sub
 End Class

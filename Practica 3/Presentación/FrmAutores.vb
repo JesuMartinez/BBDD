@@ -1,9 +1,7 @@
 ﻿Public Class FrmAutores
     Private _idArticulo As Integer
     Public Sub New()
-        ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
-        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
     End Sub
 
     Public Property IDArticulo As Integer
@@ -36,13 +34,16 @@
     End Sub
 
     Private Sub btnAplicarGuardar_Click(sender As Object, e As EventArgs) Handles btnAplicarGuardar.Click
-        Dim art As New Articulo(Me._idArticulo, Convert.ToInt32(ListbxAutores.SelectedItem))
+        orden = 1
+        Dim art As New Articulo(Me._idArticulo, Convert.ToInt32(ListbxAutores.SelectedItem), orden)
+
         Try
             art.autor()
             ListbxAutores.Items.Remove(ListbxAutores.SelectedItem)
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
         End Try
+
     End Sub
 
     Private Sub Eliminar_Click(sender As Object, e As EventArgs) Handles Eliminar.Click

@@ -18,7 +18,6 @@
     Public Sub New(ByVal idInvest As Integer)
         Me._idInvest = idInvest
         Me._daoInvestigador = New DAOInvestigador
-        'Me._daoConferencia = New DAOConferencia
 
     End Sub
     'Constructor para inicializar las conferencias de un investigador con un id determinado
@@ -169,9 +168,9 @@
         Me._daoInvestigador.delete(Me)
     End Sub
 
-    'Public Sub generarCV()
-    'Me._daoInvestigador.generate_cv(Me)
-    'End Sub
+    Public Sub generarCV()
+        Me._daoInvestigador.generate_cv(Me)
+    End Sub
 
     'Public Sub insertAutores()
     'Me._daoInvestigador.insert_autores(Me, Me._articulo)

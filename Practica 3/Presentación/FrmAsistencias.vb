@@ -17,13 +17,15 @@
     Private Sub btnAplicarGuardar_Click(sender As Object, e As EventArgs) Handles btnAplicarGuardar.Click
         Dim invseleccionado As New FrmInvestigadores
         Dim inv As New Investigador(_idInvestigador, Convert.ToInt32(lstbxAsistencias.SelectedItem))
+        'For Each it In lstbxAsistencias.SelectedItems
         Try
             inv.asiste()
             lstbxAsistencias.Items.Remove(lstbxAsistencias.SelectedItem)
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
-            Exit Sub
+            'MessageBox.Show("La conferencia " & Convert.ToInt32(lstbxAsistencias.SelectedItem) & " ya se ha insertado anteriormente (generaría valores duplicados en la BBDD)")
         End Try
+        '     Next
     End Sub
 
     Private Sub cargarConferencias()
@@ -77,7 +79,6 @@
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles Eliminar.Click
         lstbxConferencias.Items.Add(lstbxAsistencias.SelectedItem)
         lstbxAsistencias.Items.Remove(lstbxAsistencias.SelectedItem)
-
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
