@@ -1,7 +1,7 @@
 ﻿Public Class FrmAsistencias
     Private Sub btnAplicarGuardar_Click(sender As Object, e As EventArgs) Handles btnAplicarGuardar.Click
         Dim inv As Investigador
-        'inv = New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem), Convert.ToInt32(ListbxConferenciasAsiste.SelectedItem))
+        inv = New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem), Convert.ToInt32(ListbxConferenciasAsiste.SelectedItem))
         Try
             inv.asiste()
             ListbxConferenciasAsiste.Items.Remove(ListbxConferenciasAsiste.SelectedItem)
@@ -25,11 +25,11 @@
     End Sub
 
     Private Sub cargarAsistencias()
-        Dim inv As New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem))
-        Dim conf As New Conferencia
-        For Each conf In inv.ListaConferencias
-            ListbxConferenciasAsiste.Items.Add(inv.ListaConferencias)
-        Next
+        'Dim inv As New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem))
+        'Dim conf As New Conferencia
+        'For Each conf In inv.ListaConferencias
+        'ListbxConferenciasAsiste.Items.Add(inv.ListaConferencias)
+        'Next
     End Sub
 
     Private Sub cargarInvestigadores()
