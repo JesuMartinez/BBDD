@@ -27,20 +27,17 @@ Partial Class FrmAutores
         Me.Añadir = New System.Windows.Forms.Button()
         Me.ListbxInvestigadores = New System.Windows.Forms.ListBox()
         Me.ListbxAutores = New System.Windows.Forms.ListBox()
-        Me.lstbxArticulos = New System.Windows.Forms.ListBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnAplicarGuardar
         '
         Me.btnAplicarGuardar.Enabled = False
-        Me.btnAplicarGuardar.Location = New System.Drawing.Point(686, 263)
+        Me.btnAplicarGuardar.Location = New System.Drawing.Point(408, 271)
         Me.btnAplicarGuardar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAplicarGuardar.Name = "btnAplicarGuardar"
         Me.btnAplicarGuardar.Size = New System.Drawing.Size(131, 117)
@@ -51,7 +48,7 @@ Partial Class FrmAutores
         'Eliminar
         '
         Me.Eliminar.Enabled = False
-        Me.Eliminar.Location = New System.Drawing.Point(686, 192)
+        Me.Eliminar.Location = New System.Drawing.Point(408, 193)
         Me.Eliminar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Eliminar.Name = "Eliminar"
         Me.Eliminar.Size = New System.Drawing.Size(131, 49)
@@ -62,7 +59,7 @@ Partial Class FrmAutores
         'Añadir
         '
         Me.Añadir.Enabled = False
-        Me.Añadir.Location = New System.Drawing.Point(686, 109)
+        Me.Añadir.Location = New System.Drawing.Point(408, 112)
         Me.Añadir.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Añadir.Name = "Añadir"
         Me.Añadir.Size = New System.Drawing.Size(131, 55)
@@ -90,52 +87,31 @@ Partial Class FrmAutores
         Me.ListbxAutores.Size = New System.Drawing.Size(212, 404)
         Me.ListbxAutores.TabIndex = 5
         '
-        'lstbxArticulos
-        '
-        Me.lstbxArticulos.FormattingEnabled = True
-        Me.lstbxArticulos.ItemHeight = 16
-        Me.lstbxArticulos.Location = New System.Drawing.Point(27, 40)
-        Me.lstbxArticulos.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.lstbxArticulos.Name = "lstbxArticulos"
-        Me.lstbxArticulos.Size = New System.Drawing.Size(212, 404)
-        Me.lstbxArticulos.TabIndex = 10
-        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.ListbxAutores)
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.GroupBox1.Location = New System.Drawing.Point(851, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(599, 12)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(280, 470)
         Me.GroupBox1.TabIndex = 11
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Autores que participan en este artículo"
+        Me.GroupBox1.Text = "AUTORES EN ARTÍCULO SELECCIONADO"
         '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.ListbxInvestigadores)
         Me.GroupBox2.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.GroupBox2.Location = New System.Drawing.Point(380, 12)
+        Me.GroupBox2.Location = New System.Drawing.Point(60, 12)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(253, 470)
         Me.GroupBox2.TabIndex = 12
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Lista de autores"
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.lstbxArticulos)
-        Me.GroupBox3.ForeColor = System.Drawing.SystemColors.Highlight
-        Me.GroupBox3.Location = New System.Drawing.Point(55, 12)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(273, 469)
-        Me.GroupBox3.TabIndex = 13
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Lista de articulos"
+        Me.GroupBox2.Text = "AUTORES"
         '
         'btnSalir
         '
-        Me.btnSalir.Location = New System.Drawing.Point(686, 407)
+        Me.btnSalir.Location = New System.Drawing.Point(408, 407)
         Me.btnSalir.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(131, 49)
@@ -147,9 +123,8 @@ Partial Class FrmAutores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1192, 508)
+        Me.ClientSize = New System.Drawing.Size(907, 508)
         Me.Controls.Add(Me.btnSalir)
-        Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnAplicarGuardar)
@@ -159,7 +134,6 @@ Partial Class FrmAutores
         Me.Text = "FrmAutores"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox3.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -169,9 +143,7 @@ Partial Class FrmAutores
     Friend WithEvents Añadir As Button
     Friend WithEvents ListbxInvestigadores As ListBox
     Friend WithEvents ListbxAutores As ListBox
-    Friend WithEvents lstbxArticulos As ListBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents btnSalir As Button
 End Class

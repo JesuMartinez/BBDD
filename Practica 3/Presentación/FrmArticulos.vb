@@ -87,6 +87,7 @@
         If (lstbxArticulos.SelectedIndex > -1) Then
             btnModificarArticulo.Enabled = True
             btnEliminarArticulo.Enabled = True
+            btnGestionarAutores.Enabled = True
             art = New Articulo(Convert.ToInt32(lstbxArticulos.SelectedItem))
             Try
                 art.readArticulo()
@@ -102,6 +103,7 @@
         Else
             btnModificarArticulo.Enabled = False
             btnEliminarArticulo.Enabled = False
+            btnGestionarAutores.Enabled = False
         End If
     End Sub
 
@@ -116,7 +118,9 @@
     End Sub
 
     Private Sub btnGestionarAutores_Click(sender As Object, e As EventArgs) Handles btnGestionarAutores.Click
+        Dim frmautores As New FrmAutores
+        frmautores.IDArticulo = Convert.ToInt32(lstbxArticulos.SelectedItem)
         Me.Hide()
-        FrmAutores.Show()
+        frmautores.Show()
     End Sub
 End Class

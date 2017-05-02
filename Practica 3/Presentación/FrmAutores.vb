@@ -1,4 +1,19 @@
 ﻿Public Class FrmAutores
+    Private _idArticulo As Integer
+    Public Sub New()
+        ' Esta llamada es exigida por el diseñador.
+        InitializeComponent()
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+    End Sub
+
+    Public Property IDArticulo As Integer
+        Get
+            Return Me._idArticulo
+        End Get
+        Set(value As Integer)
+            Me._idArticulo = value
+        End Set
+    End Property
     Private Sub cargarInvestigadores()
         Dim inv As New Investigador
         Try
@@ -11,53 +26,23 @@
         End Try
     End Sub
 
-    Private Sub cargarArticulos()
-        Dim art As New Articulo
-        Try
-            art.readAll()
-            For Each art In art.DAOArticulo.ListaArticulos
-                lstbxArticulos.Items.Add(art.IDArticulo)
-            Next
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-            Exit Sub
-        End Try
-    End Sub
-
-    Private Sub cargarAutores()
-        Dim art As New Articulo(Convert.ToInt32(lstbxArticulos.SelectedItem))
-        'Dim conf As New Conferencia
-        'For Each conf In inv.ListaConferencias
-        'ListbxConferenciasAsiste.Items.Add(inv.ListaConferencias)
-        'Next
-    End Sub
-
     Private Sub FrmAutores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cargarArticulos()
+        cargarInvestigadores()
     End Sub
 
     Private Sub Añadir_Click(sender As Object, e As EventArgs) Handles Añadir.Click
         ListbxAutores.Items.Add(ListbxInvestigadores.SelectedItem)
         ListbxInvestigadores.Items.Remove(ListbxInvestigadores.SelectedItem)
-            btnAplicarGuardar.Enabled = True
     End Sub
 
     Private Sub btnAplicarGuardar_Click(sender As Object, e As EventArgs) Handles btnAplicarGuardar.Click
-        Dim art As Articulo
-        art = New Articulo(Convert.ToInt32(lstbxArticulos.SelectedItem), Convert.ToInt32(ListbxAutores.SelectedItem))
+        Dim art As New Articulo(Me._idArticulo, Convert.ToInt32(ListbxAutores.SelectedItem))
         Try
             art.autor()
             ListbxAutores.Items.Remove(ListbxAutores.SelectedItem)
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
         End Try
-    End Sub
-
-    Private Sub lstbxArticulos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstbxArticulos.SelectedIndexChanged
-        ListbxInvestigadores.Items.Clear()
-        ListbxAutores.Items.Clear()
-        cargarInvestigadores()
-        cargarAutores()
     End Sub
 
     Private Sub Eliminar_Click(sender As Object, e As EventArgs) Handles Eliminar.Click
