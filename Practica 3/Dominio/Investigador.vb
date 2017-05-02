@@ -11,12 +11,12 @@
     Private _orden As Integer
     Private _daoInvestigador As DAOInvestigador
     Private _conferencia As Conferencia
-    Private _daoConferencia As DAOConferencia
+    'Private _listaConferenciasAsiste As Collection
 
     Public Sub New(ByVal idInvest As Integer)
         Me._idInvest = idInvest
         Me._daoInvestigador = New DAOInvestigador
-        Me._daoConferencia = New DAOConferencia
+        'Me._listaConferenciasAsiste = New Collection
     End Sub
     'Constructor para inicializar las conferencias de un investigador con un id determinado
     Public Sub New(ByVal idInvest As Integer, ByVal idConferencia As Integer)
@@ -39,14 +39,14 @@
         End Set
     End Property
 
-    Public Property ListaConferencias() As Collection
-        Get
-            Return Me._daoConferencia.ListaConferencias
-        End Get
-        Set(value As Collection)
-            Me._daoConferencia.ListaConferencias = value
-        End Set
-    End Property
+    'Public Property ListaConferencias() As Collection
+    'Get
+    'Return Me._listaConferenciasAsiste
+    'End Get
+    'Set(value As Collection)
+    'Me._listaConferenciasAsiste = value
+    'End Set
+    'End Property
 
     Public Property Articulo() As Articulo
         Get
