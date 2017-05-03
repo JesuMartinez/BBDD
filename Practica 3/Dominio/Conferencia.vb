@@ -112,4 +112,5 @@
     Public Sub readConfAsiste()
         Me._daoConferencia.readConfAsiste()
     End Sub
+
 End Class

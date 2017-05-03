@@ -273,6 +273,7 @@ Partial Class Curriculum_Vitae
         '
         'txtbxArticulos
         '
+        Me.txtbxArticulos.Enabled = False
         Me.txtbxArticulos.Location = New System.Drawing.Point(6, 39)
         Me.txtbxArticulos.Multiline = True
         Me.txtbxArticulos.Name = "txtbxArticulos"

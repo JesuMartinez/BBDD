@@ -36,6 +36,7 @@
         txtbxDespacho.Text = inv.Despacho
         txtbxTlf.Text = inv.Telefono
         txtbxEmail.Text = inv.Email
+
     End Sub
 
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
