@@ -7,7 +7,7 @@
                 lstbxArticulos.Items.Add(art.IDArticulo)
             Next
         Catch ex As Exception
-            MessageBox.Show(ex.ToString)
+            MessageBox.Show(ex.Message)
             Exit Sub
         End Try
     End Sub
@@ -29,7 +29,7 @@
                 ar.insertArticulo()
                 lstbxArticulos.Items.Add(ar.IDArticulo)
             Catch ex As Exception
-                MessageBox.Show(ex.ToString)
+                MessageBox.Show(ex.Message)
                 Exit Sub
             End Try
         Else
@@ -50,7 +50,7 @@
                     ar.updateArticulo()
                     MessageBox.Show("El artículo ha sido modificado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Catch ex As Exception
-                    MessageBox.Show(ex.ToString)
+                    MessageBox.Show(ex.Message)
                     Exit Sub
                 End Try
             End If
@@ -66,7 +66,7 @@
                 ar.deleteArticulo()
                 lstbxArticulos.Items.Remove(lstbxArticulos.SelectedItem)
             Catch ex As Exception
-                MessageBox.Show(ex.ToString)
+                MessageBox.Show(ex.Message)
                 Exit Sub
             End Try
         End If
@@ -93,7 +93,7 @@
             Try
                 art.readArticulo()
             Catch ex As Exception
-                MessageBox.Show(ex.ToString)
+                MessageBox.Show(ex.Message)
                 Exit Sub
             End Try
             txtbxIDArticulo.Text = art.IDArticulo.ToString

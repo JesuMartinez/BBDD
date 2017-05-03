@@ -39,7 +39,7 @@
                     con.insertConferencia()
                     lstbxConferencias.Items.Add(con.IDConferencia)
                 Catch ex As Exception
-                    MessageBox.Show(ex.ToString)
+                    MessageBox.Show(ex.Message)
                     Exit Sub
                 End Try
             Else
@@ -57,7 +57,7 @@
                 con.deleteConferencia()
                 lstbxConferencias.Items.Remove(lstbxConferencias.SelectedItem)
             Catch ex As Exception
-                MessageBox.Show(ex.ToString)
+                MessageBox.Show(ex.Message)
                 Exit Sub
             End Try
         End If
@@ -77,7 +77,7 @@
                     con.updateConferencia()
                     MessageBox.Show("La conferencia ha sido modificada correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Catch ex As Exception
-                    MessageBox.Show(ex.ToString)
+                    MessageBox.Show(ex.Message)
                     Exit Sub
                 End Try
             End If
@@ -94,7 +94,7 @@
                 lstbxConferencias.Items.Add(con.IDConferencia)
             Next
         Catch ex As Exception
-            MessageBox.Show(ex.ToString)
+            MessageBox.Show(ex.Message)
             Exit Sub
         End Try
     End Sub
