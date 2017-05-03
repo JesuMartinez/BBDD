@@ -21,6 +21,10 @@
         Dim con As New Conferencia
         Try
             inv.readInvestigador()
+            con.readConfAsiste()
+            For Each con In con.DAOConferencia.ListaConferencias
+                txtbxConferencias.Text = con.Nombre & " " & con.Siglas & " " & con.Lugar & " " & con.FechaInicio & " " & con.FechaFin
+            Next
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
             Exit Sub
@@ -32,16 +36,6 @@
         txtbxDespacho.Text = inv.Despacho
         txtbxTlf.Text = inv.Telefono
         txtbxEmail.Text = inv.Email
-
-        Try
-            con.readConfAsiste()
-            For Each con In con.DAOConferencia.ListaConferencias
-                txtbxConferencias.Text = con.Nombre & " " & con.Siglas & " " & con.Lugar & " " & con.FechaInicio & " " & con.FechaFin
-            Next
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString)
-            Exit Sub
-        End Try
 
     End Sub
 

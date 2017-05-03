@@ -156,10 +156,6 @@
         Me._daoInvestigador.delete(Me)
     End Sub
 
-    Public Sub generateCV()
-        Me._daoInvestigador.generate_cv(Me)
-    End Sub
-
     Public Sub asiste()
         Me._daoInvestigador.asiste(Me, Me._conferencia)
     End Sub
