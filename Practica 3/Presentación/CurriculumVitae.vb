@@ -18,6 +18,7 @@
         lblAutor.Visible = True
         lblAutor.Text = "CURRICULUM DEL AUTOR CON ID (" & _idinvestigador.ToString & ")"
         Dim inv As New Investigador(_idinvestigador)
+        Dim con As New Conferencia
         Try
             inv.readInvestigador()
         Catch ex As Exception
@@ -33,7 +34,10 @@
         txtbxEmail.Text = inv.Email
 
         Try
-            inv.readConfAsiste()
+            con.readConfAsiste()
+            For Each con In con.DAOConferencia.ListaConferencias
+                txtbxConferencias.Text = con.Nombre & " " & con.Siglas & " " & con.Lugar & " " & con.FechaInicio & " " & con.FechaFin
+            Next
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
             Exit Sub

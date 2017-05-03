@@ -35,6 +35,22 @@
         End While
     End Sub
 
+    Public Sub readConfAsiste()
+        Dim conf As Conferencia
+        Dim leer As OleDb.OleDbDataReader
+        leer = AgenteBD.getAgente.leer("SELECT * FROM CONFERENCIAS, (ASISTE INNER JOIN INVESTIGADORES ON ASISTE.Invest = INVESTIGADORES.idInvest) WHERE ASISTE.Conferencia = CONFERENCIAS.idConferencia ;")
+        While leer.Read
+
+            conf = New Conferencia(Convert.ToInt32(leer.GetValue(0)))
+            conf.Siglas = leer.GetValue(1).ToString
+            conf.Nombre = leer.GetValue(2).ToString
+            conf.Lugar = leer.GetValue(3).ToString
+            conf.FechaInicio = leer.GetValue(4).ToString
+            conf.FechaFin = leer.GetValue(5).ToString
+            Me.ListaConferencias.Add(conf)
+        End While
+    End Sub
+
     Public Function insert(ByVal con As Conferencia) As Integer
         Return AgenteBD.getAgente().modificar("INSERT INTO CONFERENCIAS VALUES ('" & con.IDConferencia & "','" & con.Siglas & "','" & con.Nombre & "','" & con.Lugar & "',#" & con.FechaInicio & "#,#" & con.FechaFin & "#);")
     End Function

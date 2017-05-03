@@ -269,7 +269,7 @@ Partial Class Curriculum_Vitae
         Me.grpbxArticulos.Size = New System.Drawing.Size(717, 209)
         Me.grpbxArticulos.TabIndex = 11
         Me.grpbxArticulos.TabStop = False
-        Me.grpbxArticulos.Text = "CONFERENCIAS A LAS QUE ASISTE"
+        Me.grpbxArticulos.Text = "ARTÍCULOS QUE HA PUBLICADO"
         '
         'txtbxArticulos
         '
