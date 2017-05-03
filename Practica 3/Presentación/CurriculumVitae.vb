@@ -15,6 +15,8 @@
     End Property
 
     Private Sub Curriculum_Vitae_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        lblAutor.Visible = True
+        lblAutor.Text = "CURRICULUM DEL AUTOR CON ID (" & _idinvestigador.ToString & ")"
         Dim inv As New Investigador(_idinvestigador)
         Try
             inv.generarCV()
@@ -22,10 +24,14 @@
             MessageBox.Show(ex.ToString)
             Exit Sub
         End Try
-        'txtbxCV.Text = 
+
     End Sub
 
     Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txtbxCV.TextChanged
+
+    End Sub
+
+    Private Sub lblAutor_Click(sender As Object, e As EventArgs) Handles lblAutor.Click
 
     End Sub
 End Class

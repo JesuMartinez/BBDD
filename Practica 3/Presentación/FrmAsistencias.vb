@@ -15,7 +15,6 @@
     End Property
 
     Private Sub btnAplicarGuardar_Click(sender As Object, e As EventArgs) Handles btnAplicarGuardar.Click
-        Dim invseleccionado As New FrmInvestigadores
         Dim inv As New Investigador(_idInvestigador, Convert.ToInt32(lstbxAsistencias.SelectedItem))
         'For Each it In lstbxAsistencias.SelectedItems
         Try
@@ -40,14 +39,6 @@
             Exit Sub
         End Try
     End Sub
-
-    ' Private Sub cargarAsistencias()
-    'Dim inv As New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem))
-    'Dim conf As New Conferencia
-    'For Each conf In inv.Conferencia.DAOConferencia.ListaConferencias
-    '       lstbxAsistencias.Items.Add(inv.Conferencia.DAOConferencia.ListaConferencias)
-    'Next
-    'End Sub
 
     Private Sub FrmAsistencias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarConferencias()

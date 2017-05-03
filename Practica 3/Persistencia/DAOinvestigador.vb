@@ -53,10 +53,12 @@
         Dim leer As OleDb.OleDbDataReader
         Dim art As Articulo
         Dim conf As Conferencia
-        leer = AgenteBD.getAgente.leer("SELECT INVESTIGADORES.Apellidos, INVESTIGADORES.Nombre, ARTICULOS.Titulo, CONFERENCIAS.Nombre, CONFERENCIAS.Siglas, ARTICULOS.pag_inicio, ARTICULOS.pag_fin, CONFERENCIAS.Lugar, CONFERENCIAS.Fecha_inicio
-        FROM INVESTIGADORES INNER JOIN (ARTICULOS INNER JOIN AUTOR On ARTICULOS.idArticulo = AUTOR.Articulo) On INVESTIGADORES.idInvest = AUTOR.Invest
-        INNER JOIN (CONFERENCIAS INNER JOIN ASISTE ON CONFERENCIAS.idConferencia = ASISTE.Conferencia) ON INVESTIGADORES.idConferencia = ASISTE.Invest
-        WHERE INVESTIGADORES.idInvest =" & inv.IDInvestigador & ";")
+        leer = AgenteBD.getAgente.leer("SELECT INVESTIGADORES.Apellidos, INVESTIGADORES.Nombre, ARTICULOS.Titulo, CONFERENCIAS.Nombre, CONFERENCIAS.Siglas, ARTICULOS.pag_inicio, ARTICULOS.pag_fin, CONFERENCIAS.Lugar, CONFERENCIAS.Fecha_inicio " &
+                                        "FROM INVESTIGADORES " &
+                                        "INNER JOIN ARTICULOS (INNER JOIN AUTOR ON ARTICULOS.idArticulo = AUTOR.Articulo) ON INVESTIGADORES.idInvest = AUTOR.Invest " &
+                                        "INNER JOIN CONFERENCIAS (INNER JOIN ASISTE ON CONFERENCIAS.idConferencia = ASISTE.Conferencia) ON INVESTIGADORES.idInvest = ASISTE.Invest " &
+                                        "INNER JOIN ARTICULOS ((INNER JOIN AUTOR ON ARTICULOS.idArticulo = AUTOR.Articulo) ON INVESTIGADORES.idInvest = AUTOR.Invest) INNER JOIN CONFERENCIAS ON ARTICULOS.Conferencia = CONFERENCIAS.idConferencia " &
+                                        "WHERE INVESTIGADORES.idInvest = " & inv.IDInvestigador & ";")
         While leer.Read
             inv = New Investigador
             conf = New Conferencia
@@ -71,6 +73,10 @@
             conf.Lugar = leer.GetValue(7).ToString
             conf.FechaInicio = leer.GetValue(8).ToString
         End While
+    End Sub
+
+    Public Sub generate_cv2(ByVal inv As Investigador)
+
     End Sub
 
     Public Function asiste(ByVal inv As Investigador, ByVal conf As Conferencia) As Integer

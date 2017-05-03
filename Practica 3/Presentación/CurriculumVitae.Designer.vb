@@ -41,7 +41,7 @@ Partial Class Curriculum_Vitae
         'txtbxCV
         '
         Me.txtbxCV.Enabled = False
-        Me.txtbxCV.Location = New System.Drawing.Point(54, 128)
+        Me.txtbxCV.Location = New System.Drawing.Point(54, 173)
         Me.txtbxCV.Multiline = True
         Me.txtbxCV.Name = "txtbxCV"
         Me.txtbxCV.Size = New System.Drawing.Size(775, 402)
@@ -50,9 +50,10 @@ Partial Class Curriculum_Vitae
         'lblAutor
         '
         Me.lblAutor.AutoSize = True
-        Me.lblAutor.Location = New System.Drawing.Point(574, 72)
+        Me.lblAutor.Font = New System.Drawing.Font("Verdana", 10.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAutor.Location = New System.Drawing.Point(50, 125)
         Me.lblAutor.Name = "lblAutor"
-        Me.lblAutor.Size = New System.Drawing.Size(41, 17)
+        Me.lblAutor.Size = New System.Drawing.Size(60, 20)
         Me.lblAutor.TabIndex = 2
         Me.lblAutor.Text = "autor"
         Me.lblAutor.Visible = False
@@ -61,7 +62,7 @@ Partial Class Curriculum_Vitae
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(908, 574)
+        Me.ClientSize = New System.Drawing.Size(908, 606)
         Me.Controls.Add(Me.lblAutor)
         Me.Controls.Add(Me.txtbxCV)
         Me.Controls.Add(Me.Label1)
