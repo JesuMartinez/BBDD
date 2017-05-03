@@ -131,6 +131,7 @@ Partial Class FrmInvestigadores
         '
         'btnCrearCV
         '
+        Me.btnCrearCV.Enabled = False
         Me.btnCrearCV.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btnCrearCV.Location = New System.Drawing.Point(28, 374)
         Me.btnCrearCV.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)

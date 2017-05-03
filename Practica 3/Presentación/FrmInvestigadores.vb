@@ -21,6 +21,7 @@
             btnModificar.Enabled = True
             btnEliminar.Enabled = True
             btnGestionarAsistencias.Enabled = True
+            btnCrearCV.Enabled = True
             inv = New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem))
             Try
                 inv.readInvestigador()
@@ -40,6 +41,7 @@
             btnModificar.Enabled = False
             btnEliminar.Enabled = False
             btnGestionarAsistencias.Enabled = False
+            btnCrearCV.Enabled = False
         End If
     End Sub
 
@@ -139,7 +141,7 @@
 
     Private Sub btnGestionarAsistencias_Click(sender As Object, e As EventArgs) Handles btnGestionarAsistencias.Click
         Dim frmasistencia As New FrmAsistencias
-        frmasistencia._idInvestigador = Convert.ToInt32(lstbxInvestigadores.SelectedItem)
+        frmasistencia.IDInvestigador = Convert.ToInt32(lstbxInvestigadores.SelectedItem)
         Me.Hide()
         frmasistencia.Show()
 

@@ -37,7 +37,7 @@ Partial Class FrmAutores
         'btnAplicarGuardar
         '
         Me.btnAplicarGuardar.Enabled = False
-        Me.btnAplicarGuardar.Location = New System.Drawing.Point(408, 271)
+        Me.btnAplicarGuardar.Location = New System.Drawing.Point(392, 269)
         Me.btnAplicarGuardar.Margin = New System.Windows.Forms.Padding(4)
         Me.btnAplicarGuardar.Name = "btnAplicarGuardar"
         Me.btnAplicarGuardar.Size = New System.Drawing.Size(131, 117)
@@ -48,7 +48,7 @@ Partial Class FrmAutores
         'Eliminar
         '
         Me.Eliminar.Enabled = False
-        Me.Eliminar.Location = New System.Drawing.Point(408, 193)
+        Me.Eliminar.Location = New System.Drawing.Point(392, 194)
         Me.Eliminar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Eliminar.Name = "Eliminar"
         Me.Eliminar.Size = New System.Drawing.Size(131, 49)
@@ -59,7 +59,7 @@ Partial Class FrmAutores
         'Añadir
         '
         Me.Añadir.Enabled = False
-        Me.Añadir.Location = New System.Drawing.Point(408, 112)
+        Me.Añadir.Location = New System.Drawing.Point(392, 110)
         Me.Añadir.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Añadir.Name = "Añadir"
         Me.Añadir.Size = New System.Drawing.Size(131, 55)
@@ -112,7 +112,7 @@ Partial Class FrmAutores
         '
         'btnSalir
         '
-        Me.btnSalir.Location = New System.Drawing.Point(408, 407)
+        Me.btnSalir.Location = New System.Drawing.Point(392, 407)
         Me.btnSalir.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(131, 49)

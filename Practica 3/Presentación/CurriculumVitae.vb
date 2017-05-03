@@ -1,5 +1,5 @@
 ﻿Public Class Curriculum_Vitae
-    Private _idInvestigador As Integer
+    Private _idinvestigador As Integer
 
     Public Sub New()
         InitializeComponent()
@@ -7,19 +7,25 @@
 
     Public Property IDInvestigador As Integer
         Get
-            Return Me._idInvestigador
+            Return Me._idinvestigador
         End Get
         Set(value As Integer)
-            Me._idInvestigador = value
+            Me._idinvestigador = value
         End Set
     End Property
+
     Private Sub Curriculum_Vitae_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim inv As New Investigador(Me._idInvestigador)
+        Dim inv As New Investigador(_idinvestigador)
         Try
-            inv.generateCV()
+            inv.generarCV()
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
             Exit Sub
         End Try
+        'txtbxCV.Text = 
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txtbxCV.TextChanged
+
     End Sub
 End Class
