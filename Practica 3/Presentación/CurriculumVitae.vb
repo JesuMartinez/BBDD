@@ -16,9 +16,15 @@
 
     Private Sub Curriculum_Vitae_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lblAutor.Visible = True
-        lblAutor.Text = "CURRICULUM DEL AUTOR CON ID (" & _idinvestigador.ToString & ")"
-        Dim inv As New Investigador(_idinvestigador)
-        inv.Nombre = txtbxNombre.Text
+        lblAutor.Text = "CURRICULUM DEL AUTOR CON ID (" & _idinvestigador & ")"
+        Dim inv As New Investigador(Me._idinvestigador)
+        Try
+            inv.readInvestigador()
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+            Exit Sub
+        End Try
+        txtbxNombre.Text = inv.Nombre
         txtbxApellido.Text = inv.Apellidos
         txtbxEdificio.Text = inv.Edificio
         txtbxDepartamento.Text = inv.Departamento
@@ -26,8 +32,11 @@
         txtbxTlf.Text = inv.Telefono
         txtbxEmail.Text = inv.Email
 
-
-
+        Try
+            inv.readConfAsiste()
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+        End Try
         'Dim inv As New Investigador(_idinvestigador)
         'Try
         'inv.generateCV()
