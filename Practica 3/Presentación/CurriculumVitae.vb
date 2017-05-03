@@ -18,20 +18,28 @@
         lblAutor.Visible = True
         lblAutor.Text = "CURRICULUM DEL AUTOR CON ID (" & _idinvestigador.ToString & ")"
         Dim inv As New Investigador(_idinvestigador)
-        Try
-            inv.generateCV()
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString)
-            Exit Sub
-        End Try
+        inv.Nombre = txtbxNombre.Text
+        txtbxApellido.Text = inv.Apellidos
+        txtbxEdificio.Text = inv.Edificio
+        txtbxDepartamento.Text = inv.Departamento
+        txtbxDespacho.Text = inv.Despacho
+        txtbxTlf.Text = inv.Telefono
+        txtbxEmail.Text = inv.Email
+
+
+
+        'Dim inv As New Investigador(_idinvestigador)
+        'Try
+        'inv.generateCV()
+        'Catch ex As Exception
+        'MessageBox.Show(ex.ToString)
+        'Exit Sub
+        'End Try
 
     End Sub
 
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles txtbxCV.TextChanged
-
-    End Sub
-
-    Private Sub lblAutor_Click(sender As Object, e As EventArgs) Handles lblAutor.Click
-
+    Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
+        Me.Hide()
+        FrmInvestigadores.Show()
     End Sub
 End Class
