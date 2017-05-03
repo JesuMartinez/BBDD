@@ -6,15 +6,28 @@
     End Sub
 
     Private Sub btnAplicarGuardar_Click(sender As Object, e As EventArgs) Handles btnAplicarGuardar.Click
-        Dim invseleccionado As New FrmInvestigadores
-        Dim inv As New Investigador(_idInvestigador, Convert.ToInt32(lstbxAsistencias.SelectedItem))
-        Try
-            inv.asiste()
-            lstbxAsistencias.Items.Remove(lstbxAsistencias.SelectedItem)
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString)
-            Exit Sub
-        End Try
+        'Dim invseleccionado As New FrmInvestigadores
+        'Dim inv As New Investigador(Me._idInvestigador, Convert.ToInt32(lstbxAsistencias.SelectedItem))
+        'Try
+        'inv.asiste()
+        'lstbxAsistencias.Items.Remove(lstbxAsistencias.SelectedItem)
+        'Catch ex As Exception
+        'MessageBox.Show(ex.ToString)
+        'Exit Sub
+        'End Try
+        Dim inv As Investigador
+        For conf = 0 To lstbxAsistencias.Items.Count - 1
+            inv = New Investigador(Me._idInvestigador, Convert.ToInt32(lstbxAsistencias.Items(conf)))
+            Try
+                inv.asiste()
+                MessageBox.Show("Asistencia a la conferencia " & Convert.ToInt32(lstbxAsistencias.Items(conf)) & " añadida correctamente.", "Información", MessageBoxButtons.OK)
+            Catch ex As Exception
+                MessageBox.Show("El investigador ya asiste a la conferencia " & Convert.ToInt32(lstbxAsistencias.Items(conf)) & ".", "Advertencia", MessageBoxButtons.OK)
+            End Try
+        Next
+        lstbxAsistencias.Items.Clear()
+        btnAplicarGuardar.Enabled = False
+        Eliminar.Enabled = False
     End Sub
 
     Private Sub cargarConferencias()
@@ -29,14 +42,6 @@
             Exit Sub
         End Try
     End Sub
-
-    ' Private Sub cargarAsistencias()
-    'Dim inv As New Investigador(Convert.ToInt32(lstbxInvestigadores.SelectedItem))
-    'Dim conf As New Conferencia
-    'For Each conf In inv.Conferencia.DAOConferencia.ListaConferencias
-    '       lstbxAsistencias.Items.Add(inv.Conferencia.DAOConferencia.ListaConferencias)
-    'Next
-    'End Sub
 
     Private Sub FrmAsistencias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarConferencias()

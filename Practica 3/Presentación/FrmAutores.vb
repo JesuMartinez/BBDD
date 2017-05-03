@@ -1,9 +1,7 @@
 ﻿Public Class FrmAutores
     Private _idArticulo As Integer
     Public Sub New()
-        ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
-        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
     End Sub
 
     Public Property IDArticulo As Integer
@@ -36,13 +34,21 @@
     End Sub
 
     Private Sub btnAplicarGuardar_Click(sender As Object, e As EventArgs) Handles btnAplicarGuardar.Click
-        Dim art As New Articulo(Me._idArticulo, Convert.ToInt32(ListbxAutores.SelectedItem))
-        Try
-            art.autor()
-            ListbxAutores.Items.Remove(ListbxAutores.SelectedItem)
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString)
-        End Try
+        Dim art As Articulo
+        Dim orden As Integer = 0
+        For autor = 0 To ListbxAutores.Items.Count - 1
+            orden += 1
+            art = New Articulo(Me._idArticulo, Convert.ToInt32(ListbxAutores.Items(autor)), orden)
+            Try
+                art.autor()
+                MessageBox.Show("El investigador " & Convert.ToInt32(ListbxAutores.Items(autor)) & " añadido como autor correctamente.", "Información", MessageBoxButtons.OK)
+            Catch ex As Exception
+                MessageBox.Show("El investigador " & Convert.ToInt32(ListbxAutores.Items(autor)) & " ya es autor de dicho articulo.", "Advertencia", MessageBoxButtons.OK)
+            End Try
+        Next
+        ListbxAutores.Items.Clear()
+        btnAplicarGuardar.Enabled = False
+        Eliminar.Enabled = False
     End Sub
 
     Private Sub Eliminar_Click(sender As Object, e As EventArgs) Handles Eliminar.Click
@@ -62,8 +68,8 @@
             Eliminar.Enabled = True
             btnAplicarGuardar.Enabled = True
         Else
-            Eliminar.Enabled = False
             btnAplicarGuardar.Enabled = False
+            Eliminar.Enabled = False
         End If
     End Sub
 

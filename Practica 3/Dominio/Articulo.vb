@@ -13,12 +13,12 @@
         Me._conferencia = New Conferencia
     End Sub
 
-    Public Sub New(ByVal idArticulo As Integer, ByVal idInvest As Integer)
+    Public Sub New(ByVal idArticulo As Integer, ByVal idInvest As Integer, ByVal orden As Integer)
         Me._idArticulo = idArticulo
         Me._daoArticulo = New DAOArticulo
         Me._investigador = New Investigador
         Me._investigador.IDInvestigador = idInvest
-        Me._investigador.Orden = Convert.ToInt32(((6 * Rnd()) + 1))
+        Me._investigador.Orden = orden
     End Sub
 
     Public Sub New()

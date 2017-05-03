@@ -49,23 +49,30 @@
         Return AgenteBD.getAgente.modificar("DELETE FROM INVESTIGADORES WHERE idInvest=" & inv.IDInvestigador & ";")
     End Function
 
-    'Public Function generate_cv(ByVal inv As Investigador) As Integer
-    'Return AgenteBD.getAgente.modificar("SELECT investigadores.Nombre, articulos.Titulo, conferencias.Siglas, articulos.pag_inicio, articulos.pag_fin, conferencias.Lugar, conferencias.Fecha_inicio
-    '                                        FROM investigadores 
-    '                                       JOIN autor
-    '                                      ON investigadores.idInvest = autor.Invest
-    '                                     JOIN articulos
-    'On autor.Articulo = articulos.idArticulo
-    '                                        JOIN conferencias
-    'On articulos.Conferencia = conferencias.idConferencia
-    '                                        WHERE idInvest =" & inv.IDInvestigador & ";")
-    'End Function
-
-    'Public Function insert_autores(ByVal inv As Investigador, ByVal ar As Articulo) As Integer
-    'Return AgenteBD.getAgente.modificar("INSERT INTO AUTOR VALUES ('" & inv.IDInvestigador & "','" & ar.IDArticulo & "') WHERE IdInvest=" & inv.IDInvestigador & " AND idArticulo=" & ar.IDArticulo & ";")
-    'End Function
+    Public Sub generate_cv(ByVal inv As Investigador)
+        Dim leer As OleDb.OleDbDataReader
+        Dim art As Articulo
+        Dim conf As Conferencia
+        leer = AgenteBD.getAgente.leer("SELECT INVESTIGADORES.Apellidos, INVESTIGADORES.Nombre, ARTICULOS.Titulo, CONFERENCIAS.Nombre, CONFERENCIAS.Siglas, ARTICULOS.pag_inicio, ARTICULOS.pag_fin, CONFERENCIAS.Lugar, CONFERENCIAS.Fecha_inicio
+        FROM INVESTIGADORES INNER JOIN (ARTICULOS INNER JOIN AUTOR ON ARTICULOS.idArticulo = AUTOR.Articulo) ON INVESTIGADORES.idInvest = AUTOR.Invest" & "INNER JOIN (CONFERENCIAS INNER JOIN ASISTE ON CONFERENCIAS.idConferencia = ASISTE.Conferencia) ON INVESTIGADORES.idConferencia = ASISTE.Invest
+        WHERE INVESTIGADORES.idInvest =" & inv.IDInvestigador & ";")
+        While leer.Read
+            inv = New Investigador
+            conf = New Conferencia
+            art = New Articulo
+            inv.Apellidos = leer.GetValue(0).ToString
+            inv.Nombre = leer.GetValue(1).ToString
+            art.Titulo = leer.GetValue(2).ToString
+            conf.Nombre = leer.GetValue(3).ToString
+            conf.Siglas = leer.GetValue(4).ToString
+            art.PagInicio = Convert.ToInt32(leer.GetValue(5))
+            art.PagFin = Convert.ToInt32(leer.GetValue(6))
+            conf.Lugar = leer.GetValue(7).ToString
+            conf.FechaInicio = leer.GetValue(8).ToString
+        End While
+    End Sub
 
     Public Function asiste(ByVal inv As Investigador, ByVal conf As Conferencia) As Integer
         Return AgenteBD.getAgente.modificar("INSERT INTO ASISTE VALUES ('" & conf.IDConferencia & "','" & inv.IDInvestigador & "');")
-    End Function
+        End Function
 End Class

@@ -1,4 +1,18 @@
 ﻿Public Class FrmInvestigadores
+    Private _idInvestigador As Integer
+
+    Public Sub New()
+        InitializeComponent()
+    End Sub
+
+    Public Property IDInvestigador As Integer
+        Get
+            Return Me._idInvestigador
+        End Get
+        Set(value As Integer)
+            Me._idInvestigador = value
+        End Set
+    End Property
 
     Private Sub lstbxInvestigadores_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstbxInvestigadores.SelectedIndexChanged
         Dim inv As Investigador
@@ -124,7 +138,6 @@
     End Sub
 
     Private Sub btnGestionarAsistencias_Click(sender As Object, e As EventArgs) Handles btnGestionarAsistencias.Click
-        'id_investigador = Convert.ToInt32(lstbxInvestigadores.SelectedItem) module1
         Dim frmasistencia As New FrmAsistencias
         frmasistencia._idInvestigador = Convert.ToInt32(lstbxInvestigadores.SelectedItem)
         Me.Hide()
@@ -140,5 +153,12 @@
         Else
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub btnCrearCV_Click(sender As Object, e As EventArgs) Handles btnCrearCV.Click
+        Dim frmcv As New Curriculum_Vitae
+        frmcv.IDInvestigador = Convert.ToInt32(lstbxInvestigadores.SelectedItem)
+        Me.Hide()
+        frmcv.Show()
     End Sub
 End Class
