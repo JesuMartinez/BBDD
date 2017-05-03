@@ -252,6 +252,7 @@ Partial Class Curriculum_Vitae
         '
         'txtbxConferencias
         '
+        Me.txtbxConferencias.Enabled = False
         Me.txtbxConferencias.Location = New System.Drawing.Point(6, 39)
         Me.txtbxConferencias.Multiline = True
         Me.txtbxConferencias.Name = "txtbxConferencias"

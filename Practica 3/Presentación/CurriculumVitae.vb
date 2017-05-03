@@ -18,7 +18,13 @@
         lblAutor.Visible = True
         lblAutor.Text = "CURRICULUM DEL AUTOR CON ID (" & _idinvestigador.ToString & ")"
         Dim inv As New Investigador(_idinvestigador)
-        inv.Nombre = txtbxNombre.Text
+        Try
+            inv.readInvestigador()
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+            Exit Sub
+        End Try
+        txtbxNombre.Text = inv.Nombre
         txtbxApellido.Text = inv.Apellidos
         txtbxEdificio.Text = inv.Edificio
         txtbxDepartamento.Text = inv.Departamento
@@ -40,6 +46,6 @@
 
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
         Me.Hide()
-        FrmInvestigadores.Show()
+        FrmInvestigadores.Show()  
     End Sub
 End Class

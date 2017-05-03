@@ -75,9 +75,7 @@
         End While
     End Sub
 
-    Public Sub generate_cv2(ByVal inv As Investigador)
 
-    End Sub
 
     Public Function asiste(ByVal inv As Investigador, ByVal conf As Conferencia) As Integer
         Return AgenteBD.getAgente.modificar("INSERT INTO ASISTE VALUES ('" & conf.IDConferencia & "','" & inv.IDInvestigador & "');")
