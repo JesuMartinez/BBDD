@@ -41,6 +41,7 @@ Partial Class FrmAsistencias
         Me.lstbxAsistencias.Location = New System.Drawing.Point(15, 28)
         Me.lstbxAsistencias.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.lstbxAsistencias.Name = "lstbxAsistencias"
+        Me.lstbxAsistencias.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
         Me.lstbxAsistencias.Size = New System.Drawing.Size(212, 404)
         Me.lstbxAsistencias.TabIndex = 0
         '
