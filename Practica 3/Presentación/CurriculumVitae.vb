@@ -32,8 +32,11 @@
         txtbxTlf.Text = inv.Telefono
         txtbxEmail.Text = inv.Email
 
-
-
+        Try
+            inv.readConfAsiste()
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+        End Try
         'Dim inv As New Investigador(_idinvestigador)
         'Try
         'inv.generateCV()
@@ -46,6 +49,6 @@
 
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
         Me.Hide()
-        FrmInvestigadores.Show()  
+        FrmInvestigadores.Show()
     End Sub
 End Class
