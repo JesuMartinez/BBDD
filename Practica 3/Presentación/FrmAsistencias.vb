@@ -20,7 +20,6 @@
             inv = New Investigador(Me._idInvestigador, Convert.ToInt32(lstbxAsistencias.Items(conf)))
             Try
                 inv.asiste()
-                MessageBox.Show("Asistencia a la conferencia " & Convert.ToInt32(lstbxAsistencias.Items(conf)) & " añadida correctamente.", "Información", MessageBoxButtons.OK)
             Catch ex As Exception
                 MessageBox.Show("El investigador ya asiste a la conferencia " & Convert.ToInt32(lstbxAsistencias.Items(conf)) & ".", "Advertencia", MessageBoxButtons.OK)
             End Try

@@ -41,7 +41,6 @@
             art = New Articulo(Me._idArticulo, Convert.ToInt32(ListbxAutores.Items(autor)), orden)
             Try
                 art.autor()
-                MessageBox.Show("El investigador " & Convert.ToInt32(ListbxAutores.Items(autor)) & " añadido como autor correctamente.", "Información", MessageBoxButtons.OK)
             Catch ex As Exception
                 MessageBox.Show("El investigador " & Convert.ToInt32(ListbxAutores.Items(autor)) & " ya es autor de dicho articulo.", "Advertencia", MessageBoxButtons.OK)
             End Try
