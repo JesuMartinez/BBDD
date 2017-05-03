@@ -42,13 +42,6 @@
             MessageBox.Show(ex.ToString)
             Exit Sub
         End Try
-        'Dim inv As New Investigador(_idinvestigador)
-        'Try
-        'inv.generateCV()
-        'Catch ex As Exception
-        'MessageBox.Show(ex.ToString)
-        'Exit Sub
-        'End Try
 
     End Sub
 
