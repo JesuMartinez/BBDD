@@ -11,7 +11,6 @@
     Private _orden As Integer
     Private _daoInvestigador As DAOInvestigador
     Private _daoarticulo As DAOArticulo
-    Private _daoconferencia As DAOConferencia
     Private _conferencia As Conferencia
 
     Public Sub New(ByVal idInvest As Integer)
@@ -38,15 +37,6 @@
             Me._idInvest = value
         End Set
     End Property
-
-    'Public Property ListaConferencias() As Collection
-    'Get
-    'Return Me._listaConferenciasAsiste
-    'End Get
-    'Set(value As Collection)
-    'Me._listaConferenciasAsiste = value
-    'End Set
-    'End Property
 
     Public Property Articulo() As Articulo
         Get
