@@ -85,6 +85,7 @@
             MessageBox.Show("Modificación de ID de conferencia inválida ya que corresponde con la clave primaria de nuestra base de datos. " & vbNewLine & "Por favor modifique cualquier campo excepto el ID.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
+
     Public Sub cargarConferencias()
         Dim con As New Conferencia
         Try
@@ -97,6 +98,7 @@
             Exit Sub
         End Try
     End Sub
+
     Private Sub FrmConferencias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarConferencias()
     End Sub
@@ -124,9 +126,7 @@
     Private Sub txtbxFecha_inicio_Validating(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles txtbxFecha_inicio.Validating, txtbxFecha_fin.Validating
         Dim fecha As DateTime
         If Not DateTime.TryParse(txtbxFecha_inicio.Text, fecha) And Not DateTime.TryParse(txtbxFecha_fin.Text, fecha) Then
-            MessageBox.Show("Error en el formato de la fecha, por favor introduzca un formato de fecha válido")
+            MessageBox.Show("Error en el formato de la fecha, por favor introduzca un formato de fecha válido.")
         End If
-
     End Sub
-
 End Class

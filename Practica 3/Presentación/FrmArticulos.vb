@@ -11,6 +11,7 @@
             Exit Sub
         End Try
     End Sub
+
     Private Sub FrmArticulos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarArticulos()
     End Sub

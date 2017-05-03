@@ -40,7 +40,6 @@
         Dim leer As OleDb.OleDbDataReader
         leer = AgenteBD.getAgente.leer("SELECT * FROM CONFERENCIAS, (ASISTE INNER JOIN INVESTIGADORES ON ASISTE.Invest = INVESTIGADORES.idInvest) WHERE ASISTE.Conferencia = CONFERENCIAS.idConferencia ;")
         While leer.Read
-
             conf = New Conferencia(Convert.ToInt32(leer.GetValue(0)))
             conf.Siglas = leer.GetValue(1).ToString
             conf.Nombre = leer.GetValue(2).ToString

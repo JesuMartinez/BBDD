@@ -21,6 +21,10 @@
         Dim con As New Conferencia
         Try
             inv.readInvestigador()
+            con.readConfAsiste()
+            For Each con In con.DAOConferencia.ListaConferencias
+                txtbxConferencias.Text = con.Nombre & " " & con.Siglas & " " & con.Lugar & " " & con.FechaInicio & " " & con.FechaFin
+            Next
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
             Exit Sub
@@ -32,24 +36,6 @@
         txtbxDespacho.Text = inv.Despacho
         txtbxTlf.Text = inv.Telefono
         txtbxEmail.Text = inv.Email
-
-        Try
-            con.readConfAsiste()
-            For Each con In con.DAOConferencia.ListaConferencias
-                txtbxConferencias.Text = con.Nombre & " " & con.Siglas & " " & con.Lugar & " " & con.FechaInicio & " " & con.FechaFin
-            Next
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString)
-            Exit Sub
-        End Try
-        'Dim inv As New Investigador(_idinvestigador)
-        'Try
-        'inv.generateCV()
-        'Catch ex As Exception
-        'MessageBox.Show(ex.ToString)
-        'Exit Sub
-        'End Try
-
     End Sub
 
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click

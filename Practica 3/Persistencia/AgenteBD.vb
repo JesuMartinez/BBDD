@@ -16,13 +16,14 @@ Public Class AgenteBD
         End If
         Return mInstancia
     End Function
+
     Public Function leer(ByVal sql As String) As OleDbDataReader
         Dim com As New OleDbCommand(sql, mConexion)
         Return com.ExecuteReader()
     End Function
+
     Public Function modificar(ByVal sql As String) As Integer
         Dim com As New OleDbCommand(sql, mConexion)
         Return com.ExecuteNonQuery()
     End Function
-
 End Class

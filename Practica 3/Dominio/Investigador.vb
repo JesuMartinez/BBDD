@@ -10,7 +10,6 @@
     Private _articulo As Articulo
     Private _orden As Integer
     Private _daoInvestigador As DAOInvestigador
-    Private _daoarticulo As DAOArticulo
     Private _conferencia As Conferencia
 
     Public Sub New(ByVal idInvest As Integer)
@@ -35,15 +34,6 @@
         End Get
         Set(value As Integer)
             Me._idInvest = value
-        End Set
-    End Property
-
-    Public Property Articulo() As Articulo
-        Get
-            Return Me._articulo
-        End Get
-        Set(value As Articulo)
-            Me._articulo = value
         End Set
     End Property
 
@@ -118,6 +108,15 @@
         End Set
     End Property
 
+    Public Property Articulo() As Articulo
+        Get
+            Return Me._articulo
+        End Get
+        Set(value As Articulo)
+            Me._articulo = value
+        End Set
+    End Property
+
     Public Property Orden As Integer
         Get
             Return Me._orden
@@ -154,10 +153,6 @@
 
     Public Sub deleteInvestigador()
         Me._daoInvestigador.delete(Me)
-    End Sub
-
-    Public Sub generateCV()
-        Me._daoInvestigador.generate_cv(Me)
     End Sub
 
     Public Sub asiste()

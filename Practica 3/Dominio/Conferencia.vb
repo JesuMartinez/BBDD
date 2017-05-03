@@ -26,15 +26,6 @@
         End Set
     End Property
 
-    Public Property Articulo() As Articulo
-        Get
-            Return Me._articulo
-        End Get
-        Set(value As Articulo)
-            Me._articulo = value
-        End Set
-    End Property
-
     Public Property Siglas() As String
         Get
             Return Me._siglas
@@ -50,6 +41,15 @@
         End Get
         Set(value As String)
             Me._nombre = value
+        End Set
+    End Property
+
+    Public Property Lugar() As String
+        Get
+            Return Me._lugar
+        End Get
+        Set(value As String)
+            Me._lugar = value
         End Set
     End Property
 
@@ -71,12 +71,12 @@
         End Set
     End Property
 
-    Public Property Lugar() As String
+    Public Property Articulo() As Articulo
         Get
-            Return Me._lugar
+            Return Me._articulo
         End Get
-        Set(value As String)
-            Me._lugar = value
+        Set(value As Articulo)
+            Me._articulo = value
         End Set
     End Property
 
@@ -108,7 +108,7 @@
     Public Sub deleteConferencia()
         Me._daoConferencia.delete(Me)
     End Sub
-
+    'Método para gestionar las asistencias
     Public Sub readConfAsiste()
         Me._daoConferencia.readConfAsiste()
     End Sub

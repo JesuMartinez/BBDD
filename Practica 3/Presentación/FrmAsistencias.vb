@@ -80,5 +80,4 @@
         Me.Close()
         FrmInvestigadores.Show()
     End Sub
-
 End Class

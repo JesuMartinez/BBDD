@@ -12,6 +12,7 @@
             Me._idArticulo = value
         End Set
     End Property
+
     Private Sub cargarInvestigadores()
         Dim inv As New Investigador
         Try
