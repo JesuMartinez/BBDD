@@ -19,7 +19,7 @@
         lblAutor.Text = "CURRICULUM DEL AUTOR CON ID (" & _idinvestigador.ToString & ")"
         Dim inv As New Investigador(_idinvestigador)
         Try
-            inv.generarCV()
+            inv.generateCV()
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
             Exit Sub
