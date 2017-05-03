@@ -15,15 +15,6 @@
     End Property
 
     Private Sub btnAplicarGuardar_Click(sender As Object, e As EventArgs) Handles btnAplicarGuardar.Click
-        'Dim invseleccionado As New FrmInvestigadores
-        'Dim inv As New Investigador(Me._idInvestigador, Convert.ToInt32(lstbxAsistencias.SelectedItem))
-        'Try
-        'inv.asiste()
-        'lstbxAsistencias.Items.Remove(lstbxAsistencias.SelectedItem)
-        'Catch ex As Exception
-        'MessageBox.Show(ex.ToString)
-        'Exit Sub
-        'End Try
         Dim inv As Investigador
         For conf = 0 To lstbxAsistencias.Items.Count - 1
             inv = New Investigador(Me._idInvestigador, Convert.ToInt32(lstbxAsistencias.Items(conf)))
