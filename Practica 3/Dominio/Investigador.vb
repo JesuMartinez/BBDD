@@ -145,7 +145,7 @@
     End Sub
 
     Public Sub readConfAsiste()
-        Me._daoInvestigador.readConfAsiste()
+        Me._daoInvestigador.readConfAsiste(Me._idInvest)
     End Sub
     Public Sub insertInvestigador()
         Me._daoInvestigador.insert(Me)

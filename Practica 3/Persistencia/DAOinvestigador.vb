@@ -37,10 +37,10 @@
         End While
     End Sub
 
-    Public Sub readConfAsiste()
+    Public Sub readConfAsiste(ByVal idInvestigador As Integer)
         Dim conf As New Conferencia
         Dim leer As OleDb.OleDbDataReader
-        leer = AgenteBD.getAgente.leer("SELECT * FROM CONFERENCIAS WHERE CONFERENCIAS.idConferencia = ASISTE.Conferencia AND INVESTIGADORES.idInvest = ASISTE.Invest;")
+        leer = AgenteBD.getAgente.leer("SELECT * FROM CONFERENCIAS WHERE ASISTE.Invest = " & idInvestigador & " AND ASISTE.Conferencia = CONFERENCIAS.idConferencia;")
         While leer.Read
             conf.IDConferencia = Convert.ToInt32(leer.GetValue(0))
             conf.Siglas = leer.GetValue(1).ToString
