@@ -1,4 +1,18 @@
 ﻿Public Class FrmInvestigadores
+    Private _idInvestigador As Integer
+
+    Public Sub New()
+        InitializeComponent()
+    End Sub
+
+    Public Property IDInvestigador As Integer
+        Get
+            Return Me._idInvestigador
+        End Get
+        Set(value As Integer)
+            Me._idInvestigador = value
+        End Set
+    End Property
 
     Private Sub lstbxInvestigadores_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lstbxInvestigadores.SelectedIndexChanged
         Dim inv As Investigador
