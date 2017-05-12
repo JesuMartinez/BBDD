@@ -16,14 +16,16 @@
 
     Private Sub btnAplicarGuardar_Click(sender As Object, e As EventArgs) Handles btnAplicarGuardar.Click
         Dim inv As Investigador
+        Dim lista_conf As New Collection
         For conf = 0 To lstbxAsistencias.Items.Count - 1
-            inv = New Investigador(Me._idInvestigador, lstbxAsistencias.SelectedItems)
-            Try
-                inv.asiste()
-            Catch ex As Exception
-                MessageBox.Show("El investigador ya asiste a la conferencia " & Convert.ToInt32(lstbxAsistencias.Items(conf)) & ".", "Advertencia", MessageBoxButtons.OK)
-            End Try
+            lista_conf.Add(conf)
         Next
+        inv = New Investigador(Me._idInvestigador, lista_conf)
+        Try
+            inv.asiste()
+        Catch ex As Exception
+            MessageBox.Show("El investigador ya asiste a la conferencia.", "Advertencia", MessageBoxButtons.OK)
+        End Try
         lstbxAsistencias.Items.Clear()
         btnAplicarGuardar.Enabled = False
         Eliminar.Enabled = False

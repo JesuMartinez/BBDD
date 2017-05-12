@@ -7,22 +7,20 @@
     Private _departamento As String
     Private _telefono As String
     Private _email As String
-    Private _daoArticulo As DAOArticulo
+    Private _listaArticulos As Collection
     Private _orden As Integer
     Private _daoInvestigador As DAOInvestigador
-    Private _daoConferencia As DAOConferencia
+    Private _listaConferencias As Collection
 
     Public Sub New(ByVal idInvest As Integer)
         Me._idInvest = idInvest
         Me._daoInvestigador = New DAOInvestigador
-
     End Sub
     'Constructor para inicializar las conferencias de un investigador con un id determinado
-    Public Sub New(ByVal idInvest As Integer, ByVal daoConferencia As ListBox.ObjectCollection)
+    Public Sub New(ByVal idInvest As Integer, ByVal listaConferencias As Collection)
         Me._idInvest = idInvest
         Me._daoInvestigador = New DAOInvestigador
-        Me._daoConferencia = daoConferencia
-        Me._daoConferencia = New DAOConferencia
+        Me._listaConferencias = New Collection
     End Sub
 
     Public Sub New()
@@ -92,12 +90,12 @@
         End Set
     End Property
 
-    Public Property DAOConferencia As DAOConferencia
+    Public Property ListaConferencias As Collection
         Get
-            Return Me._daoConferencia
+            Return Me._listaConferencias
         End Get
-        Set(value As DAOConferencia)
-            Me._daoConferencia = value
+        Set(value As Collection)
+            Me._listaConferencias = value
         End Set
     End Property
     Public Property Email() As String
@@ -109,12 +107,12 @@
         End Set
     End Property
 
-    Public Property DAOArticulo() As DAOArticulo
+    Public Property ListaArticulos() As Collection
         Get
-            Return Me._daoArticulo
+            Return Me._listaArticulos
         End Get
-        Set(value As DAOArticulo)
-            Me._daoArticulo = value
+        Set(value As Collection)
+            Me._listaArticulos = value
         End Set
     End Property
 
@@ -157,6 +155,8 @@
     End Sub
 
     Public Sub asiste()
-        Me._daoInvestigador.asiste(Me, Me._conferencia)
+        For Each conf In Me._listaConferencias
+            'Me._listaConferencias.Add(Me._daoInvestigador.asiste(Me, conf))
+        Next
     End Sub
 End Class
