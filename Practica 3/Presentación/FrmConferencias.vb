@@ -26,27 +26,22 @@
 
     Private Sub btnAñadir_Click(sender As Object, e As EventArgs) Handles btnAñadir.Click
         Dim con As Conferencia
-        If (txtbxFecha_fin.TextLength > 0 And txtbxFecha_inicio.TextLength > 0 And txtbxIDConferencia.TextLength > 0 And txtbxLugar.TextLength > 0 And
-          txtbxNombreConferencia.TextLength > 0 And txtbxSiglas.TextLength > 0) Then
-            If (txtbxFecha_inicio.Text <= txtbxFecha_fin.Text) Then
-                con = New Conferencia(Convert.ToInt32(txtbxIDConferencia.Text))
-                con.Siglas = txtbxSiglas.Text
-                con.Nombre = txtbxNombreConferencia.Text
-                con.Lugar = txtbxLugar.Text
-                con.FechaInicio = txtbxFecha_inicio.Text
-                con.FechaFin = txtbxFecha_fin.Text
-                Try
-                    con.insertConferencia()
-                    lstbxConferencias.Items.Add(con.IDConferencia)
-                Catch ex As Exception
-                    MessageBox.Show(ex.Message)
-                    Exit Sub
-                End Try
-            Else
-                MessageBox.Show("Fechas de las conferencias inválidas. Por favor compruebe que la fecha de inicio es menor o igual que la fecha de finalización.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            End If
+        If (txtbxFecha_inicio.Text <= txtbxFecha_fin.Text) Then
+            con = New Conferencia(Convert.ToInt32(txtbxIDConferencia.Text))
+            con.Siglas = txtbxSiglas.Text
+            con.Nombre = txtbxNombreConferencia.Text
+            con.Lugar = txtbxLugar.Text
+            con.FechaInicio = txtbxFecha_inicio.Text
+            con.FechaFin = txtbxFecha_fin.Text
+            Try
+                con.insertConferencia()
+                lstbxConferencias.Items.Add(con.IDConferencia)
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+                Exit Sub
+            End Try
         Else
-            MessageBox.Show("Por favor introduzca información en los campos vacíos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Fechas de las conferencias inválidas. Por favor compruebe que la fecha de inicio es menor o igual que la fecha de finalización.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 
@@ -128,5 +123,9 @@
         If Not DateTime.TryParse(txtbxFecha_inicio.Text, fecha) And Not DateTime.TryParse(txtbxFecha_fin.Text, fecha) Then
             MessageBox.Show("Error en el formato de la fecha, por favor introduzca un formato de fecha válido.")
         End If
+    End Sub
+
+    Private Sub FrmConferencias_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        Application.Exit()
     End Sub
 End Class

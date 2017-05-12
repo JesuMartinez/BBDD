@@ -81,4 +81,8 @@
             Añadir.Enabled = False
         End If
     End Sub
+
+    Private Sub FrmAutores_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        Application.Exit()
+    End Sub
 End Class

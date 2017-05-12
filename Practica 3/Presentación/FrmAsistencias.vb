@@ -82,4 +82,8 @@
         Me.Close()
         FrmInvestigadores.Show()
     End Sub
+
+    Private Sub FrmAsistencias_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        Application.Exit()
+    End Sub
 End Class
