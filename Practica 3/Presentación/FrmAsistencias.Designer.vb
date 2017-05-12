@@ -106,7 +106,7 @@ Partial Class FrmAsistencias
         Me.GroupBox1.Size = New System.Drawing.Size(243, 450)
         Me.GroupBox1.TabIndex = 7
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Lista de conferencias totales"
+        Me.GroupBox1.Text = "CONFERENCIAS"
         '
         'GroupBox3
         '
