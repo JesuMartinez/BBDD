@@ -7,21 +7,22 @@
     Private _departamento As String
     Private _telefono As String
     Private _email As String
-    Private _articulo As Articulo
+    Private _daoArticulo As DAOArticulo
     Private _orden As Integer
     Private _daoInvestigador As DAOInvestigador
-    Private _conferencia As Conferencia
+    Private _daoConferencia As DAOConferencia
 
     Public Sub New(ByVal idInvest As Integer)
         Me._idInvest = idInvest
         Me._daoInvestigador = New DAOInvestigador
+
     End Sub
     'Constructor para inicializar las conferencias de un investigador con un id determinado
-    Public Sub New(ByVal idInvest As Integer, ByVal idConferencia As Integer)
+    Public Sub New(ByVal idInvest As Integer, ByVal daoConferencia As ListBox.ObjectCollection)
         Me._idInvest = idInvest
         Me._daoInvestigador = New DAOInvestigador
-        Me._conferencia = New Conferencia
-        Me._conferencia.IDConferencia = idConferencia
+        Me._daoConferencia = daoConferencia
+        Me._daoConferencia = New DAOConferencia
     End Sub
 
     Public Sub New()
@@ -91,12 +92,12 @@
         End Set
     End Property
 
-    Public Property Conferencia As Conferencia
+    Public Property DAOConferencia As DAOConferencia
         Get
-            Return Me._conferencia
+            Return Me._daoConferencia
         End Get
-        Set(value As Conferencia)
-            Me._conferencia = value
+        Set(value As DAOConferencia)
+            Me._daoConferencia = value
         End Set
     End Property
     Public Property Email() As String
@@ -108,12 +109,12 @@
         End Set
     End Property
 
-    Public Property Articulo() As Articulo
+    Public Property DAOArticulo() As DAOArticulo
         Get
-            Return Me._articulo
+            Return Me._daoArticulo
         End Get
-        Set(value As Articulo)
-            Me._articulo = value
+        Set(value As DAOArticulo)
+            Me._daoArticulo = value
         End Set
     End Property
 

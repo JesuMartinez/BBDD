@@ -17,7 +17,7 @@
     Private Sub btnAplicarGuardar_Click(sender As Object, e As EventArgs) Handles btnAplicarGuardar.Click
         Dim inv As Investigador
         For conf = 0 To lstbxAsistencias.Items.Count - 1
-            inv = New Investigador(Me._idInvestigador, Convert.ToInt32(lstbxAsistencias.Items(conf)))
+            inv = New Investigador(Me._idInvestigador, lstbxAsistencias.SelectedItems)
             Try
                 inv.asiste()
             Catch ex As Exception
