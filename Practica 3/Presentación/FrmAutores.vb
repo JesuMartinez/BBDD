@@ -12,6 +12,7 @@
             Me._idArticulo = value
         End Set
     End Property
+
     Private Sub cargarInvestigadores()
         Dim inv As New Investigador
         Try
@@ -20,7 +21,8 @@
                 ListbxInvestigadores.Items.Add(inv.IDInvestigador)
             Next
         Catch ex As Exception
-            MessageBox.Show(ex.ToString)
+            MessageBox.Show(ex.Message)
+            Exit Sub
         End Try
     End Sub
 

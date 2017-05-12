@@ -63,7 +63,6 @@
         Else
             Me.Close()
         End If
-
     End Sub
 
     Private Sub btnAñadir_Click(sender As Object, e As EventArgs) Handles btnAñadir.Click
@@ -83,7 +82,7 @@
                 inv.insertInvestigador()
                 lstbxInvestigadores.Items.Add(inv.IDInvestigador)
             Catch ex As Exception
-                MessageBox.Show(ex.ToString)
+                MessageBox.Show(ex.Message)
                 Exit Sub
             End Try
         Else
@@ -123,7 +122,7 @@
                 inv.deleteInvestigador()
                 lstbxInvestigadores.Items.Remove(lstbxInvestigadores.SelectedItem)
             Catch ex As Exception
-                MessageBox.Show(ex.ToString)
+                MessageBox.Show(ex.Message)
                 Exit Sub
             End Try
         End If
