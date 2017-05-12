@@ -43,4 +43,8 @@
         Me.Hide()
         FrmInvestigadores.Show()
     End Sub
+
+    Private Sub Curriculum_Vitae_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        Application.Exit()
+    End Sub
 End Class

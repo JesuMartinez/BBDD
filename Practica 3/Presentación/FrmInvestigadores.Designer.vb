@@ -23,7 +23,7 @@ Partial Class FrmInvestigadores
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.grpbxInvestigadores = New System.Windows.Forms.GroupBox()
-        Me.txtbxTelefono = New System.Windows.Forms.MaskedTextBox()
+        Me.txtbxTelefono = New System.Windows.Forms.TextBox()
         Me.btnArticulos = New System.Windows.Forms.Button()
         Me.btnConferencias = New System.Windows.Forms.Button()
         Me.btnGestionarAsistencias = New System.Windows.Forms.Button()
@@ -89,11 +89,12 @@ Partial Class FrmInvestigadores
         '
         'txtbxTelefono
         '
-        Me.txtbxTelefono.Location = New System.Drawing.Point(804, 132)
-        Me.txtbxTelefono.Mask = "000-000-000"
+        Me.txtbxTelefono.Location = New System.Drawing.Point(805, 131)
+        Me.txtbxTelefono.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.txtbxTelefono.MaxLength = 9
         Me.txtbxTelefono.Name = "txtbxTelefono"
-        Me.txtbxTelefono.Size = New System.Drawing.Size(150, 22)
-        Me.txtbxTelefono.TabIndex = 25
+        Me.txtbxTelefono.Size = New System.Drawing.Size(149, 22)
+        Me.txtbxTelefono.TabIndex = 24
         '
         'btnArticulos
         '
@@ -375,5 +376,5 @@ Partial Class FrmInvestigadores
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
     Friend WithEvents btnConferencias As Button
     Friend WithEvents btnArticulos As Button
-    Friend WithEvents txtbxTelefono As MaskedTextBox
+    Friend WithEvents txtbxTelefono As TextBox
 End Class

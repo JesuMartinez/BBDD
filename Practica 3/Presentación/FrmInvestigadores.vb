@@ -65,12 +65,11 @@
         End If
     End Sub
 
+
+
     Private Sub btnAñadir_Click(sender As Object, e As EventArgs) Handles btnAñadir.Click
         Dim inv As Investigador
-        If (txtbxApellidosInvestigador.TextLength > 0 And txtbxDepartamento.TextLength > 0 And txtbxDespacho.TextLength > 0 And
-        txtbxEdificio.TextLength > 0 And txtbxEmail.TextLength > 0 And txtbxNombreInvestigador.TextLength > 0 And txtbxTelefono.TextLength > 0) And
-        txtbxIDInvestigador.TextLength > 0 Then
-            inv = New Investigador(Convert.ToInt32(txtbxIDInvestigador.Text))
+        inv = New Investigador(Convert.ToInt32(txtbxIDInvestigador.Text))
             inv.Nombre = txtbxNombreInvestigador.Text
             inv.Apellidos = txtbxApellidosInvestigador.Text
             inv.Despacho = txtbxDespacho.Text
@@ -78,16 +77,13 @@
             inv.Departamento = txtbxDepartamento.Text
             inv.Telefono = txtbxTelefono.Text
             inv.Email = txtbxEmail.Text
-            Try
-                inv.insertInvestigador()
-                lstbxInvestigadores.Items.Add(inv.IDInvestigador)
-            Catch ex As Exception
-                MessageBox.Show(ex.Message)
-                Exit Sub
-            End Try
-        Else
-            MessageBox.Show("Por favor introduzca información en los campos vacíos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End If
+        Try
+            inv.insertInvestigador()
+            lstbxInvestigadores.Items.Add(inv.IDInvestigador)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            Exit Sub
+        End Try
     End Sub
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
@@ -155,6 +151,15 @@
             e.Handled = True
         End If
     End Sub
+    Private Sub txtbxTelefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtbxTelefono.KeyPress
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
 
     Private Sub btnCrearCV_Click(sender As Object, e As EventArgs) Handles btnCrearCV.Click
         Dim frmcv As New Curriculum_Vitae
@@ -162,4 +167,10 @@
         Me.Hide()
         frmcv.Show()
     End Sub
+
+    Private Sub FrmInvestigadores_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        Application.Exit()
+    End Sub
+
+
 End Class

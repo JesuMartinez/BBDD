@@ -21,7 +21,7 @@
     Public Sub New(ByVal idInvest As Integer, ByVal daoConferencia As ListBox.ObjectCollection)
         Me._idInvest = idInvest
         Me._daoInvestigador = New DAOInvestigador
-        Me._daoConferencia = daoConferencia
+        'Me._daoConferencia = daoConferencia
         Me._daoConferencia = New DAOConferencia
     End Sub
 
@@ -157,6 +157,6 @@
     End Sub
 
     Public Sub asiste()
-        Me._daoInvestigador.asiste(Me, Me._conferencia)
+        '  Me._daoInvestigador.asiste(Me, Me._conferencia)
     End Sub
 End Class

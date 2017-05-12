@@ -18,23 +18,18 @@
 
     Private Sub btnAñadirArticulo_Click(sender As Object, e As EventArgs) Handles btnAñadirArticulo.Click
         Dim ar As Articulo
-        If (txtbxIDArticulo.TextLength > 0 And txtbxPag_fin.TextLength > 0 And txtbxPag_inicio.TextLength > 0 And
-            txtbxTituloArticulo.TextLength > 0) Then
-            ar = New Articulo(Convert.ToInt32(txtbxIDArticulo.Text))
+        ar = New Articulo(Convert.ToInt32(txtbxIDArticulo.Text))
             ar.Titulo = txtbxTituloArticulo.Text
             ar.Conferencia.IDConferencia = Convert.ToInt32(txtbxConferencia.Text)
             ar.PagInicio = Convert.ToInt32(txtbxPag_inicio.Text)
             ar.PagFin = Convert.ToInt32(txtbxPag_fin.Text)
-            Try
-                ar.insertArticulo()
-                lstbxArticulos.Items.Add(ar.IDArticulo)
-            Catch ex As Exception
-                MessageBox.Show(ex.Message)
-                Exit Sub
-            End Try
-        Else
-            MessageBox.Show("Por favor introduzca información en los campos vacíos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End If
+        Try
+            ar.insertArticulo()
+            lstbxArticulos.Items.Add(ar.IDArticulo)
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            Exit Sub
+        End Try
     End Sub
 
     Private Sub btnModificarArticulo_Click(sender As Object, e As EventArgs) Handles btnModificarArticulo.Click
@@ -123,5 +118,10 @@
         frmautores.IDArticulo = Convert.ToInt32(lstbxArticulos.SelectedItem)
         Me.Hide()
         frmautores.Show()
+    End Sub
+
+    Private Sub FrmArticulos_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        Application.Exit()
+
     End Sub
 End Class
