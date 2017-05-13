@@ -16,10 +16,10 @@
 
     Private Sub btnAplicarGuardar_Click(sender As Object, e As EventArgs) Handles btnAplicarGuardar.Click
         Dim inv As Investigador
-        Dim conf As New Conferencia
+
         Dim lista_conf As New Collection
         For Each conf In lstbxAsistencias.Items
-            lista_conf.Add(conf.IDConferencia)
+            lista_conf.Add(conf)
         Next
         inv = New Investigador(Me._idInvestigador, lista_conf)
         Try
@@ -36,9 +36,11 @@
         Dim conf As New Conferencia
         Try
             conf.readAll()
+
             For Each conf In conf.DAOConferencia.ListaConferencias
                 lstbxConferencias.Items.Add(conf.IDConferencia)
             Next
+
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
             Exit Sub
@@ -57,8 +59,8 @@
             MessageBox.Show(ex.ToString)
         End Try
     End Sub
-
     Private Sub FrmAsistencias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         cargarConferencias()
         cargarAsistencias()
     End Sub

@@ -26,8 +26,23 @@
         End Try
     End Sub
 
+    Private Sub cargarAutores()
+        Dim art As New Articulo(Me._idArticulo)
+        Try
+            art.consultarAutores()
+
+            For Each inv In art.ListaInvestigadores
+                ListbxAutores.Items.Add(art.ListaInvestigadores(inv))
+            Next
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+        End Try
+
+    End Sub
+
     Private Sub FrmAutores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarInvestigadores()
+        cargarAutores()
     End Sub
 
     Private Sub Añadir_Click(sender As Object, e As EventArgs) Handles Añadir.Click
@@ -37,17 +52,17 @@
 
     Private Sub btnAplicarGuardar_Click(sender As Object, e As EventArgs) Handles btnAplicarGuardar.Click
         Dim art As Articulo
+      
         Dim orden As Integer = 0
-        For autor = 0 To ListbxAutores.Items.Count - 1
+        For autor = 0 To ListbxAutores.Items.Count -1
             orden += 1
-            art = New Articulo(Me._idArticulo, Convert.ToInt32(ListbxAutores.Items(autor)), orden)
+            art = New Articulo(Me._idArticulo, Convert.ToInt32(ListbxAutores.SelectedItem), orden)
             Try
                 art.autor()
             Catch ex As Exception
                 MessageBox.Show("El investigador " & Convert.ToInt32(ListbxAutores.Items(autor)) & " ya es autor de dicho articulo.", "Advertencia", MessageBoxButtons.OK)
             End Try
         Next
-        ListbxAutores.Items.Clear()
         btnAplicarGuardar.Enabled = False
         Eliminar.Enabled = False
     End Sub
