@@ -21,7 +21,7 @@
     Public Sub New(ByVal idInvest As Integer, ByVal listaConferencias As Collection)
         Me._idInvest = idInvest
         Me._daoInvestigador = New DAOInvestigador
-        Me._listaConferencias = New Collection
+        Me._listaConferencias = listaConferencias
     End Sub
 
     Public Sub New()
@@ -157,7 +157,7 @@
 
     Public Sub asiste()
         For Each conf In Me._listaConferencias
-            'Me._listaConferencias.Add(Me._daoInvestigador.asiste(Me, conf))
+            Me._daoInvestigador.asiste(Me, Convert.ToInt32(Me._listaConferencias.Item(conf)))
         Next
     End Sub
 End Class

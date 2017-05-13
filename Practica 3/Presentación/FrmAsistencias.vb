@@ -18,7 +18,7 @@
         Dim inv As Investigador
         Dim lista_conf As New Collection
         For conf = 0 To lstbxAsistencias.Items.Count - 1
-            lista_conf.Add(conf)
+            lista_conf.Add(lstbxAsistencias.Items(conf))
         Next
         inv = New Investigador(Me._idInvestigador, lista_conf)
         Try
@@ -44,8 +44,16 @@
         End Try
     End Sub
 
+    Private Sub cargarConferenciasAsiste()
+        Dim inv As New Investigador(Me._idInvestigador)
+        For Each conf In inv.ListaConferencias
+            lstbxAsistencias.Items.Add(inv.ListaConferencias(conf))
+        Next
+    End Sub
+
     Private Sub FrmAsistencias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarConferencias()
+        'cargarConferenciasAsiste()
     End Sub
 
     Private Sub Añadir_Click(sender As Object, e As EventArgs) Handles Añadir.Click
