@@ -15,6 +15,7 @@
     Public Sub New(ByVal idInvest As Integer)
         Me._idInvest = idInvest
         Me._daoInvestigador = New DAOInvestigador
+        Me._listaConferencias = New Collection
     End Sub
     'Constructor para inicializar las conferencias de un investigador con un id determinado
     Public Sub New(ByVal idInvest As Integer, ByVal listaConferencias As Collection)
@@ -98,6 +99,7 @@
             Me._listaConferencias = value
         End Set
     End Property
+
     Public Property Email() As String
         Get
             Return Me._email
@@ -138,6 +140,10 @@
         Me._daoInvestigador.read(Me)
     End Sub
 
+    Public Sub readAsistencias()
+        Me._daoInvestigador.readAsistencias(Me)
+    End Sub
+
     Public Sub readAll()
         Me._daoInvestigador.readAll()
     End Sub
@@ -155,8 +161,8 @@
     End Sub
 
     Public Sub asiste()
-        For Each conf In Me._listaConferencias
-            Me._daoInvestigador.asiste(Me, Convert.ToInt32(Me._listaConferencias.Item(conf)))
+        For Each conf As Conferencia In Me._listaConferencias
+            Me._daoInvestigador.asiste(Me, conf)
         Next
     End Sub
 End Class

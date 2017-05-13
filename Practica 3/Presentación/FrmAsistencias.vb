@@ -16,9 +16,10 @@
 
     Private Sub btnAplicarGuardar_Click(sender As Object, e As EventArgs) Handles btnAplicarGuardar.Click
         Dim inv As Investigador
+        Dim conf As New Conferencia
         Dim lista_conf As New Collection
-        For conf = 0 To lstbxAsistencias.Items.Count - 1
-            lista_conf.Add(lstbxAsistencias.Items(conf))
+        For Each conf In lstbxAsistencias.Items
+            lista_conf.Add(conf.IDConferencia)
         Next
         inv = New Investigador(Me._idInvestigador, lista_conf)
         Try
@@ -44,16 +45,22 @@
         End Try
     End Sub
 
-    Private Sub cargarConferenciasAsiste()
+    Private Sub cargarAsistencias()
         Dim inv As New Investigador(Me._idInvestigador)
-        For Each conf In inv.ListaConferencias
-            lstbxAsistencias.Items.Add(inv.ListaConferencias(conf))
-        Next
+        Dim conf As New Conferencia
+        Try
+            inv.readAsistencias()
+            For Each conf In inv.ListaConferencias
+                lstbxAsistencias.Items.Add(conf.IDConferencia)
+            Next
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+        End Try
     End Sub
 
     Private Sub FrmAsistencias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarConferencias()
-        'cargarConferenciasAsiste()
+        cargarAsistencias()
     End Sub
 
     Private Sub Añadir_Click(sender As Object, e As EventArgs) Handles Añadir.Click
