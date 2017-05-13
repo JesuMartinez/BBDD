@@ -70,13 +70,13 @@
     Private Sub btnAñadir_Click(sender As Object, e As EventArgs) Handles btnAñadir.Click
         Dim inv As Investigador
         inv = New Investigador(Convert.ToInt32(txtbxIDInvestigador.Text))
-            inv.Nombre = txtbxNombreInvestigador.Text
-            inv.Apellidos = txtbxApellidosInvestigador.Text
-            inv.Despacho = txtbxDespacho.Text
-            inv.Edificio = txtbxEdificio.Text
-            inv.Departamento = txtbxDepartamento.Text
-            inv.Telefono = txtbxTelefono.Text
-            inv.Email = txtbxEmail.Text
+        inv.Nombre = txtbxNombreInvestigador.Text
+        inv.Apellidos = txtbxApellidosInvestigador.Text
+        inv.Despacho = txtbxDespacho.Text
+        inv.Edificio = txtbxEdificio.Text
+        inv.Departamento = txtbxDepartamento.Text
+        inv.Telefono = txtbxTelefono.Text
+        inv.Email = txtbxEmail.Text
         Try
             inv.insertInvestigador()
             lstbxInvestigadores.Items.Add(inv.IDInvestigador)
@@ -171,6 +171,4 @@
     Private Sub FrmInvestigadores_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         Application.Exit()
     End Sub
-
-
 End Class
