@@ -7,10 +7,11 @@
     Private _departamento As String
     Private _telefono As String
     Private _email As String
-    Private _listaArticulos As Collection
     Private _orden As Integer
-    Private _daoInvestigador As DAOInvestigador
+    Private _listaArticulos As Collection 'para autores
     Private _listaConferencias As Collection
+
+    Private _daoInvestigador As DAOInvestigador
 
     Public Sub New(ByVal idInvest As Integer)
         Me._idInvest = idInvest

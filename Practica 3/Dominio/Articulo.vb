@@ -1,10 +1,11 @@
 ﻿Public Class Articulo
     Private _idArticulo As Integer
     Private _titulo As String
-    Private _conferencia As Conferencia
     Private _pagInicio As Integer
     Private _pagFin As Integer
+    Private _conferencia As Conferencia
     Private _daoArticulo As DAOArticulo
+    Private _listaInvestigadores As Collection
     Private _investigador As Investigador
 
     Public Sub New(ByVal idArticulo As Integer)
