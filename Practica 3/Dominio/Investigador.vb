@@ -11,7 +11,6 @@
     Private _listaArticulos As Collection 'para autores
     Private _listaConferencias As Collection
     Private _daoInvestigador As DAOInvestigador
- 
 
     Public Sub New(ByVal idInvest As Integer)
         Me._idInvest = idInvest
