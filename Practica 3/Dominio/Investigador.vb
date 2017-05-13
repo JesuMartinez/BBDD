@@ -10,12 +10,12 @@
     Private _orden As Integer
     Private _listaArticulos As Collection 'para autores
     Private _listaConferencias As Collection
-
     Private _daoInvestigador As DAOInvestigador
 
     Public Sub New(ByVal idInvest As Integer)
         Me._idInvest = idInvest
         Me._daoInvestigador = New DAOInvestigador
+        Me._listaConferencias = New Collection
     End Sub
     'Constructor para inicializar las conferencias de un investigador con un id determinado
     Public Sub New(ByVal idInvest As Integer, ByVal listaConferencias As Collection)
@@ -160,4 +160,12 @@
             Me._daoInvestigador.asiste(Me, Convert.ToInt32(Me._listaConferencias.Item(conf)))
         Next
     End Sub
+
+    Public Sub consultarAsistencias()
+        Me._daoInvestigador.consultaAsistencias(Me)
+    End Sub
+
+    '   Public Sub consultarArticulos()
+    '  Me._daoInvestigador.consultaArticulos(Me)
+    ' End Sub
 End Class

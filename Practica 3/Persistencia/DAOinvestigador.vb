@@ -52,4 +52,20 @@
     Public Function asiste(ByVal inv As Investigador, ByVal idConferencia As Integer) As Integer
         Return AgenteBD.getAgente.modificar("INSERT INTO ASISTE VALUES ('" & idConferencia & "','" & inv.IDInvestigador & "');")
     End Function
+
+    Public Sub consultaAsistencias(ByVal inv As Investigador)
+        Dim leer As OleDb.OleDbDataReader
+        leer = AgenteBD.getAgente.leer("SELECT Conferencia FROM ASISTE WHERE Invest=" & inv.IDInvestigador & ";")
+        While leer.Read
+            inv.ListaConferencias.Add(leer.GetInt32(0))
+        End While
+    End Sub
+
+    '  Public Sub consultaArticulos(ByVal inv As Investigador)
+    ' Dim leer As OleDb.OleDbDataReader
+    '    leer = AgenteBD.getAgente.leer("SELECT Articulo FROM AUTOR WHERE Invest=" & inv.IDInvestigador & ";")
+    'While leer.Read
+    '       inv.ListaArticulos.Add(leer.GetInt32(1))
+    'End While
+    'End Sub
 End Class

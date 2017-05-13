@@ -35,9 +35,11 @@
         Dim conf As New Conferencia
         Try
             conf.readAll()
+
             For Each conf In conf.DAOConferencia.ListaConferencias
                 lstbxConferencias.Items.Add(conf.IDConferencia)
             Next
+
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
             Exit Sub
@@ -45,15 +47,20 @@
     End Sub
 
     Private Sub cargarConferenciasAsiste()
-        Dim inv As New Investigador(Me._idInvestigador)
-        For Each conf In inv.ListaConferencias
-            lstbxAsistencias.Items.Add(inv.ListaConferencias(conf))
-        Next
-    End Sub
 
+        Dim inv As New Investigador(Me._idInvestigador)
+        Try
+            inv.consultarAsistencias()
+            For Each conf In inv.ListaConferencias
+                lstbxAsistencias.Items.Add(inv.ListaConferencias(conf))
+            Next
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+        End Try
+    End Sub
     Private Sub FrmAsistencias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cargarConferenciasAsiste()
         cargarConferencias()
-        'cargarConferenciasAsiste()
     End Sub
 
     Private Sub Añadir_Click(sender As Object, e As EventArgs) Handles Añadir.Click
