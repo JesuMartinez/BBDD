@@ -36,9 +36,11 @@
         Dim conf As New Conferencia
         Try
             conf.readAll()
+
             For Each conf In conf.DAOConferencia.ListaConferencias
                 lstbxConferencias.Items.Add(conf.IDConferencia)
             Next
+
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
             Exit Sub
@@ -57,8 +59,8 @@
             MessageBox.Show(ex.ToString)
         End Try
     End Sub
-
     Private Sub FrmAsistencias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cargarConferenciasAsiste()
         cargarConferencias()
         cargarAsistencias()
     End Sub

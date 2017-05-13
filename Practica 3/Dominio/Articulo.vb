@@ -1,16 +1,18 @@
 ﻿Public Class Articulo
     Private _idArticulo As Integer
     Private _titulo As String
-    Private _conferencia As Conferencia
     Private _pagInicio As Integer
     Private _pagFin As Integer
+    Private _conferencia As Conferencia
     Private _daoArticulo As DAOArticulo
+    Private _listaInvestigadores As Collection
     Private _investigador As Investigador
 
     Public Sub New(ByVal idArticulo As Integer)
         Me._idArticulo = idArticulo
         Me._daoArticulo = New DAOArticulo
         Me._conferencia = New Conferencia 'Declarar conferencia para ese articulo
+        Me._listaInvestigadores = New Collection
     End Sub
 
     Public Sub New(ByVal idArticulo As Integer, ByVal idInvest As Integer, ByVal orden As Integer)
@@ -42,6 +44,16 @@
             Me._titulo = value
         End Set
     End Property
+
+    Public Property ListaInvestigadores() As Collection
+        Get
+            Return Me._listaInvestigadores
+        End Get
+        Set(value As Collection)
+            Me._listaInvestigadores = value
+        End Set
+    End Property
+
 
     Public Property Conferencia() As Conferencia
         Get
@@ -106,6 +118,10 @@
     'Método para gestionar los autores
     Public Sub autor()
         Me._daoArticulo.autor(Me, Me._investigador)
+    End Sub
+
+    Public Sub consultarAutores()
+        Me._daoArticulo.consultaAutores(Me)
     End Sub
 
     Public Sub deleteArticulo()

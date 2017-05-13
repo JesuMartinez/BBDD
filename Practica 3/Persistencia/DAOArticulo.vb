@@ -49,4 +49,12 @@
     Public Function autor(ByVal art As Articulo, ByVal inv As Investigador) As Integer
         Return AgenteBD.getAgente.modificar("INSERT INTO AUTOR VALUES ('" & inv.IDInvestigador & "','" & art.IDArticulo & "','" & art.Investigador.Orden & "');")
     End Function
+
+    Public Sub consultaAutores(ByVal art As Articulo)
+        Dim leer As OleDb.OleDbDataReader
+        leer = AgenteBD.getAgente.leer("SELECT Invest FROM AUTOR WHERE Articulo=" & art.IDArticulo & ";")
+        While leer.Read
+            art.ListaInvestigadores.Add(leer.GetInt32(0))
+        End While
+    End Sub
 End Class
