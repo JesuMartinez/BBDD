@@ -161,7 +161,7 @@
     End Sub
 
     Public Sub asiste()
-        For Each conf As Conferencia In Me._listaConferencias
+        For Each conf As Integer In Me._listaConferencias
             Me._daoInvestigador.asiste(Me, conf)
         Next
     End Sub

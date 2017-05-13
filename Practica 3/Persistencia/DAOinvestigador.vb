@@ -57,8 +57,8 @@
         Return AgenteBD.getAgente.modificar("DELETE FROM INVESTIGADORES WHERE idInvest=" & inv.IDInvestigador & ";")
     End Function
 
-    Public Function asiste(ByVal inv As Investigador, ByVal conf As Conferencia) As Integer
-        Return AgenteBD.getAgente.modificar("INSERT INTO ASISTE VALUES ('" & conf.IDConferencia & "','" & inv.IDInvestigador & "');")
+    Public Function asiste(ByVal inv As Investigador, ByVal conf As Integer) As Integer
+        Return AgenteBD.getAgente.modificar("INSERT INTO ASISTE VALUES ('" & conf & "','" & inv.IDInvestigador & "');")
     End Function
 
     Public Sub consultaAsistencias(ByVal inv As Investigador)

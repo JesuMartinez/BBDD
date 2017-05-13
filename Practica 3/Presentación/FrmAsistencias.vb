@@ -17,13 +17,13 @@
     Private Sub btnAplicarGuardar_Click(sender As Object, e As EventArgs) Handles btnAplicarGuardar.Click
         Dim inv As Investigador
         Dim lista_conf As New Collection
+        lista_conf.Add(Convert.ToInt32(lstbxAsistencias.SelectedItem))
         inv = New Investigador(Me._idInvestigador, lista_conf)
-            Try
+        Try
             inv.asiste()
         Catch ex As Exception
             MessageBox.Show("El investigador ya asiste a la conferencia.", "Advertencia", MessageBoxButtons.OK)
         End Try
-        lstbxAsistencias.Items.Clear()
         btnAplicarGuardar.Enabled = False
         Eliminar.Enabled = False
     End Sub
@@ -55,6 +55,7 @@
         End Try
     End Sub
     Private Sub FrmAsistencias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         cargarConferencias()
         cargarAsistencias()
     End Sub

@@ -24,6 +24,7 @@
             con.readConfAsiste()
             For Each con In con.DAOConferencia.ListaConferencias
                 txtbxConferencias.Text = con.Nombre & " " & con.Siglas & " " & con.Lugar & " " & con.FechaInicio & " " & con.FechaFin
+
             Next
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -36,7 +37,6 @@
         txtbxDespacho.Text = inv.Despacho
         txtbxTlf.Text = inv.Telefono
         txtbxEmail.Text = inv.Email
-
     End Sub
 
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click
@@ -46,5 +46,9 @@
 
     Private Sub Curriculum_Vitae_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         Application.Exit()
+    End Sub
+
+    Private Sub txtbxConferencias_TextChanged(sender As Object, e As EventArgs) Handles txtbxConferencias.TextChanged
+
     End Sub
 End Class

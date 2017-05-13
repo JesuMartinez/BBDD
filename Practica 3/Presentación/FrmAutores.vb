@@ -54,7 +54,7 @@
         Dim art As Articulo
       
         Dim orden As Integer = 0
-        For autor = 0 To ListbxAutores.Items.Count - 1
+        For autor = 0 To ListbxAutores.Items.Count -1
             orden += 1
             art = New Articulo(Me._idArticulo, Convert.ToInt32(ListbxAutores.SelectedItem), orden)
             Try
