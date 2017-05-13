@@ -16,13 +16,9 @@
 
     Private Sub btnAplicarGuardar_Click(sender As Object, e As EventArgs) Handles btnAplicarGuardar.Click
         Dim inv As Investigador
-        Dim conf As New Conferencia
         Dim lista_conf As New Collection
-        For Each conf In lstbxAsistencias.Items
-            lista_conf.Add(conf.IDConferencia)
-        Next
         inv = New Investigador(Me._idInvestigador, lista_conf)
-        Try
+            Try
             inv.asiste()
         Catch ex As Exception
             MessageBox.Show("El investigador ya asiste a la conferencia.", "Advertencia", MessageBoxButtons.OK)
@@ -36,7 +32,6 @@
         Dim conf As New Conferencia
         Try
             conf.readAll()
-
             For Each conf In conf.DAOConferencia.ListaConferencias
                 lstbxConferencias.Items.Add(conf.IDConferencia)
             Next
@@ -60,7 +55,6 @@
         End Try
     End Sub
     Private Sub FrmAsistencias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cargarConferenciasAsiste()
         cargarConferencias()
         cargarAsistencias()
     End Sub
