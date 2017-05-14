@@ -47,8 +47,8 @@
 
         Try
             inv.readAsistencias()
-            For Each conf As Integer In inv.ListaConferencias
-                lstbxAsistencias.Items.Add(conf)
+            For Each conf In inv.ListaConferencias
+                lstbxAsistencias.Items.Add(inv.ListaConferencias(conf))
             Next
         Catch ex As Exception
             MessageBox.Show(ex.ToString)

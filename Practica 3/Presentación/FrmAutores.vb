@@ -21,7 +21,7 @@
                 ListbxInvestigadores.Items.Add(inv.IDInvestigador)
             Next
         Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            MessageBox.Show(ex.ToString)
             Exit Sub
         End Try
     End Sub
@@ -30,7 +30,6 @@
         Dim art As New Articulo(Me._idArticulo)
         Try
             art.consultarAutores()
-
             For Each inv In art.ListaInvestigadores
                 ListbxAutores.Items.Add(art.ListaInvestigadores(inv))
             Next
