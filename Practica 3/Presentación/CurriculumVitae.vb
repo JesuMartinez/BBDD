@@ -28,7 +28,7 @@
             For Each item As Integer In inv.ListaConferencias
                 conf = New Conferencia(item)
                 conf.readConferencia()
-                txtbxConferencias.Text += conf.Nombre & " " & conf.Siglas & " " & conf.Lugar & " " & conf.FechaInicio & " " & conf.FechaFin & vbNewLine
+                txtbxConferencias.Text += conf.Nombre & " " & conf.Siglas & " " & conf.Lugar & " " & Convert.ToDateTime(conf.FechaInicio) & " " & Convert.ToDateTime(conf.FechaFin) & vbNewLine
             Next
         Catch ex As Exception
 
