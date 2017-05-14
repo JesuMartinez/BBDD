@@ -243,7 +243,7 @@ Partial Class Curriculum_Vitae
         Me.grpbxAsistencias.Controls.Add(Me.txtbxConferencias)
         Me.grpbxAsistencias.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grpbxAsistencias.ForeColor = System.Drawing.Color.CornflowerBlue
-        Me.grpbxAsistencias.Location = New System.Drawing.Point(631, 150)
+        Me.grpbxAsistencias.Location = New System.Drawing.Point(637, 150)
         Me.grpbxAsistencias.Name = "grpbxAsistencias"
         Me.grpbxAsistencias.Size = New System.Drawing.Size(717, 209)
         Me.grpbxAsistencias.TabIndex = 10
@@ -264,7 +264,7 @@ Partial Class Curriculum_Vitae
         Me.grpbxArticulos.Controls.Add(Me.txtbxArticulos)
         Me.grpbxArticulos.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grpbxArticulos.ForeColor = System.Drawing.Color.CornflowerBlue
-        Me.grpbxArticulos.Location = New System.Drawing.Point(631, 374)
+        Me.grpbxArticulos.Location = New System.Drawing.Point(637, 374)
         Me.grpbxArticulos.Name = "grpbxArticulos"
         Me.grpbxArticulos.Size = New System.Drawing.Size(717, 209)
         Me.grpbxArticulos.TabIndex = 11
