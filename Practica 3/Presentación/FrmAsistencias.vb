@@ -32,7 +32,6 @@
         Dim conf As New Conferencia
         Try
             conf.readAll()
-
             For Each conf In conf.DAOConferencia.ListaConferencias
                 lstbxConferencias.Items.Add(conf.IDConferencia)
             Next
