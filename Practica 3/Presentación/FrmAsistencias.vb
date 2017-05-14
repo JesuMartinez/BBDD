@@ -28,6 +28,20 @@
         Eliminar.Enabled = False
     End Sub
 
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles Eliminar.Click
+        Dim inv As Investigador
+        Dim lista_conf As New Collection
+        lista_conf.Add(Convert.ToInt32(lstbxAsistencias.SelectedItem))
+        inv = New Investigador(_idInvestigador, lista_conf)
+        Try
+            inv.eliminarAsistencia()
+        Catch ex As Exception
+
+        End Try
+        lstbxConferencias.Items.Add(lstbxAsistencias.SelectedItem)
+        lstbxAsistencias.Items.Remove(lstbxAsistencias.SelectedItem)
+    End Sub
+
     Private Sub cargarConferencias()
         Dim conf As New Conferencia
         Try
@@ -44,11 +58,11 @@
 
     Private Sub cargarAsistencias()
         Dim inv As New Investigador(Me._idInvestigador)
-        Dim conf As New Conferencia
+
         Try
             inv.readAsistencias()
             For Each conf In inv.ListaConferencias
-                lstbxAsistencias.Items.Add(conf.IDConferencia)
+                lstbxAsistencias.Items.Add(inv.ListaConferencias(conf))
             Next
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
@@ -83,15 +97,12 @@
         End If
     End Sub
 
-    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles Eliminar.Click
-        lstbxConferencias.Items.Add(lstbxAsistencias.SelectedItem)
-        lstbxAsistencias.Items.Remove(lstbxAsistencias.SelectedItem)
-    End Sub
+
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         lstbxConferencias.Items.Clear()
         lstbxAsistencias.Items.Clear()
-        Me.Close()
+        Me.Hide()
         FrmInvestigadores.Show()
     End Sub
 

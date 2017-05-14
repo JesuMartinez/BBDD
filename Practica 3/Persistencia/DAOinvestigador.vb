@@ -33,7 +33,7 @@
         Dim leer As OleDb.OleDbDataReader
         leer = AgenteBD.getAgente.leer("SELECT Conferencia FROM ASISTE WHERE Invest=" & inv.IDInvestigador & ";")
         While leer.Read
-            inv.ListaConferencias.Add(New Conferencia(leer.GetInt32(0)))
+            inv.ListaConferencias.Add(leer.GetInt32(0))
         End While
     End Sub
 
@@ -59,6 +59,10 @@
 
     Public Function asiste(ByVal inv As Investigador, ByVal idConferencia As Integer) As Integer
         Return AgenteBD.getAgente.modificar("INSERT INTO ASISTE VALUES ('" & idConferencia & "','" & inv.IDInvestigador & "');")
+    End Function
+
+    Public Function eliminarAsistencia(ByVal inv As Investigador, ByVal conf As Integer) As Integer
+        Return AgenteBD.getAgente.modificar("DELETE FROM ASISTE WHERE Invest=" & inv.IDInvestigador & " AND Conferencia=" & conf & ";")
     End Function
 
     '  Public Sub consultaArticulos(ByVal inv As Investigador)

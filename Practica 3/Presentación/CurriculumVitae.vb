@@ -15,17 +15,34 @@
     End Property
 
     Private Sub Curriculum_Vitae_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cargarDatosPersonales()
+        cargarAsistencias()
+        'cargarAUTORES y terminado
+    End Sub
+
+    Private Sub cargarAsistencias()
+        Dim listaConf As New Collection
+        Dim inv As New Investigador(_idinvestigador)
+        Dim conf As Conferencia
+        Try
+            inv.readAsistencias()
+            For Each item As Integer In inv.ListaConferencias
+                conf = New Conferencia(item)
+                conf.readConferencia()
+                txtbxConferencias.Text += conf.Nombre & " " & conf.Siglas & " " & conf.Lugar & " " & Convert.ToDateTime(conf.FechaInicio) & " " & Convert.ToDateTime(conf.FechaFin) & vbNewLine
+            Next
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub cargarDatosPersonales()
         lblAutor.Visible = True
         lblAutor.Text = "CURRICULUM DEL AUTOR CON ID (" & _idinvestigador.ToString & ")"
         Dim inv As New Investigador(_idinvestigador)
-        Dim con As New Conferencia
         Try
             inv.readInvestigador()
-            con.readConfAsiste()
-            For Each con In con.DAOConferencia.ListaConferencias
-                txtbxConferencias.Text = con.Nombre & " " & con.Siglas & " " & con.Lugar & " " & con.FechaInicio & " " & con.FechaFin
-
-            Next
+            'txtbxConferencias.Text = con.Nombre & " " & con.Siglas & " " & con.Lugar & " " & con.FechaInicio & " " & con.FechaFin
         Catch ex As Exception
             MessageBox.Show(ex.Message)
             Exit Sub
@@ -48,7 +65,4 @@
         Application.Exit()
     End Sub
 
-    Private Sub txtbxConferencias_TextChanged(sender As Object, e As EventArgs) Handles txtbxConferencias.TextChanged
-
-    End Sub
 End Class

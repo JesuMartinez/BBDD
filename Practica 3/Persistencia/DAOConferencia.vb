@@ -14,7 +14,7 @@
         End Set
     End Property
 
-    Public Sub read(ByRef con As Conferencia)
+    Public Sub read(ByVal con As Conferencia)
         Dim leer As OleDb.OleDbDataReader
         leer = AgenteBD.getAgente.leer("SELECT * FROM CONFERENCIAS WHERE idConferencia=" & con.IDConferencia & ";")
         While leer.Read
