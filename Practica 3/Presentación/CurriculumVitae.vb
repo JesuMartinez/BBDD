@@ -25,10 +25,11 @@
         Dim conf As Conferencia
         Try
             inv.consultarAsistencias()
+
             For Each item As Integer In inv.ListaConferencias
                 conf = New Conferencia(item)
-                conf.readConferencia()
-                txtbxConferencias.Text += conf.Nombre & " " & conf.Siglas & " " & conf.Lugar & " " & conf.FechaInicio & " " & conf.FechaFin & vbNewLine
+                Read
+                txtbxConferencias.Text = conf.Nombre & " " & conf.Siglas & " " & conf.Lugar & " " & conf.FechaInicio & " " & conf.FechaFin & vbNewLine
             Next
         Catch ex As Exception
 

@@ -75,7 +75,7 @@
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         ListbxInvestigadores.Items.Clear()
         ListbxAutores.Items.Clear()
-        Me.Close()
+        Me.Hide()
         FrmArticulos.Show()
     End Sub
 

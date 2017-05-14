@@ -32,7 +32,6 @@
         Dim conf As New Conferencia
         Try
             conf.readAll()
-
             For Each conf In conf.DAOConferencia.ListaConferencias
                 lstbxConferencias.Items.Add(conf.IDConferencia)
             Next
@@ -92,7 +91,7 @@
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
         lstbxConferencias.Items.Clear()
         lstbxAsistencias.Items.Clear()
-        Me.Close()
+        Me.Hide()
         FrmInvestigadores.Show()
     End Sub
 

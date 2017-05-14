@@ -165,11 +165,6 @@
             Me._daoInvestigador.asiste(Me, conf)
         Next
     End Sub
-
-    Public Sub consultarAsistencias()
-        Me._daoInvestigador.consultaAsistencias(Me)
-    End Sub
-
     '   Public Sub consultarArticulos()
     '  Me._daoInvestigador.consultaArticulos(Me)
     ' End Sub
