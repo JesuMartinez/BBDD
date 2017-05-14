@@ -44,11 +44,11 @@
 
     Private Sub cargarAsistencias()
         Dim inv As New Investigador(Me._idInvestigador)
-        Dim conf As New Conferencia
+
         Try
             inv.readAsistencias()
-            For Each conf In inv.ListaConferencias
-                lstbxAsistencias.Items.Add(conf.IDConferencia)
+            For Each conf As Integer In inv.ListaConferencias
+                lstbxAsistencias.Items.Add(conf)
             Next
         Catch ex As Exception
             MessageBox.Show(ex.ToString)

@@ -17,6 +17,7 @@
     Private Sub Curriculum_Vitae_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarDatosPersonales()
         cargarAsistencias()
+        'cargarAUTORES y terminado
     End Sub
 
     Private Sub cargarAsistencias()
