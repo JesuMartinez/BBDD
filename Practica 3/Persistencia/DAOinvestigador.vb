@@ -61,6 +61,10 @@
         Return AgenteBD.getAgente.modificar("INSERT INTO ASISTE VALUES ('" & conf & "','" & inv.IDInvestigador & "');")
     End Function
 
+    Public Function eliminarAsistencia(ByVal inv As Investigador, ByVal conf As Integer) As Integer
+        Return AgenteBD.getAgente.modificar("DELETE FROM ASISTE WHERE Invest=" & inv.IDInvestigador & " AND Conferencia=" & conf & ";")
+    End Function
+
     '  Public Sub consultaArticulos(ByVal inv As Investigador)
     ' Dim leer As OleDb.OleDbDataReader
     '    leer = AgenteBD.getAgente.leer("SELECT Articulo FROM AUTOR WHERE Invest=" & inv.IDInvestigador & ";")

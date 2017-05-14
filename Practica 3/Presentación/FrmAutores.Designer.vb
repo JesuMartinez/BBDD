@@ -84,7 +84,6 @@ Partial Class FrmAutores
         Me.ListbxAutores.Location = New System.Drawing.Point(40, 40)
         Me.ListbxAutores.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ListbxAutores.Name = "ListbxAutores"
-        Me.ListbxAutores.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple
         Me.ListbxAutores.Size = New System.Drawing.Size(212, 404)
         Me.ListbxAutores.TabIndex = 5
         '

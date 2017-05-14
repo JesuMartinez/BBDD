@@ -165,6 +165,13 @@
             Me._daoInvestigador.asiste(Me, conf)
         Next
     End Sub
+
+    Public Sub eliminarAsistencia()
+        For Each conf As Integer In Me._listaConferencias
+            Me._daoInvestigador.eliminarAsistencia(Me, conf)
+        Next
+    End Sub
+
     '   Public Sub consultarArticulos()
     '  Me._daoInvestigador.consultaArticulos(Me)
     ' End Sub

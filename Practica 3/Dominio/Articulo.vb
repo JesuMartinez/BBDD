@@ -15,12 +15,11 @@
         Me._listaInvestigadores = New Collection
     End Sub
 
-    Public Sub New(ByVal idArticulo As Integer, ByVal idInvest As Integer, ByVal orden As Integer)
+    Public Sub New(ByVal idArticulo As Integer, ByVal listaAutores As Collection)
         Me._idArticulo = idArticulo
         Me._daoArticulo = New DAOArticulo
         Me._investigador = New Investigador
-        Me._investigador.IDInvestigador = idInvest
-        Me._investigador.Orden = orden
+        Me._listaInvestigadores = listaAutores
     End Sub
 
     Public Sub New()
@@ -117,7 +116,16 @@
     End Sub
     'Método para gestionar los autores
     Public Sub autor()
-        Me._daoArticulo.autor(Me, Me._investigador)
+        For Each item As Integer In Me._listaInvestigadores
+
+            Me._daoArticulo.autor(Me, item, (_listaInvestigadores.Count))
+        Next
+    End Sub
+
+    Public Sub eliminarAutores()
+        For Each inv As Integer In Me._listaInvestigadores
+            Me._daoArticulo.eliminarAutores(Me, inv)
+        Next
     End Sub
 
     Public Sub consultarAutores()
