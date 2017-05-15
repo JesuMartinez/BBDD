@@ -6,7 +6,6 @@
     Private _conferencia As Conferencia
     Private _daoArticulo As DAOArticulo
     Private _listaInvestigadores As Collection
-    Private _investigador As Investigador
 
     Public Sub New(ByVal idArticulo As Integer)
         Me._idArticulo = idArticulo
@@ -18,7 +17,6 @@
     Public Sub New(ByVal idArticulo As Integer, ByVal listaAutores As Collection)
         Me._idArticulo = idArticulo
         Me._daoArticulo = New DAOArticulo
-        Me._investigador = New Investigador
         Me._listaInvestigadores = listaAutores
     End Sub
 
@@ -90,15 +88,6 @@
         End Set
     End Property
 
-    Public Property Investigador As Investigador
-        Get
-            Return Me._investigador
-        End Get
-        Set(value As Investigador)
-            Me._investigador = value
-        End Set
-    End Property
-
     Public Sub readArticulo()
         Me._daoArticulo.read(Me)
     End Sub
@@ -116,20 +105,19 @@
     End Sub
     'Método para gestionar los autores
     Public Sub autor()
-        For Each item As Integer In Me._listaInvestigadores
-
-            Me._daoArticulo.autor(Me, item, (_listaInvestigadores.Count))
+        For Each inv As Investigador In Me._listaInvestigadores
+            Me._daoArticulo.autor(Me, inv)
         Next
     End Sub
 
-    Public Sub eliminarAutores()
-        For Each inv As Integer In Me._listaInvestigadores
-            Me._daoArticulo.eliminarAutores(Me, inv)
+    Public Sub deleteAutor()
+        For Each inv As Investigador In Me._listaInvestigadores
+            Me._daoArticulo.deleteAutor(Me, inv)
         Next
     End Sub
 
-    Public Sub consultarAutores()
-        Me._daoArticulo.consultaAutores(Me)
+    Public Sub readAutores()
+        Me._daoArticulo.readAutores(Me)
     End Sub
 
     Public Sub deleteArticulo()

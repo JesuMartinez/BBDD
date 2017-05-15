@@ -29,14 +29,14 @@
     Private Sub cargarAutores()
         Dim art As New Articulo(Me._idArticulo)
         Try
-            art.consultarAutores()
-            For Each inv In art.ListaInvestigadores
-                ListbxAutores.Items.Add(art.ListaInvestigadores(inv))
+            art.readAutores()
+            For Each inv As Investigador In art.ListaInvestigadores
+                ListbxAutores.Items.Add(inv.IDInvestigador)
             Next
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
+            Exit Sub
         End Try
-
     End Sub
 
     Private Sub FrmAutores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -49,34 +49,40 @@
         ListbxInvestigadores.Items.Remove(ListbxInvestigadores.SelectedItem)
     End Sub
 
-    '  Private Sub btnAplicarGuardar_Click(sender As Object, e As EventArgs) Handles btnAplicarGuardar.Click
-    ' Dim art As Articulo
-
-    '  Dim orden As Integer = 0
-    ' For autor = 0 To ListbxAutores.Items.Count -1
-    '        orden += 1
-    '       art = New Articulo(Me._idArticulo, Convert.ToInt32(ListbxAutores.SelectedItem), orden)
-    'Try
-    '           art.autor()
-    'Catch ex As Exception
-    '           MessageBox.Show("El investigador " & Convert.ToInt32(ListbxAutores.Items(autor)) & " ya es autor de dicho articulo.", "Advertencia", MessageBoxButtons.OK)
-    'End Try
-    'Next
-    '   btnAplicarGuardar.Enabled = False
-    '  Eliminar.Enabled = False
-    'End  Sub
+    Private Sub btnAplicarGuardar_Click(sender As Object, e As EventArgs) Handles btnAplicarGuardar.Click
+        Dim art As Articulo
+        Dim inv As New Investigador
+        Dim lista_autores As New Collection
+        inv.IDInvestigador = Convert.ToInt32(ListbxAutores.SelectedItem)
+        inv.Orden = ListbxAutores.SelectedIndex
+        lista_autores.Add(inv)
+        art = New Articulo(Me._idArticulo, lista_autores)
+        Try
+            art.autor()
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+            ListbxAutores.Items.Remove(ListbxAutores.SelectedItem)
+            Exit Sub
+        End Try
+        btnAplicarGuardar.Enabled = False
+        Eliminar.Enabled = False
+    End Sub
 
     Private Sub Eliminar_Click(sender As Object, e As EventArgs) Handles Eliminar.Click
         Dim art As Articulo
-        Dim lista_inv As New Collection
-        lista_inv.Add(Convert.ToInt32(ListbxAutores.SelectedItem))
-        art = New Articulo(_idArticulo, lista_inv)
+        Dim inv As New Investigador
+        Dim lista_autores As New Collection
+        inv.IDInvestigador = Convert.ToInt32(ListbxAutores.SelectedItem)
+        lista_autores.Add(inv)
+        art = New Articulo(Me._idArticulo, lista_autores)
         Try
-            art.eliminarAutores()
+            art.deleteAutor()
         Catch ex As Exception
-
+            MessageBox.Show(ex.ToString)
+            ListbxAutores.Items.Remove(ListbxAutores.SelectedItem)
+            Exit Sub
         End Try
-        ListbxInvestigadores.Items.Add(ListbxAutores.SelectedItem)
+        'ListbxInvestigadores.Items.Add(ListbxAutores.SelectedItem)
         ListbxAutores.Items.Remove(ListbxAutores.SelectedItem)
     End Sub
 
@@ -107,23 +113,5 @@
 
     Private Sub FrmAutores_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         Application.Exit()
-    End Sub
-
-    Private Sub btnAplicarGuardar_Click(sender As Object, e As EventArgs) Handles btnAplicarGuardar.Click
-        Dim art As New Articulo(_idArticulo)
-        Dim lista_autores As Collection
-        Try
-            art.consultarAutores()
-            art.ListaInvestigadores.Add(Convert.ToInt32(ListbxAutores.SelectedItem))
-            For Each item As Integer In art.ListaInvestigadores
-                MessageBox.Show("ESTO VA A MOSTRAR" & item)
-            Next
-            art.autor()
-
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString)
-        End Try
-        btnAplicarGuardar.Enabled = False
-        Eliminar.Enabled = False
     End Sub
 End Class

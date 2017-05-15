@@ -1,5 +1,5 @@
 ﻿Public Class Curriculum_Vitae
-    Private _idinvestigador As Integer
+    Private _idInvestigador As Integer
 
     Public Sub New()
         InitializeComponent()
@@ -22,27 +22,25 @@
 
     Private Sub cargarAsistencias()
         Dim listaConf As New Collection
-        Dim inv As New Investigador(_idinvestigador)
-        Dim conf As Conferencia
+        Dim inv As New Investigador(Me._idInvestigador)
         Try
             inv.readAsistencias()
-            For Each item As Integer In inv.ListaConferencias
-                conf = New Conferencia(item)
+            For Each conf As Conferencia In inv.ListaConferencias
                 conf.readConferencia()
-                txtbxConferencias.Text += conf.Nombre & " " & conf.Siglas & " " & conf.Lugar & " " & Convert.ToDateTime(conf.FechaInicio) & " " & Convert.ToDateTime(conf.FechaFin) & vbNewLine
+                txtbxConferencias.Text += conf.Nombre & " . " & conf.Siglas & " . " & conf.Lugar & " . " & Convert.ToDateTime(conf.FechaInicio) & "-" & Convert.ToDateTime(conf.FechaFin) & vbNewLine
             Next
         Catch ex As Exception
-
+            MessageBox.Show(ex.ToString)
+            Exit Sub
         End Try
     End Sub
 
     Private Sub cargarDatosPersonales()
         lblAutor.Visible = True
         lblAutor.Text = "CURRICULUM DEL AUTOR CON ID (" & _idinvestigador.ToString & ")"
-        Dim inv As New Investigador(_idinvestigador)
+        Dim inv As New Investigador(Me._idInvestigador)
         Try
             inv.readInvestigador()
-            'txtbxConferencias.Text = con.Nombre & " " & con.Siglas & " " & con.Lugar & " " & con.FechaInicio & " " & con.FechaFin
         Catch ex As Exception
             MessageBox.Show(ex.Message)
             Exit Sub
@@ -64,5 +62,4 @@
     Private Sub Curriculum_Vitae_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         Application.Exit()
     End Sub
-
 End Class

@@ -161,18 +161,14 @@
     End Sub
 
     Public Sub asiste()
-        For Each conf As Integer In Me._listaConferencias
+        For Each conf As Conferencia In Me._listaConferencias
             Me._daoInvestigador.asiste(Me, conf)
         Next
     End Sub
 
-    Public Sub eliminarAsistencia()
-        For Each conf As Integer In Me._listaConferencias
-            Me._daoInvestigador.eliminarAsistencia(Me, conf)
+    Public Sub deleteAsistencia()
+        For Each conf As Conferencia In Me._listaConferencias
+            Me._daoInvestigador.deleteAsistencia(Me, conf)
         Next
     End Sub
-
-    '   Public Sub consultarArticulos()
-    '  Me._daoInvestigador.consultaArticulos(Me)
-    ' End Sub
 End Class

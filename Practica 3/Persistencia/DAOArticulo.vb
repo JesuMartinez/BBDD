@@ -46,19 +46,19 @@
         Return AgenteBD.getAgente.modificar("DELETE FROM ARTICULOS WHERE idArticulo=" & art.IDArticulo & ";")
     End Function
 
-    Public Function autor(ByVal art As Articulo, ByVal idAutor As Integer, ByVal orden As Integer) As Integer
-        Return AgenteBD.getAgente.modificar("INSERT INTO AUTOR VALUES ('" & idAutor & "','" & art.IDArticulo & "','" & orden & "');")
+    Public Function autor(ByVal art As Articulo, ByVal inv As Investigador) As Integer
+        Return AgenteBD.getAgente.modificar("INSERT INTO AUTOR VALUES ('" & inv.IDInvestigador & "','" & art.IDArticulo & "','" & inv.Orden & "');")
     End Function
 
-    Public Function eliminarAutores(ByVal art As Articulo, ByVal idInvest As Integer) As Integer
-        Return AgenteBD.getAgente.modificar("DELETE FROM AUTOR WHERE Invest=" & idInvest & " AND Articulo=" & art.IDArticulo & ";")
+    Public Function deleteAutor(ByVal art As Articulo, ByVal inv As Investigador) As Integer
+        Return AgenteBD.getAgente.modificar("DELETE * FROM AUTOR WHERE Invest=" & inv.IDInvestigador & " AND Articulo=" & art.IDArticulo & ";")
     End Function
 
-    Public Sub consultaAutores(ByVal art As Articulo)
+    Public Sub readAutores(ByVal art As Articulo)
         Dim leer As OleDb.OleDbDataReader
         leer = AgenteBD.getAgente.leer("SELECT Invest FROM AUTOR WHERE Articulo=" & art.IDArticulo & ";")
         While leer.Read
-            art.ListaInvestigadores.Add(leer.GetInt32(0))
+            art.ListaInvestigadores.Add(New Investigador(leer.GetInt32(0)))
         End While
     End Sub
 End Class
