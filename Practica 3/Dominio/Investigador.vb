@@ -8,7 +8,7 @@
     Private _telefono As String
     Private _email As String
     Private _orden As Integer
-    Private _listaArticulos As Collection 'para autores
+    Private _listaArticulos As Collection
     Private _listaConferencias As Collection
     Private _daoInvestigador As DAOInvestigador
 
@@ -16,6 +16,7 @@
         Me._idInvest = idInvest
         Me._daoInvestigador = New DAOInvestigador
         Me._listaConferencias = New Collection
+        Me._listaArticulos = New Collection
     End Sub
     'Constructor para inicializar las conferencias de un investigador con un id determinado
     Public Sub New(ByVal idInvest As Integer, ByVal listaConferencias As Collection)
@@ -142,6 +143,10 @@
 
     Public Sub readAsistencias()
         Me._daoInvestigador.readAsistencias(Me)
+    End Sub
+
+    Public Sub readArticulos()
+        Me._daoInvestigador.readArticulos(Me)
     End Sub
 
     Public Sub readAll()

@@ -274,6 +274,7 @@ Partial Class Curriculum_Vitae
         'txtbxArticulos
         '
         Me.txtbxArticulos.Enabled = False
+        Me.txtbxArticulos.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxArticulos.Location = New System.Drawing.Point(6, 39)
         Me.txtbxArticulos.Multiline = True
         Me.txtbxArticulos.Name = "txtbxArticulos"

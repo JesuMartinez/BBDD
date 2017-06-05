@@ -17,27 +17,12 @@
     Private Sub Curriculum_Vitae_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarDatosPersonales()
         cargarAsistencias()
-        'cargarAUTORES y terminado
-    End Sub
-
-    Private Sub cargarAsistencias()
-        Dim listaConf As New Collection
-        Dim inv As New Investigador(Me._idInvestigador)
-        Try
-            inv.readAsistencias()
-            For Each conf As Conferencia In inv.ListaConferencias
-                conf.readConferencia()
-                txtbxConferencias.Text += conf.Nombre & " . " & conf.Siglas & " . " & conf.Lugar & " . " & Convert.ToDateTime(conf.FechaInicio) & "-" & Convert.ToDateTime(conf.FechaFin) & vbNewLine
-            Next
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString)
-            Exit Sub
-        End Try
+        cargarArticulos()
     End Sub
 
     Private Sub cargarDatosPersonales()
         lblAutor.Visible = True
-        lblAutor.Text = "CURRICULUM DEL AUTOR CON ID (" & _idinvestigador.ToString & ")"
+        lblAutor.Text = "CURRICULUM DEL AUTOR CON ID (" & _idInvestigador.ToString & ")"
         Dim inv As New Investigador(Me._idInvestigador)
         Try
             inv.readInvestigador()
@@ -52,6 +37,42 @@
         txtbxDespacho.Text = inv.Despacho
         txtbxTlf.Text = inv.Telefono
         txtbxEmail.Text = inv.Email
+    End Sub
+
+    Private Sub cargarAsistencias()
+        Dim inv As New Investigador(Me._idInvestigador)
+        Try
+            inv.readAsistencias()
+            For Each conf As Conferencia In inv.ListaConferencias
+                conf.readConferencia()
+                txtbxConferencias.Text += conf.Nombre & ".  " & conf.Siglas & ".  " & conf.Lugar & ".  " & Convert.ToDateTime(conf.FechaInicio) & " - " & Convert.ToDateTime(conf.FechaFin) & vbNewLine
+            Next
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+            Exit Sub
+        End Try
+    End Sub
+
+    Public Sub cargarArticulos()
+        Dim inv As New Investigador(Me._idInvestigador)
+        Dim autores As New ArrayList
+        Try
+            inv.readArticulos()
+            For Each art As Articulo In inv.ListaArticulos
+                autores.Clear() 'refrescamos los autores para que no se acumulen los que han intervenido en distintos articulos
+                art.readArticulo()
+                art.Conferencia.readConferencia() 'para poder acceder a los datos de la conferencia
+                art.readAutores() 'de esta manera averigüamos quien ha intervenido (autores) en el artículo publicado por el investigador seleccionado
+                For Each invest As Investigador In art.ListaInvestigadores
+                    invest.readInvestigador()
+                    autores.Add(invest.Apellidos & " " & invest.Nombre)
+                Next
+                txtbxArticulos.Text += String.Join(",", autores.ToArray) & ".  " & art.Titulo & ".  " & art.Conferencia.Nombre & " (" & art.Conferencia.Siglas & ").  pp.  " & art.PagInicio & "-" & art.PagFin & ".  " & art.Conferencia.Lugar & ".  " & Year(Convert.ToDateTime(art.Conferencia.FechaFin)) & vbNewLine
+            Next
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+            Exit Sub
+        End Try
     End Sub
 
     Private Sub btnVolver_Click(sender As Object, e As EventArgs) Handles btnVolver.Click

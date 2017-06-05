@@ -37,6 +37,14 @@
         End While
     End Sub
 
+    Public Sub readArticulos(ByRef inv As Investigador)
+        Dim leer As OleDb.OleDbDataReader
+        leer = AgenteBD.getAgente.leer("SELECT Articulo FROM AUTOR WHERE Invest=" & inv.IDInvestigador & ";")
+        While leer.Read
+            inv.ListaArticulos.Add(New Articulo(leer.GetInt32(0)))
+        End While
+    End Sub
+
     Public Sub readAll()
         Dim leer As OleDb.OleDbDataReader
         leer = AgenteBD.getAgente.leer("SELECT * FROM INVESTIGADORES ORDER BY idInvest;")

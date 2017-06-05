@@ -121,7 +121,7 @@
     Private Sub txtbxFecha_inicio_Validating(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles txtbxFecha_inicio.Validating, txtbxFecha_fin.Validating
         Dim fecha As DateTime
         If Not DateTime.TryParse(txtbxFecha_inicio.Text, fecha) And Not DateTime.TryParse(txtbxFecha_fin.Text, fecha) Then
-            MessageBox.Show("Error en el formato de la fecha, por favor introduzca un formato de fecha válido.")
+            MessageBox.Show("Error en el formato de la fecha. Por favor introduzca un formato de fecha válido.")
         End If
     End Sub
 

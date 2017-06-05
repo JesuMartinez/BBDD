@@ -56,7 +56,7 @@
 
     Public Sub readAutores(ByVal art As Articulo)
         Dim leer As OleDb.OleDbDataReader
-        leer = AgenteBD.getAgente.leer("SELECT Invest FROM AUTOR WHERE Articulo=" & art.IDArticulo & ";")
+        leer = AgenteBD.getAgente.leer("SELECT Invest FROM AUTOR WHERE Articulo=" & art.IDArticulo & " ORDER BY Orden;")
         While leer.Read
             art.ListaInvestigadores.Add(New Investigador(leer.GetInt32(0)))
         End While
