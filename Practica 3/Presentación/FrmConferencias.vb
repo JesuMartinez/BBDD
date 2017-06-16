@@ -79,7 +79,7 @@
                     End Try
                 End If
             Else
-                MessageBox.Show("Introduzca un período entre fechas válida", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Por favor. Introduzca un período entre fechas válida", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             End If
         Else
