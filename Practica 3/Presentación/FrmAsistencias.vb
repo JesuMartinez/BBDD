@@ -22,7 +22,7 @@
                 lstbxConferencias.Items.Add(conf.IDConferencia)
             Next
         Catch ex As Exception
-            MessageBox.Show(ex.ToString)
+            MessageBox.Show(ex.Message)
             Exit Sub
         End Try
     End Sub
@@ -35,14 +35,16 @@
                 lstbxAsistencias.Items.Add(conf.IDConferencia)
             Next
         Catch ex As Exception
-            MessageBox.Show(ex.ToString)
+            MessageBox.Show(ex.Message)
             Exit Sub
         End Try
     End Sub
+
     Private Sub FrmAsistencias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarConferencias()
         cargarAsistencias()
     End Sub
+
     Private Sub btnAplicarGuardar_Click(sender As Object, e As EventArgs) Handles btnAplicarGuardar.Click
         Dim inv As Investigador
         Dim conf As New Conferencia
@@ -53,7 +55,7 @@
         Try
             inv.asiste()
         Catch ex As Exception
-            MessageBox.Show(ex.ToString)
+            MessageBox.Show(ex.Message)
             lstbxAsistencias.Items.Remove(lstbxAsistencias.SelectedItem)
             Exit Sub
         End Try
@@ -71,11 +73,10 @@
         Try
             inv.deleteAsistencia()
         Catch ex As Exception
-            MessageBox.Show(ex.ToString)
+            MessageBox.Show(ex.Message)
             lstbxAsistencias.Items.Remove(lstbxAsistencias.SelectedItem)
             Exit Sub
         End Try
-        'lstbxConferencias.Items.Add(lstbxAsistencias.SelectedItem)
         lstbxAsistencias.Items.Remove(lstbxAsistencias.SelectedItem)
     End Sub
 
