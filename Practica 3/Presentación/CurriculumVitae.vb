@@ -59,7 +59,7 @@
         Try
             inv.readArticulos()
             For Each art As Articulo In inv.ListaArticulos
-                autores.Clear() 'refrescamos los autores para que no se acumulen los que han intervenido en distintos articulos
+                autores.Clear() 'refrescamos los autores para que no se acumulen los que han intervenido en distintos articulos 
                 art.readArticulo()
                 art.Conferencia.readConferencia() 'para poder acceder a los datos de la conferencia
                 art.readAutores() 'de esta manera averigüamos quien ha intervenido (autores) en el artículo publicado por el investigador seleccionado
@@ -67,7 +67,9 @@
                     invest.readInvestigador()
                     autores.Add(invest.Apellidos & " " & invest.Nombre)
                 Next
+
                 txtbxArticulos.Text += String.Join(",", autores.ToArray) & ".  " & art.Titulo & ".  " & art.Conferencia.Nombre & " (" & art.Conferencia.Siglas & ").  pp.  " & art.PagInicio & "-" & art.PagFin & ".  " & art.Conferencia.Lugar & ".  " & Year(Convert.ToDateTime(art.Conferencia.FechaFin)) & vbNewLine
+
             Next
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
