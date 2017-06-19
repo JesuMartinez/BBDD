@@ -134,8 +134,4 @@
     Private Sub FrmConferencias_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         Application.Exit()
     End Sub
-
-    Private Sub txtbxFecha_inicio_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles txtbxFecha_inicio.MaskInputRejected
-
-    End Sub
 End Class

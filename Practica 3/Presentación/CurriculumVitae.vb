@@ -67,9 +67,7 @@
                     invest.readInvestigador()
                     autores.Add(invest.Apellidos & " " & invest.Nombre)
                 Next
-
                 txtbxArticulos.Text += String.Join(",", autores.ToArray) & ".  " & art.Titulo & ".  " & art.Conferencia.Nombre & " (" & art.Conferencia.Siglas & ").  pp.  " & art.PagInicio & "-" & art.PagFin & ".  " & art.Conferencia.Lugar & ".  " & Year(Convert.ToDateTime(art.Conferencia.FechaFin)) & vbNewLine
-
             Next
         Catch ex As Exception
             MessageBox.Show(ex.Message)
