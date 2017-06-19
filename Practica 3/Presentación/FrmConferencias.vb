@@ -60,7 +60,7 @@
 
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Dim con As Conferencia
-        If (txtbxIDConferencia.Modified = False) Then
+        If (txtbxIDConferencia.Modified = False And txtbxFecha_inicio.Text <= txtbxFecha_fin.Text) Then
 
             con = New Conferencia(Convert.ToInt32(lstbxConferencias.SelectedItem))
             con.Siglas = txtbxSiglas.Text
@@ -68,22 +68,19 @@
             con.Lugar = txtbxLugar.Text
             con.FechaInicio = txtbxFecha_inicio.Text
             con.FechaFin = txtbxFecha_fin.Text
-            If (txtbxFecha_inicio.Text <= txtbxFecha_fin.Text) Then
-                If MessageBox.Show("¿Desea modificar la conferencia seleccionada?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
-                    Try
-                        con.updateConferencia()
-                        MessageBox.Show("La conferencia ha sido modificada correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    Catch ex As Exception
-                        MessageBox.Show(ex.Message)
-                        Exit Sub
-                    End Try
-                End If
-            Else
-                MessageBox.Show("Introduzca un período entre fechas válida", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
+            If MessageBox.Show("¿Desea modificar la conferencia seleccionada?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                Try
+                    con.updateConferencia()
+                    MessageBox.Show("La conferencia ha sido modificada correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Catch ex As Exception
+                    MessageBox.Show(ex.Message)
+                    Exit Sub
+                End Try
             End If
         Else
-                MessageBox.Show("Modificación de ID de conferencia inválida ya que corresponde con la clave primaria de nuestra base de datos. " & vbNewLine & "Por favor modifique cualquier campo excepto el ID.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Introduzca un período entre fechas válida", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
         End If
     End Sub
 
@@ -135,7 +132,5 @@
         Application.Exit()
     End Sub
 
-    Private Sub txtbxFecha_inicio_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles txtbxFecha_inicio.MaskInputRejected
 
-    End Sub
 End Class
