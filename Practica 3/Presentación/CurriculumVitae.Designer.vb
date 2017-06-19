@@ -43,7 +43,7 @@ Partial Class Curriculum_Vitae
         Me.grpbxAsistencias = New System.Windows.Forms.GroupBox()
         Me.txtbxConferencias = New System.Windows.Forms.TextBox()
         Me.grpbxArticulos = New System.Windows.Forms.GroupBox()
-        Me.txtbxArticulos = New System.Windows.Forms.RichTextBox()
+        Me.txtbxArticulos = New System.Windows.Forms.TextBox()
         Me.grpbxDatos.SuspendLayout()
         Me.grpbxAsistencias.SuspendLayout()
         Me.grpbxArticulos.SuspendLayout()
@@ -274,12 +274,11 @@ Partial Class Curriculum_Vitae
         'txtbxArticulos
         '
         Me.txtbxArticulos.Enabled = False
-        Me.txtbxArticulos.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxArticulos.Location = New System.Drawing.Point(6, 25)
+        Me.txtbxArticulos.Multiline = True
         Me.txtbxArticulos.Name = "txtbxArticulos"
-        Me.txtbxArticulos.Size = New System.Drawing.Size(705, 178)
-        Me.txtbxArticulos.TabIndex = 0
-        Me.txtbxArticulos.Text = ""
+        Me.txtbxArticulos.Size = New System.Drawing.Size(705, 164)
+        Me.txtbxArticulos.TabIndex = 10
         '
         'Curriculum_Vitae
         '
@@ -301,6 +300,7 @@ Partial Class Curriculum_Vitae
         Me.grpbxAsistencias.ResumeLayout(False)
         Me.grpbxAsistencias.PerformLayout()
         Me.grpbxArticulos.ResumeLayout(False)
+        Me.grpbxArticulos.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -327,5 +327,5 @@ Partial Class Curriculum_Vitae
     Friend WithEvents grpbxAsistencias As GroupBox
     Friend WithEvents txtbxConferencias As TextBox
     Friend WithEvents grpbxArticulos As GroupBox
-    Friend WithEvents txtbxArticulos As RichTextBox
+    Friend WithEvents txtbxArticulos As TextBox
 End Class

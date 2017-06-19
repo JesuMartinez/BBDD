@@ -26,7 +26,7 @@
 
     Private Sub btnAñadir_Click(sender As Object, e As EventArgs) Handles btnAñadir.Click
         Dim con As Conferencia
-        If (txtbxFecha_inicio.Text <= txtbxFecha_fin.Text) Then
+        If (Convert.ToDateTime(txtbxFecha_inicio.Text) <= Convert.ToDateTime(txtbxFecha_fin.Text)) Then
             con = New Conferencia(Convert.ToInt32(txtbxIDConferencia.Text))
             con.Siglas = txtbxSiglas.Text
             con.Nombre = txtbxNombreConferencia.Text
@@ -61,14 +61,15 @@
     Private Sub btnModificar_Click(sender As Object, e As EventArgs) Handles btnModificar.Click
         Dim con As Conferencia
         If (txtbxIDConferencia.Modified = False) Then
+            If (Convert.ToDateTime(txtbxFecha_inicio.Text) <= Convert.ToDateTime(txtbxFecha_fin.Text)) Then
 
-            con = New Conferencia(Convert.ToInt32(lstbxConferencias.SelectedItem))
-            con.Siglas = txtbxSiglas.Text
-            con.Nombre = txtbxNombreConferencia.Text
-            con.Lugar = txtbxLugar.Text
-            con.FechaInicio = txtbxFecha_inicio.Text
-            con.FechaFin = txtbxFecha_fin.Text
-            If (txtbxFecha_inicio.Text <= txtbxFecha_fin.Text) Then
+                con = New Conferencia(Convert.ToInt32(lstbxConferencias.SelectedItem))
+                con.Siglas = txtbxSiglas.Text
+                con.Nombre = txtbxNombreConferencia.Text
+                con.Lugar = txtbxLugar.Text
+                con.FechaInicio = txtbxFecha_inicio.Text
+                con.FechaFin = txtbxFecha_fin.Text
+
                 If MessageBox.Show("¿Desea modificar la conferencia seleccionada?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                     Try
                         con.updateConferencia()
@@ -79,12 +80,14 @@
                     End Try
                 End If
             Else
-                MessageBox.Show("Por favor. Introduzca un período entre fechas válida", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
+                MessageBox.Show("Introduzca un período entre fechas válida.", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
+
         Else
-                MessageBox.Show("Modificación de ID de conferencia inválida ya que corresponde con la clave primaria de nuestra base de datos. " & vbNewLine & "Por favor modifique cualquier campo excepto el ID.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Error al intentar cambiar de ID, ya que corresponde con la clave primaria de nuestra base de datos.", "ATENCIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
+
+
     End Sub
 
     Public Sub cargarConferencias()
