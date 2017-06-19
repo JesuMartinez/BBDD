@@ -253,10 +253,10 @@ Partial Class Curriculum_Vitae
         'txtbxConferencias
         '
         Me.txtbxConferencias.Enabled = False
-        Me.txtbxConferencias.Location = New System.Drawing.Point(6, 39)
+        Me.txtbxConferencias.Location = New System.Drawing.Point(6, 25)
         Me.txtbxConferencias.Multiline = True
         Me.txtbxConferencias.Name = "txtbxConferencias"
-        Me.txtbxConferencias.Size = New System.Drawing.Size(705, 164)
+        Me.txtbxConferencias.Size = New System.Drawing.Size(705, 178)
         Me.txtbxConferencias.TabIndex = 9
         '
         'grpbxArticulos
