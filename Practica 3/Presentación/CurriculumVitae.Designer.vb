@@ -277,7 +277,7 @@ Partial Class Curriculum_Vitae
         Me.txtbxArticulos.Location = New System.Drawing.Point(6, 25)
         Me.txtbxArticulos.Multiline = True
         Me.txtbxArticulos.Name = "txtbxArticulos"
-        Me.txtbxArticulos.Size = New System.Drawing.Size(705, 164)
+        Me.txtbxArticulos.Size = New System.Drawing.Size(705, 178)
         Me.txtbxArticulos.TabIndex = 10
         '
         'Curriculum_Vitae
