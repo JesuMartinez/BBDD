@@ -65,8 +65,6 @@
         End If
     End Sub
 
-
-
     Private Sub btnAñadir_Click(sender As Object, e As EventArgs) Handles btnAñadir.Click
         Dim inv As Investigador
         inv = New Investigador(Convert.ToInt32(txtbxIDInvestigador.Text))
@@ -107,7 +105,7 @@
                 End Try
             End If
         Else
-            MessageBox.Show("Modificación de ID de investigador inválida ya que corresponde con la clave primaria de nuestra base de datos" & vbNewLine & "Por favor modifique cualquier campo excepto el ID.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Modificación de ID de investigador inválida ya que corresponde con la clave primaria de nuestra base de datos." & vbNewLine & "Por favor modifique cualquier campo excepto el ID.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 

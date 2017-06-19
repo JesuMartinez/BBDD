@@ -108,8 +108,4 @@
     Public Sub deleteConferencia()
         Me._daoConferencia.delete(Me)
     End Sub
-    'Método para gestionar las asistencias
-    Public Sub readConfAsiste()
-        Me._daoConferencia.readConfAsiste()
-    End Sub
 End Class

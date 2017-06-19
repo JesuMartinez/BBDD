@@ -22,7 +22,7 @@
 
     Private Sub cargarDatosPersonales()
         lblAutor.Visible = True
-        lblAutor.Text = "CURRICULUM DEL AUTOR CON ID (" & _idInvestigador.ToString & ")"
+        lblAutor.Text = "CURRICULUM DEL AUTOR CON ID (" & Me._idInvestigador.ToString & ")"
         Dim inv As New Investigador(Me._idInvestigador)
         Try
             inv.readInvestigador()
@@ -48,7 +48,7 @@
                 txtbxConferencias.Text += conf.Nombre & ".  " & conf.Siglas & ".  " & conf.Lugar & ".  " & Convert.ToDateTime(conf.FechaInicio) & " - " & Convert.ToDateTime(conf.FechaFin) & vbNewLine
             Next
         Catch ex As Exception
-            MessageBox.Show(ex.ToString)
+            MessageBox.Show(ex.Message)
             Exit Sub
         End Try
     End Sub
@@ -72,7 +72,7 @@
 
             Next
         Catch ex As Exception
-            MessageBox.Show(ex.ToString)
+            MessageBox.Show(ex.Message)
             Exit Sub
         End Try
     End Sub

@@ -1,5 +1,6 @@
 ﻿Public Class FrmAutores
     Private _idArticulo As Integer
+
     Public Sub New()
         InitializeComponent()
     End Sub
@@ -21,7 +22,7 @@
                 ListbxInvestigadores.Items.Add(inv.IDInvestigador)
             Next
         Catch ex As Exception
-            MessageBox.Show(ex.ToString)
+            MessageBox.Show(ex.Message)
             Exit Sub
         End Try
     End Sub
@@ -34,7 +35,7 @@
                 ListbxAutores.Items.Add(inv.IDInvestigador)
             Next
         Catch ex As Exception
-            MessageBox.Show(ex.ToString)
+            MessageBox.Show(ex.Message)
             Exit Sub
         End Try
     End Sub
@@ -60,7 +61,7 @@
         Try
             art.autor()
         Catch ex As Exception
-            MessageBox.Show(ex.ToString)
+            MessageBox.Show(ex.Message)
             ListbxAutores.Items.Remove(ListbxAutores.SelectedItem)
             Exit Sub
         End Try
@@ -78,11 +79,10 @@
         Try
             art.deleteAutor()
         Catch ex As Exception
-            MessageBox.Show(ex.ToString)
+            MessageBox.Show(ex.Message)
             ListbxAutores.Items.Remove(ListbxAutores.SelectedItem)
             Exit Sub
         End Try
-        'ListbxInvestigadores.Items.Add(ListbxAutores.SelectedItem)
         ListbxAutores.Items.Remove(ListbxAutores.SelectedItem)
     End Sub
 

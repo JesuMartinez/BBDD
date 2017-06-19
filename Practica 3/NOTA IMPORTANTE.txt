@@ -1,0 +1,2 @@
+Si al abrir el archivo access da un error de Microsoft OLEDB, basta con irse a las propiedades del proyecto (Proyecto/Propiedades del proyecto)
+y en la casilla de CPU de destino cambiarlo a ANY CPU-->Preferentemente 32 bits.
