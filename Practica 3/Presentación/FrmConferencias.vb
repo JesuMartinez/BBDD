@@ -62,14 +62,12 @@
         Dim con As Conferencia
         If (txtbxIDConferencia.Modified = False) Then
             If (Convert.ToDateTime(txtbxFecha_inicio.Text) <= Convert.ToDateTime(txtbxFecha_fin.Text)) Then
-
                 con = New Conferencia(Convert.ToInt32(lstbxConferencias.SelectedItem))
                 con.Siglas = txtbxSiglas.Text
                 con.Nombre = txtbxNombreConferencia.Text
                 con.Lugar = txtbxLugar.Text
                 con.FechaInicio = txtbxFecha_inicio.Text
                 con.FechaFin = txtbxFecha_fin.Text
-
                 If MessageBox.Show("¿Desea modificar la conferencia seleccionada?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                     Try
                         con.updateConferencia()
